@@ -29,6 +29,12 @@ create table if not exists profile_details (
   data jsonb not null default '{}'
 );
 
+-- «Nur für mich»: gehört dem Besitzer, kein anderer Nutzer kann es lesen (auch keine Freunde). Dient dem Abgleich eigener Geräte.
+create table if not exists profile_private (
+  id uuid primary key references auth.users on delete cascade,
+  data jsonb not null default '{}'
+);
+
 create table if not exists rounds (
   id text primary key,
   user_id uuid not null references auth.users on delete cascade,
@@ -57,6 +63,7 @@ $$;
 
 alter table profiles enable row level security;
 alter table profile_details enable row level security;
+alter table profile_private enable row level security;
 alter table rounds enable row level security;
 alter table friendships enable row level security;
 
@@ -75,6 +82,13 @@ drop policy if exists "eigene details schreiben" on profile_details;
 create policy "eigene details schreiben" on profile_details for insert to authenticated with check (id = auth.uid());
 drop policy if exists "eigene details ändern" on profile_details;
 create policy "eigene details ändern" on profile_details for update to authenticated using (id = auth.uid());
+
+drop policy if exists "privat lesen" on profile_private;
+create policy "privat lesen" on profile_private for select to authenticated using (id = auth.uid());
+drop policy if exists "privat schreiben" on profile_private;
+create policy "privat schreiben" on profile_private for insert to authenticated with check (id = auth.uid());
+drop policy if exists "privat ändern" on profile_private;
+create policy "privat ändern" on profile_private for update to authenticated using (id = auth.uid());
 
 -- Runden: nur eigene und die von bestätigten Freunden.
 drop policy if exists "runden lesen" on rounds;

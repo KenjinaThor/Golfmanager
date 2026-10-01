@@ -69,16 +69,21 @@ function valueOf(p: Profile, k: SharedField): string | number | null {
  * Was für andere sichtbar wird:
  * - `publicData`: öffentliche Felder ausser Name und Handicap (die stehen in eigenen Spalten)
  * - `details`: alles, was Freunde sehen dürfen (öffentliche und Freundes-Felder) plus die Sichtbarkeitstabelle
- * «Nur für mich» und das Geburtsdatum sind nirgends enthalten.
+ * - `privateData`: «Nur für mich»-Felder; kommen in eine Tabelle, die nur der Besitzer lesen kann (Abgleich zwischen eigenen Geräten)
+ * Das Geburtsdatum ist nirgends enthalten.
  */
 export function sharedView(p: Profile) {
   const vis = fullVisibility(p);
   const publicData: Record<string, unknown> = {};
+  const privateData: Record<string, unknown> = {};
   const details: Record<string, unknown> = { username: p.username, visibility: vis, updatedAt: p.updatedAt ?? null };
   for (const { key } of SHARED_FIELDS) {
     const v = vis[key];
-    if (v === 'private') continue;
     const value = valueOf(p, key);
+    if (v === 'private') {
+      privateData[key] = value;
+      continue;
+    }
     details[key] = value;
     if (v === 'public' && key !== 'name' && key !== 'handicapIndex') publicData[key] = value;
   }
@@ -86,6 +91,7 @@ export function sharedView(p: Profile) {
     publicName: vis.name === 'public' ? p.name : '',
     publicHandicap: vis.handicapIndex === 'public' ? p.handicapIndex : null,
     publicData,
+    privateData,
     details,
   };
 }

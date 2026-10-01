@@ -38,7 +38,8 @@ export async function pushProfile(p: Profile): Promise<boolean> {
   const rows = profileRows(id, p);
   const a = await supabase.from('profiles').upsert(rows.profile);
   const b = a.error ? null : await supabase.from('profile_details').upsert(rows.details);
-  const err = a.error ?? b?.error;
+  const c = a.error || b?.error ? null : await supabase.from('profile_private').upsert(rows.privateRow);
+  const err = a.error ?? b?.error ?? c?.error;
   if (err) {
     setInfo({ state: 'error', message: `Profil konnte nicht übertragen werden: ${friendlySyncError(err.message)}`, busy: false });
     return false;
@@ -101,9 +102,13 @@ export async function syncAll(i: SyncInput): Promise<SyncResult | null> {
   // 1. Cloud lesen (eigene Daten; RLS würde sonst auch Freunde liefern)
   const det = await supabase.from('profile_details').select('data').eq('id', me).maybeSingle();
   if (det.error) return fail('Profil laden fehlgeschlagen', det.error.message);
+  const priv = await supabase.from('profile_private').select('data').eq('id', me).maybeSingle();
+  if (priv.error) return fail('Profil laden fehlgeschlagen', priv.error.message);
   const rem = await supabase.from('rounds').select('data').eq('user_id', me);
   if (rem.error) return fail('Runden laden fehlgeschlagen', rem.error.message);
-  const cloudProfile = (det.data?.data as Profile | undefined) ?? null;
+  const cloudShared = (det.data?.data as Profile | undefined) ?? null;
+  // eigene «Nur für mich»-Felder aus dem privaten Speicher dazunehmen
+  const cloudProfile = cloudShared ? ({ ...cloudShared, ...(priv.data?.data as Partial<Profile> | undefined) } as Profile) : null;
   const remoteRounds = (rem.data ?? []).map((x) => x.data as Round);
 
   // 2. Zusammenführen

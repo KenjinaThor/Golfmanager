@@ -68,9 +68,15 @@ test('Alter wird übertragen, aber nur als Zahl und nur laut Sichtbarkeit', () =
 test('«Nur für mich»: Feld taucht nirgends auf; Name/Handicap werden dann auch in der öffentlichen Zeile geleert', () => {
   const p = prof({ ...base, visibility: { clubBrand: 'private', ballCount: 'private', name: 'private', handicapIndex: 'friends' } });
   const rows = profileRows('u', p);
-  const json = JSON.stringify(rows);
+  const { privateRow, ...shared } = rows;
+  const json = JSON.stringify(shared);
   assert.ok(!json.includes('Ping') && !json.includes('"ballCount":7'), 'Wert eines privaten Feldes übertragen');
   assert.equal((rows.details.data as { visibility: Record<string, string> }).visibility.ballCount, 'private'); // Einstellung geht mit, damit ein zweites Gerät nichts versehentlich freigibt
+  // stattdessen im privaten Speicher (nur für den Besitzer lesbar)
+  const pd = privateRow.data as Record<string, unknown>;
+  assert.equal(pd.ballCount, 7);
+  assert.equal(pd.name, base.name);
+  assert.ok(!('handicapIndex' in pd) && !('birthDate' in pd));
   assert.equal(rows.profile.name, '');
   assert.equal(rows.profile.handicap_index, null); // nur für Freunde → nicht in der öffentlichen Zeile
   assert.ok(!('name' in (rows.details.data as object)));
