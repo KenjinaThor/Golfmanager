@@ -8,6 +8,7 @@ Golf-App für Android & iOS (Expo / React Native, TypeScript) mit optionaler Ver
 - **Runde spielen**: Schläge pro Loch erfassen; Platzvorgabe (WHS), Vorgabeschläge, Netto und Stableford werden automatisch berechnet.
 - **Lost Balls**: pro Loch erfassbar, zieht direkt vom Ballvorrat im Profil ab (−1 gibt zurück).
 - **Historie & Statistik**: alle Runden lokal gespeichert; pro Loch beste/schlechteste Runde mit Datum, Ø, Total.
+- **Excel-Export**: Statistik → «Als Excel exportieren (.xlsx)». Blätter: *Runden* (eine Zeile pro Runde), *Löcher* (eine Zeile pro Loch und Runde, für Pivot-Tabellen), *Pro Loch* (Bestwerte), *Info*. Im Browser als Download, am Handy über das Teilen-Menü.
 - **Freunde**: Login, Benutzer suchen, Anfragen, Profil und Runden bestätigter Freunde einsehen.
 
 ## Start
