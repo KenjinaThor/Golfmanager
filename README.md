@@ -38,6 +38,8 @@ Ohne Supabase läuft alles lokal; der Tab «Freunde» zeigt dann nur einen Hinwe
    **Handy-App/Expo Go**: dieselben zwei Werte in `.env` eintragen (siehe `.env.example`).
 6. In der App: Profil → Benutzername setzen (a–z, 0–9, _; min. 3 Zeichen) → Tab «Freunde» → Konto erstellen, E-Mail bestätigen, anmelden.
 
+Im Profil sind alle Felder gekennzeichnet: **öffentlich** (Name, Benutzername, Handicap: für alle angemeldeten Nutzer bei der Suche sichtbar) oder **Freunde** (alles andere inkl. Ballvorrat und Runden). Unter «Was wird übertragen?» steht der Stand der letzten Übertragung samt Fehlermeldung und ein Knopf «Jetzt übertragen».
+Freundschaften: Anfragen annehmen oder ablehnen (abgelehnte verschwinden), gesendete zurückziehen, Freunde entfernen (die Verbindung wird für beide gelöscht). Neue Anfragen zeigt ein Zeichen am Reiter «Freunde» (Abfrage alle 45 Sekunden und beim Öffnen).
 Datenschutz: Name, Benutzername und Handicap sind für angemeldete Nutzer suchbar; Runden und Profil-Details (Grösse, Schläger, Bälle …) sehen nur bestätigte Freunde. Die Regeln werden mit `backend/test/run.sh` gegen ein lokales PostgreSQL getestet (Fremde, Selbstbestätigung, umgebogene Anfragen, nicht angemeldet).
 Synchronisiert werden Profil und abgeschlossene Runden vom Gerät in die Cloud; die Wiederherstellung auf einem neuen Gerät fehlt noch.
 

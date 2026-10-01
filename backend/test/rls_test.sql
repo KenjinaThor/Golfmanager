@@ -88,6 +88,34 @@ begin
   perform as_user(a);
   select are_friends(a, b) into ok; assert ok = true, 'are_friends für eigene Freunde';
 
+  -- 9. Ablehnen: der Empfänger löscht die offene Anfrage, sie verschwindet für beide
+  perform as_user(c);
+  delete from friendships where requester = s and addressee = c and status = 'pending';
+  get diagnostics n = row_count; assert n = 1, 'Ablehnen fehlgeschlagen';
+  perform as_user(s);
+  select count(*) into n from friendships where requester = s; assert n = 0, 'Abgelehnte Anfrage noch sichtbar';
+
+  -- 10. Zurückziehen: der Absender löscht seine offene Anfrage
+  insert into friendships (requester, addressee) values (s, b);
+  delete from friendships where requester = s and addressee = b and status = 'pending';
+  get diagnostics n = row_count; assert n = 1, 'Zurückziehen fehlgeschlagen';
+
+  -- 11. Unbeteiligte können fremde Freundschaften nicht löschen
+  perform as_user(c);
+  delete from friendships where (requester = a and addressee = b) or (requester = b and addressee = a);
+  get diagnostics n = row_count; assert n = 0, 'Fremder löscht fremde Freundschaft';
+
+  -- 12. Entfernen: Bob löscht Alice als Freundin -> beide sehen sich nicht mehr
+  perform as_user(b);
+  delete from friendships where (requester = b and addressee = a) or (requester = a and addressee = b);
+  get diagnostics n = row_count; assert n = 1, 'Entfernen fehlgeschlagen';
+  select count(*) into n from rounds where user_id = a; assert n = 0, 'Bob sieht Alices Runden nach dem Entfernen';
+  select count(*) into n from profile_details where id = a; assert n = 0, 'Bob sieht Alices Details nach dem Entfernen';
+  perform as_user(a);
+  select count(*) into n from rounds where user_id = b; assert n = 0, 'Alice sieht Bobs Runden nach dem Entfernen';
+  select count(*) into n from profile_details where id = b; assert n = 0, 'Alice sieht Bobs Details nach dem Entfernen';
+  select count(*) into n from friendships; assert n = 0, 'Freundschaftszeilen übrig';
+
   -- 8. Nicht angemeldet: nichts lesbar
   reset role; set local role anon;
   begin select count(*) into n from rounds; exception when insufficient_privilege then n := 0; end;

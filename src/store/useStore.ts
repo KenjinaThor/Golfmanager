@@ -4,22 +4,10 @@ import { createJSONStorage, persist } from 'zustand/middleware';
 import { getCourse } from '../data/courses';
 import { courseHandicap, coursePar, emptyScores } from '../lib/scoring';
 import { Profile, Round, TeeId } from '../types';
-import { pushProfile, pushRound } from '../lib/sync';
+import { defaultProfile } from './defaultProfile';
+import { deleteRemoteRound, pushProfile, pushRound, scheduleProfilePush } from '../lib/sync';
 
-export const defaultProfile: Profile = {
-  name: '',
-  username: '',
-  handicapIndex: 54,
-  gender: 'men',
-  heightCm: null,
-  handedness: 'right',
-  homeClub: '',
-  clubBrand: '',
-  ballBrand: '',
-  ballCount: 12,
-  driverDistance: null,
-  bio: '',
-};
+export { defaultProfile };
 
 const newId = () => Date.now().toString(36) + Math.random().toString(36).slice(2, 8);
 
@@ -79,7 +67,7 @@ export const useStore = create<State>()(
             : s,
         ),
 
-      addLostBall: (hole, delta) =>
+      addLostBall: (hole, delta) => {
         set((s) => {
           if (!s.active) return s;
           const cur = s.active.holes.find((h) => h.number === hole)!.lostBalls;
@@ -92,7 +80,9 @@ export const useStore = create<State>()(
               holes: s.active.holes.map((h) => (h.number === hole ? { ...h, lostBalls: cur + delta } : h)),
             },
           };
-        }),
+        });
+        scheduleProfilePush(() => get().profile);
+      },
 
       finishRound: () => {
         const a = get().active;
@@ -103,14 +93,19 @@ export const useStore = create<State>()(
         void pushProfile(get().profile);
       },
 
-      discardRound: () =>
+      discardRound: () => {
         set((s) => {
           // verlorene Bälle der verworfenen Runde zurückbuchen
           const lost = s.active?.holes.reduce((n, h) => n + h.lostBalls, 0) ?? 0;
           return { active: null, profile: { ...s.profile, ballCount: s.profile.ballCount + lost } };
-        }),
+        });
+        scheduleProfilePush(() => get().profile);
+      },
 
-      deleteRound: (id) => set((s) => ({ rounds: s.rounds.filter((r) => r.id !== id) })),
+      deleteRound: (id) => {
+        set((s) => ({ rounds: s.rounds.filter((r) => r.id !== id) }));
+        void deleteRemoteRound(id);
+      },
     }),
     { name: 'golfmanager-v1', storage: createJSONStorage(() => AsyncStorage) },
   ),

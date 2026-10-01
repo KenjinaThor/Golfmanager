@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { ScrollView, Text } from 'react-native';
 import { HoleStatsTable } from '../components/Tables';
-import { Card, H, colors, fmtDate } from '../components/ui';
+import { Btn, Card, H, colors, confirmDialog, fmtDate, notify } from '../components/ui';
+import { bothWays, refreshIncoming } from '../lib/friends';
 import { getCourse } from '../data/courses';
 import { holeStats, roundLabels, roundTotals } from '../lib/scoring';
 import { supabase } from '../lib/supabase';
 import { Profile, Round } from '../types';
 
-export default function FriendDetailScreen({ route }: any) {
+export default function FriendDetailScreen({ route, navigation }: any) {
   const user = route.params.user as { id: string; username: string; name: string };
   const [details, setDetails] = useState<Profile | null>(null);
   const [rounds, setRounds] = useState<Round[]>([]);
@@ -27,15 +28,29 @@ export default function FriendDetailScreen({ route }: any) {
 
   const course = courseId ? getCourse(courseId) : undefined;
   const labels = roundLabels(rounds);
+
+  /** Löscht die Verbindung in beide Richtungen: danach sehen sich beide nicht mehr. */
+  const remove = () =>
+    confirmDialog('Freund entfernen?', `${user.name || user.username} wird aus deinen Freunden entfernt. Ihr seht euch danach gegenseitig nicht mehr.`, 'Entfernen', async () => {
+      const { data: sess } = await supabase!.auth.getSession();
+      const me = sess.session?.user.id;
+      if (!me) return;
+      const { error } = await supabase!.from('friendships').delete().or(bothWays(me, user.id));
+      if (error) { notify('Fehler', error.message); return; }
+      void refreshIncoming();
+      navigation.goBack();
+    }, true);
   return (
     <ScrollView contentContainerStyle={{ padding: 12 }}>
       <Card>
-        <H>{user.name || user.username}</H>
+        <H>{user.name || details?.name || 'Kein Name hinterlegt'}</H>
+        <Text style={{ color: colors.mute, marginBottom: 6 }}>@{user.username}</Text>
         {details ? (
           <>
             <Text>Handicap-Index: {details.handicapIndex} · Heimclub: {details.homeClub || '-'}</Text>
             <Text>Grösse: {details.heightCm ?? '-'} cm · Spielhand: {details.handedness === 'left' ? 'Links' : 'Rechts'}</Text>
-            <Text>Schläger: {details.clubBrand || '-'} · Ball: {details.ballBrand || '-'} ({details.ballCount} im Bag)</Text>
+            <Text>Schläger: {details.clubBrand || '-'} · Ball: {details.ballBrand || '-'}</Text>
+            <Text>Bälle im Bag: {details.ballCount ?? '-'}</Text>
             <Text>Driver: {details.driverDistance ?? '-'} m</Text>
             {!!details.bio && <Text style={{ marginTop: 6 }}>{details.bio}</Text>}
           </>
@@ -59,6 +74,7 @@ export default function FriendDetailScreen({ route }: any) {
         })}
         {!rounds.length && <Text style={{ color: colors.mute }}>Noch keine Runden.</Text>}
       </Card>
+      <Btn kind="danger" title="Freund entfernen" onPress={remove} />
     </ScrollView>
   );
 }

@@ -4,7 +4,7 @@
  * Spalten tees.csv:    id,tee,rating,slope
  * Nutzung: npm run import-courses
  */
-import { readFileSync, writeFileSync } from 'node:fs';
+import { existsSync, readdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { Course, Tee } from '../src/types';
 
 const TEE_IDS = ['white', 'yellow', 'blue', 'red'];
@@ -141,7 +141,9 @@ for (const r of parseCsv('data/tees.csv')) {
         par: loops[loop][n - 1].par,
         hcpIndex: d.index[i],
         distances: Object.fromEntries(TEES.map((t, k) => [t.id, d.dist(k, i + 1, loop, n, tees[k].markers!)])),
+        ...(existsSync(`assets/holes/${loop}-${n}.webp`) ? { image: `${loop}-${n}` } : {}),
       })),
+      overview: 'uebersicht',
     });
   }
 }
@@ -169,3 +171,17 @@ for (const c of courses.values()) {
 }
 writeFileSync('src/data/courses.json', JSON.stringify([...courses.values()], null, 1) + '\n');
 console.log(`${courses.size} Plätze geschrieben`);
+
+// Lochbilder (assets/holes/*.webp, Dateiname = Schlüssel) als statische require()-Liste für Metro erzeugen.
+const imageKeys = readdirSync('assets/holes').filter((f) => f.endsWith('.webp')).map((f) => f.replace('.webp', '')).sort();
+writeFileSync(
+  'src/data/holeImages.ts',
+  `// AUTOMATISCH ERZEUGT von scripts/import-courses.ts – nicht von Hand ändern.
+import { ImageSourcePropType } from 'react-native';
+
+export const holeImages: Record<string, ImageSourcePropType> = {
+${imageKeys.map((k) => `  '${k}': require('../../assets/holes/${k}.webp'),`).join('\n')}
+};
+`,
+);
+console.log(`${imageKeys.length} Lochbilder eingebunden`);

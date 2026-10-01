@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { ScrollView, Text, View } from 'react-native';
 import { Btn, Card, colors, confirmDialog, Row } from '../components/ui';
+import { HoleLayoutToggle } from '../components/HoleLayout';
 import { getCourse } from '../data/courses';
 import { roundLabels, roundTotals, strokesReceived, stableford } from '../lib/scoring';
 import { useStore } from '../store/useStore';
@@ -30,6 +31,7 @@ export default function ScorecardScreen({ navigation }: any) {
         <Text style={{ fontSize: 28, fontWeight: '800' }}>Loch {hole.number}</Text>
         <Text style={{ fontSize: 16 }}>Par {hole.par} · {dist ?? '-'} m · HCP {hole.hcpIndex}</Text>
         <Text style={{ color: colors.green, fontWeight: '600' }}>Vorgabeschläge auf diesem Loch: {rec}</Text>
+        <HoleLayoutToggle imageKey={hole.image} />
       </Card>
 
       <Card>
