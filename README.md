@@ -18,6 +18,15 @@ npm start              # Expo Go auf dem Handy, oder: npm run android / npm run 
 npm test               # Berechnungslogik
 ```
 
+## Web-App (PWA)
+Die App läuft auch im Browser und lässt sich auf dem Handy zum Startbildschirm hinzufügen (Offline-fähig, eigenes Icon).
+- Lokal testen: `npm run web`
+- Veröffentlichen: `.github/workflows/deploy-web.yml` baut bei jedem Push auf `main` und veröffentlicht auf GitHub Pages
+  (`https://<user>.github.io/Golfmanager/`). Einmalig: Repository → Settings → Pages → Source = **GitHub Actions**.
+- Für «Freunde» im Web: Repository-Secrets `EXPO_PUBLIC_SUPABASE_URL` und `EXPO_PUBLIC_SUPABASE_ANON_KEY` anlegen.
+- Anderer Unterpfad/Hosting: `EXPO_BASE_URL=/pfad npx expo export --platform web`, Ordner `dist/` ausliefern (HTTPS nötig für den Service Worker).
+- Installieren: iPhone Safari → Teilen → «Zum Home-Bildschirm»; Android Chrome → Menü → «App installieren».
+
 ## Vernetzung (Supabase)
 1. Gratis-Projekt auf supabase.com anlegen, `backend/schema.sql` im SQL-Editor ausführen.
 2. URL und anon key in `.env` eintragen.

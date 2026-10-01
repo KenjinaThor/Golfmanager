@@ -5,7 +5,21 @@
     "version": "0.1.0",
     "orientation": "portrait",
     "userInterfaceStyle": "automatic",
-    "ios": { "supportsTablet": false, "bundleIdentifier": "ch.golfmanager.app" },
-    "android": { "package": "ch.golfmanager.app" }
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "ch.golfmanager.app"
+    },
+    "android": {
+      "package": "ch.golfmanager.app"
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "single",
+      "name": "Golfmanager",
+      "shortName": "Golfmanager",
+      "description": "Golf-Runden, Handicap und Statistik für den Golfpark Waldkirch",
+      "themeColor": "#1f7a3a",
+      "backgroundColor": "#f7f8f7"
+    }
   }
 }

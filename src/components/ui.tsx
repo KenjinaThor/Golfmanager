@@ -77,3 +77,9 @@ export function confirmDialog(title: string, message: string, okLabel: string, o
     { text: okLabel, style: destructive ? 'destructive' : 'default', onPress: onOk },
   ]);
 }
+
+/** Einfache Meldung: nativ Alert.alert, im Web window.alert. */
+export function notify(title: string, message = '') {
+  if (Platform.OS === 'web') window.alert(message ? `${title}\n\n${message}` : title);
+  else Alert.alert(title, message);
+}
