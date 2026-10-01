@@ -50,3 +50,10 @@ export function checkCredentials(email: string, password: string, login: boolean
   if (!login && password.length < 6) return 'Das Passwort braucht mindestens 6 Zeichen.';
   return null;
 }
+
+/** Verständliche Meldung für Fehler beim Übertragen (z. B. wenn die Datenbank noch nicht aktualisiert wurde). */
+export function friendlySyncError(message: string): string {
+  if (/public_data/.test(message))
+    return 'Die Datenbank ist noch nicht aktualisiert. Bitte das aktuelle SQL aus backend/schema.sql im Supabase SQL Editor ausführen.';
+  return message;
+}

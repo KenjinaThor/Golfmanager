@@ -26,6 +26,21 @@ export default function FriendDetailScreen({ route, navigation }: any) {
     })();
   }, [user.id]);
 
+  /** Nur Angaben, die der Spieler für Freunde freigegeben hat (andere fehlen in den Daten). */
+  const shared: [string, string | number][] = details
+    ? ([
+        ['Alter', details.age != null ? `${details.age} Jahre` : null],
+        ['Handicap-Index', details.handicapIndex ?? null],
+        ['Heimclub', details.homeClub || null],
+        ['Grösse', details.heightCm != null ? `${details.heightCm} cm` : null],
+        ['Wertung', details.gender ? (details.gender === 'ladies' ? 'Damen' : 'Herren') : null],
+        ['Spielhand', details.handedness ? (details.handedness === 'left' ? 'Links' : 'Rechts') : null],
+        ['Schläger', details.clubBrand || null],
+        ['Ball', details.ballBrand || null],
+        ['Bälle im Bag', details.ballCount ?? null],
+        ['Driver', details.driverDistance != null ? `${details.driverDistance} m` : null],
+      ] as [string, string | number | null][]).filter((r): r is [string, string | number] => r[1] != null)
+    : [];
   const course = courseId ? getCourse(courseId) : undefined;
   const labels = roundLabels(rounds);
 
@@ -43,18 +58,14 @@ export default function FriendDetailScreen({ route, navigation }: any) {
   return (
     <ScrollView contentContainerStyle={{ padding: 12 }}>
       <Card>
-        <H>{user.name || details?.name || 'Kein Name hinterlegt'}</H>
+        <H>{user.name || details?.name || 'Name nicht freigegeben'}</H>
         <Text style={{ color: colors.mute, marginBottom: 6 }}>@{user.username}</Text>
         {details ? (
           <>
-            <Text>Handicap-Index: {details.handicapIndex} · Heimclub: {details.homeClub || '-'}</Text>
-            <Text>Grösse: {details.heightCm ?? '-'} cm · Spielhand: {details.handedness === 'left' ? 'Links' : 'Rechts'}</Text>
-            <Text>Schläger: {details.clubBrand || '-'} · Ball: {details.ballBrand || '-'}</Text>
-            <Text>Bälle im Bag: {details.ballCount ?? '-'}</Text>
-            <Text>Driver: {details.driverDistance ?? '-'} m</Text>
+            {shared.length ? shared.map(([label, value]) => <Text key={label}>{label}: {value}</Text>) : <Text style={{ color: colors.mute }}>Dieser Spieler teilt keine weiteren Angaben.</Text>}
             {!!details.bio && <Text style={{ marginTop: 6 }}>{details.bio}</Text>}
           </>
-        ) : <Text style={{ color: colors.mute }}>Keine Details hinterlegt.</Text>}
+        ) : <Text style={{ color: colors.mute }}>Keine Details freigegeben.</Text>}
       </Card>
       {course && courseId && (
         <Card>

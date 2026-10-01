@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { checkCredentials, friendlyAuthError, resolveSupabaseConfig } from '../src/lib/supabaseConfig';
+import { checkCredentials, friendlyAuthError, friendlySyncError, resolveSupabaseConfig } from '../src/lib/supabaseConfig';
 
 test('nicht konfiguriert → null (App läuft lokal)', () => {
   assert.equal(resolveSupabaseConfig('', ''), null);
@@ -39,4 +39,9 @@ test('Eingaben werden vor dem Senden geprüft', () => {
   assert.ok(checkCredentials('', '', true)?.includes('E-Mail und Passwort'));
   assert.ok(checkCredentials('keine-mail', 'geheim1', false)?.includes('nicht gültig'));
   assert.ok(friendlyAuthError('Anonymous sign-ins are disabled').includes('nicht angekommen'));
+});
+
+test('Fehler «Spalte public_data fehlt» weist auf das SQL-Update hin', () => {
+  assert.ok(friendlySyncError("Could not find the 'public_data' column of 'profiles' in the schema cache").includes('schema.sql'));
+  assert.equal(friendlySyncError('anderer Fehler'), 'anderer Fehler');
 });

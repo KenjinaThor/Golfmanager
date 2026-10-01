@@ -4,14 +4,16 @@ import { Profile, Round } from '../types';
 const isBlank = (p: Profile) => !p.username && !p.name && !p.updatedAt;
 
 /** Profil abgleichen: der neuere Stand gewinnt; auf einem neuen Gerät wird der Cloud-Stand übernommen. */
-export function mergeProfile(local: Profile, cloud: Profile | null): { profile: Profile; push: boolean } {
-  if (!cloud) return { profile: local, push: !!local.username };
-  if (isBlank(local)) return { profile: cloud, push: false };
+export function mergeProfile(local: Profile, cloud: Profile | null): { profile: Profile; push: boolean; fromCloud: boolean } {
+  if (!cloud) return { profile: local, push: !!local.username, fromCloud: false };
+  // Die Cloud enthält nur freigegebene Felder: Geteiltes überschreibt, Privates und das Geburtsdatum bleiben lokal.
+  const fromCloud: Profile = { ...local, ...cloud, birthDate: local.birthDate ?? null };
+  if (isBlank(local)) return { profile: fromCloud, push: false, fromCloud: true };
   const lu = local.updatedAt ?? 0;
   const cu = cloud.updatedAt ?? 0;
-  if (cu > lu) return { profile: cloud, push: false };
+  if (cu > lu) return { profile: fromCloud, push: false, fromCloud: true };
   // lokal neuer oder gleich alt: lokal behalten; Cloud ohne Zeitstempel (ältere Version) wird dabei aufgefrischt
-  return { profile: local, push: !!local.username && (lu > cu || !cloud.updatedAt) };
+  return { profile: local, push: !!local.username && (lu > cu || !cloud.updatedAt), fromCloud: false };
 }
 
 export interface RoundMerge {

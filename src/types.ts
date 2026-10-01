@@ -39,6 +39,14 @@ export interface Course {
   overview?: string;
 }
 
+/** Wer ein Profilfeld sehen darf: nur ich (bleibt auf dem Gerät), bestätigte Freunde oder alle angemeldeten Spieler. */
+export type Visibility = 'private' | 'friends' | 'public';
+
+/** Profilfelder, deren Sichtbarkeit der Nutzer selbst festlegt (Benutzername ist immer öffentlich, sonst wäre er nicht auffindbar). */
+export type SharedField =
+  | 'name' | 'handicapIndex' | 'age' | 'homeClub' | 'heightCm' | 'gender' | 'handedness'
+  | 'clubBrand' | 'ballBrand' | 'ballCount' | 'driverDistance' | 'bio';
+
 export interface Profile {
   name: string;
   username: string;
@@ -52,6 +60,12 @@ export interface Profile {
   ballCount: number;
   driverDistance: number | null; // Meter
   bio: string;
+  /** Geburtsdatum (JJJJ-MM-TT): bleibt immer auf dem Gerät, wird nie übertragen */
+  birthDate?: string | null;
+  /** Alter, wie es aus der Cloud kommt (auf einem Gerät ohne Geburtsdatum); lokal wird es aus birthDate berechnet */
+  age?: number | null;
+  /** gewählte Sichtbarkeit je Feld; fehlende Einträge gelten als Standard (siehe lib/privacy.ts) */
+  visibility?: Partial<Record<SharedField, Visibility>>;
   /** Zeitpunkt der letzten Änderung (ms); der neuere Stand gewinnt beim Abgleich zwischen Geräten */
   updatedAt?: number;
 }

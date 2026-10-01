@@ -16,8 +16,12 @@ create table if not exists profiles (
   id uuid primary key references auth.users on delete cascade,
   username text unique not null check (username ~ '^[a-z0-9_]{3,20}$'),
   name text not null default '',
-  handicap_index numeric(3,1)
+  handicap_index numeric(3,1),
+  -- weitere öffentlich freigegebene Angaben (vom Nutzer pro Feld gewählt), für alle angemeldeten Nutzer lesbar
+  public_data jsonb not null default '{}'
 );
+-- für Projekte, die schon eine ältere Fassung der Tabelle haben
+alter table profiles add column if not exists public_data jsonb not null default '{}';
 
 -- Details (Grösse, Schläger, Bälle …) sind nur für Freunde sichtbar.
 create table if not exists profile_details (
