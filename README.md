@@ -41,6 +41,17 @@ Ohne Supabase läuft alles lokal; der Tab «Freunde» zeigt dann nur einen Hinwe
 
 Im Profil sind alle Felder gekennzeichnet: **öffentlich** (Name, Benutzername, Handicap: für alle angemeldeten Nutzer bei der Suche sichtbar) oder **Freunde** (alles andere inkl. Ballvorrat und Runden). Unter «Was wird übertragen?» steht der Stand der letzten Übertragung samt Fehlermeldung und ein Knopf «Jetzt übertragen».
 Freundschaften: Anfragen annehmen oder ablehnen (abgelehnte verschwinden), gesendete zurückziehen, Freunde entfernen (die Verbindung wird für beide gelöscht). Neue Anfragen zeigt ein Zeichen am Reiter «Freunde» (Abfrage alle 45 Sekunden und beim Öffnen).
+### Anmeldung mit Google (optional, nur Web-App)
+Im Tab «Freunde» erscheint «Mit Google anmelden». Einrichtung:
+1. **Google Cloud Console** (console.cloud.google.com): Projekt anlegen → *APIs & Services* → *OAuth-Zustimmungsbildschirm* (Extern; App-Name, Support-E-Mail; im Modus «Testen» die E-Mail-Adressen der Nutzer als *Testnutzer* eintragen).
+2. *Anmeldedaten* → *Anmeldedaten erstellen* → *OAuth-Client-ID* → Typ **Webanwendung**.
+   - *Autorisierte JavaScript-Quellen*: `https://kenjinathor.github.io`
+   - *Autorisierte Weiterleitungs-URIs*: die **Callback URL** aus Supabase (`https://<projekt>.supabase.co/auth/v1/callback`)
+3. Client-ID und Client-Secret kopieren.
+4. **Supabase** → Authentication → Sign In / Providers → **Google**: aktivieren, *Client IDs* = Client-ID, *Client Secret* = Secret, speichern. «Skip nonce checks» und «Allow users without an email» bleiben aus.
+5. Supabase → Authentication → URL Configuration: Site URL und Redirect URL `https://kenjinathor.github.io/Golfmanager/` (wie oben).
+Das Client-Secret gehört nur in Supabase, nie ins Repo oder in einen Chat. Gleiche E-Mail-Adresse bei Google und bei einem bestehenden E-Mail-Konto: Supabase verknüpft beides zu einem Konto.
+
 Datenschutz: Name, Benutzername und Handicap sind für angemeldete Nutzer suchbar; Runden und Profil-Details (Grösse, Schläger, Bälle …) sehen nur bestätigte Freunde. Die Regeln werden mit `backend/test/run.sh` gegen ein lokales PostgreSQL getestet (Fremde, Selbstbestätigung, umgebogene Anfragen, nicht angemeldet).
 **Auf allen Geräten dieselben Daten:** Mit demselben Konto anmelden. Beim Anmelden, beim App-Start und über «Jetzt übertragen» im Profil gleicht die App in beide Richtungen ab: Profil und abgeschlossene Runden werden geladen bzw. hochgeladen, der neuere Profilstand gewinnt, eine auf einem Gerät gelöschte Runde verschwindet auch auf den anderen. Eine laufende (nicht beendete) Runde bleibt nur auf dem Gerät. Wer das Gerät wechselt, sollte vorher die Runde beenden.
 **Kleiner Kreis (z. B. 4 Kollegen):** Sobald alle ein Konto haben, in Supabase unter Authentication → Sign In / Providers «Allow new users to sign up» ausschalten, dann kann sich niemand Fremdes registrieren. Die Web-App selbst ist unter ihrer Adresse für jeden erreichbar (nur ohne Anmeldung ist nichts Persönliches zu sehen).

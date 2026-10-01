@@ -32,6 +32,9 @@ export function friendlyAuthError(message: string, host?: string | null): string
   const m = message.toLowerCase();
   if (/failed to fetch|networkerror|load failed|network request failed/.test(m))
     return `Der Server${host ? ` «${host}»` : ''} ist nicht erreichbar.\n\nPrüfe:\n• Stimmt die Adresse im GitHub-Secret (Supabase → Connect)?\n• Blockiert Firmennetz, VPN oder Werbeblocker supabase.co? Teste mit mobilen Daten.\n• Ist das Supabase-Projekt aktiv (nicht pausiert)?`;
+  if (/provider is not enabled|unsupported provider/.test(m)) return 'Die Anmeldung mit Google ist in Supabase nicht aktiviert oder nicht fertig eingerichtet (Client-ID und Secret fehlen).';
+  if (/redirect_uri_mismatch/.test(m)) return 'Google lehnt die Weiterleitung ab: Die Callback-URL von Supabase fehlt bei Google unter «Autorisierte Weiterleitungs-URIs».';
+  if (/access_denied/.test(m)) return 'Die Anmeldung mit Google wurde abgebrochen oder Google hat den Zugriff nicht erlaubt (bei einer App im Testmodus: E-Mail-Adresse als Testnutzer eintragen).';
   if (/anonymous sign-ins are disabled/.test(m)) return 'E-Mail und Passwort sind nicht angekommen. Bitte beide Felder ausfüllen (Passwort mindestens 6 Zeichen).';
   if (/user already registered/.test(m)) return 'Diese E-Mail ist schon registriert. Bitte anmelden.';
   if (/email not confirmed/.test(m)) return 'Die E-Mail ist noch nicht bestätigt. Bitte den Link in der Bestätigungs-Mail öffnen.';
@@ -49,4 +52,13 @@ export function checkCredentials(email: string, password: string, login: boolean
   if (!password) return 'Bitte Passwort eingeben.';
   if (!login && password.length < 6) return 'Das Passwort braucht mindestens 6 Zeichen.';
   return null;
+}
+
+/** Fehlertext aus der Rückkehr-Adresse nach einer OAuth-Anmeldung (Hash oder Query), sonst null. */
+export function oauthErrorFromUrl(hash: string, search: string): string | null {
+  const params = new URLSearchParams((hash.startsWith('#') ? hash.slice(1) : hash) || (search.startsWith('?') ? search.slice(1) : search));
+  const desc = params.get('error_description') || params.get('error');
+  if (!desc) return null;
+  const code = params.get('error_code') || params.get('error') || '';
+  return friendlyAuthError(`${code} ${desc}`.replace(/\+/g, ' '));
 }

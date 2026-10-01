@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { checkCredentials, friendlyAuthError, resolveSupabaseConfig } from '../src/lib/supabaseConfig';
+import { checkCredentials, friendlyAuthError, oauthErrorFromUrl, resolveSupabaseConfig } from '../src/lib/supabaseConfig';
 
 test('nicht konfiguriert → null (App läuft lokal)', () => {
   assert.equal(resolveSupabaseConfig('', ''), null);
@@ -39,4 +39,11 @@ test('Eingaben werden vor dem Senden geprüft', () => {
   assert.ok(checkCredentials('', '', true)?.includes('E-Mail und Passwort'));
   assert.ok(checkCredentials('keine-mail', 'geheim1', false)?.includes('nicht gültig'));
   assert.ok(friendlyAuthError('Anonymous sign-ins are disabled').includes('nicht angekommen'));
+});
+
+test('Google-Fehler: Provider nicht aktiviert und Rückkehr-Fehler werden erklärt', () => {
+  assert.ok(friendlyAuthError('Unsupported provider: provider is not enabled').includes('Google'));
+  assert.equal(oauthErrorFromUrl('', ''), null);
+  assert.ok(oauthErrorFromUrl('#error=access_denied&error_description=Access+denied', '')?.includes('abgebrochen'));
+  assert.ok(oauthErrorFromUrl('', '?error=server_error&error_description=redirect_uri_mismatch')?.includes('Weiterleitung'));
 });

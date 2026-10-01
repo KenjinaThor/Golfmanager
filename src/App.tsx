@@ -8,6 +8,7 @@ import { colors, ConfirmHost } from './components/ui';
 import { refreshIncoming, useFriends } from './lib/friends';
 import { supabase } from './lib/supabase';
 import { runSync } from './lib/runSync';
+import { useStore } from './store/useStore';
 import CourseDetailScreen from './screens/CourseDetailScreen';
 import CourseListScreen from './screens/CourseListScreen';
 import FriendDetailScreen from './screens/FriendDetailScreen';
@@ -49,10 +50,16 @@ function BackgroundSync() {
       void runSync();
       void refreshIncoming();
     };
-    supabase.auth.getSession().then(({ data }) => { if (data.session) run(); });
+    /** Name aus dem Google-Konto vorbelegen, wenn im Profil noch keiner steht. */
+    const prefillName = (user?: { user_metadata?: Record<string, unknown> } | null) => {
+      const full = user?.user_metadata?.full_name ?? user?.user_metadata?.name;
+      const st = useStore.getState();
+      if (typeof full === 'string' && full && !st.profile.name) st.setProfile({ name: full });
+    };
+    supabase.auth.getSession().then(({ data }) => { if (data.session) { prefillName(data.session.user); run(); } });
     const { data } = supabase.auth.onAuthStateChange((event, session) => {
       if (!session) useFriends.setState({ incoming: 0 });
-      else if (event === 'SIGNED_IN') run();
+      else if (event === 'SIGNED_IN') { prefillName(session.user); run(); }
     });
     const timer = setInterval(() => void refreshIncoming(), 45000);
     return () => { data.subscription.unsubscribe(); clearInterval(timer); };
