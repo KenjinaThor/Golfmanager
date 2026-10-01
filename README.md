@@ -27,11 +27,19 @@ Die App läuft auch im Browser und lässt sich auf dem Handy zum Startbildschirm
 - Anderer Unterpfad/Hosting: `EXPO_BASE_URL=/pfad npx expo export --platform web`, Ordner `dist/` ausliefern (HTTPS nötig für den Service Worker).
 - Installieren: iPhone Safari → Teilen → «Zum Home-Bildschirm»; Android Chrome → Menü → «App installieren».
 
-## Vernetzung (Supabase)
-1. Gratis-Projekt auf supabase.com anlegen, `backend/schema.sql` im SQL-Editor ausführen.
-2. URL und anon key in `.env` eintragen.
-Die App ist offline-first: ohne Login bleibt alles lokal. Mit Login werden Profil und abgeschlossene Runden synchronisiert.
-Datenschutz per Row-Level-Security: Runden und Profil-Details sind nur für bestätigte Freunde lesbar.
+## Vernetzung (Supabase) einrichten
+Ohne Supabase läuft alles lokal; der Tab «Freunde» zeigt dann nur einen Hinweis. So schaltest du die Vernetzung frei:
+
+1. **Projekt anlegen**: auf supabase.com ein kostenloses Projekt erstellen (Region z. B. Frankfurt).
+2. **Datenbank einrichten**: SQL Editor → neue Abfrage → Inhalt von `backend/schema.sql` einfügen → Run. Das legt Tabellen und Zugriffsregeln (Row-Level-Security) an.
+3. **Anmeldung**: Authentication → Providers → Email aktiv (Standard). Authentication → URL Configuration → **Site URL** auf `https://kenjinathor.github.io/Golfmanager/` setzen (Link in der Bestätigungs-Mail).
+4. **Zugangsdaten holen**: Project Settings → API → *Project URL* und *anon public key* (der anon key ist öffentlich vorgesehen; geschützt sind die Daten durch die Zugriffsregeln, **nie** den `service_role`-Key verwenden).
+5. **Web-App**: GitHub → Settings → Secrets and variables → Actions → Secrets `EXPO_PUBLIC_SUPABASE_URL` und `EXPO_PUBLIC_SUPABASE_ANON_KEY` anlegen, dann Actions → «Web-App veröffentlichen» → Run workflow.
+   **Handy-App/Expo Go**: dieselben zwei Werte in `.env` eintragen (siehe `.env.example`).
+6. In der App: Profil → Benutzername setzen (a–z, 0–9, _; min. 3 Zeichen) → Tab «Freunde» → Konto erstellen, E-Mail bestätigen, anmelden.
+
+Datenschutz: Name, Benutzername und Handicap sind für angemeldete Nutzer suchbar; Runden und Profil-Details (Grösse, Schläger, Bälle …) sehen nur bestätigte Freunde. Die Regeln werden mit `backend/test/run.sh` gegen ein lokales PostgreSQL getestet (Fremde, Selbstbestätigung, umgebogene Anfragen, nicht angemeldet).
+Synchronisiert werden Profil und abgeschlossene Runden vom Gerät in die Cloud; die Wiederherstellung auf einem neuen Gerät fehlt noch.
 
 ## Platzdaten
 `src/data/courses.json` wird aus `data/courses.csv` (eine Zeile pro Loch) und `data/tees.csv` erzeugt: `npm run import-courses`.
