@@ -1,7 +1,7 @@
 -- RLS-Tests für backend/schema.sql. Ablauf siehe backend/test/run.sh
 \set ON_ERROR_STOP on
 
-create function as_user(u uuid) returns void language plpgsql as $$
+create or replace function as_user(u uuid) returns void language plpgsql as $$
 begin
   reset role;
   perform set_config('request.jwt.claim.sub', u::text, true);
@@ -33,7 +33,7 @@ begin
 
   -- 1. Suche: alle Eingeloggten sehen Username/Name/Handicap, aber keine Runden/Details von Fremden
   perform as_user(b);
-  select count(*) into n from profiles; assert n = 4, 'Profilsuche';
+  select count(*) into n from profiles where username in ('alice','bob','carl','carl2'); assert n = 4, 'Profilsuche';
   select count(*) into n from rounds where user_id = a; assert n = 0, 'Fremde Runden sichtbar';
   select count(*) into n from profile_details where id = a; assert n = 0, 'Fremde Details sichtbar';
 
