@@ -15,18 +15,9 @@ test('jedes referenzierte Lochbild existiert als Datei und ist in holeImages.ts 
   assert.ok(index.includes("'uebersicht'") && index.includes("'legende'"));
 });
 
-test('Bekannte Lücke: nur Rot 9 hat noch kein Bild; alle anderen Waldkirch-Löcher haben eines', () => {
-  const missing = new Set<string>();
-  for (const c of courses.filter((x) => x.id.startsWith('waldkirch') && x.id !== 'waldkirch-kurzplatz'))
-    for (const h of c.holes.filter((x) => !x.image)) missing.add(`${c.id}#${h.number}`);
-  // Rot Loch 9 steckt in diesen Routen an Loch 9 bzw. 18 bzw. 12
-  for (const m of missing) {
-    const [id, no] = m.split('#');
-    const c = courses.find((x) => x.id === id)!;
-    const hole = c.holes[+no - 1];
-    assert.ok(/rot|schwarz/.test(id), `${m}: ohne Bild, aber kein Rot-Platz`);
-    assert.equal(hole.par, 5, `${m}: Rot 9 ist ein Par 5`);
+test('Alle Löcher aller Waldkirch-Routen (ausser Kurzplatz) haben ein Lochbild und eine Platzübersicht', () => {
+  for (const c of courses.filter((x) => x.id.startsWith('waldkirch') && x.id !== 'waldkirch-kurzplatz')) {
+    assert.ok(c.holes.every((h) => h.image), `${c.id}: Loch ohne Bild`);
+    assert.equal(c.overview, 'uebersicht', c.id);
   }
-  assert.ok(courses.find((x) => x.id === 'waldkirch-blau-9')!.holes.every((h) => h.image));
-  assert.equal(courses.find((x) => x.id === 'waldkirch-orange')!.overview, 'uebersicht');
 });

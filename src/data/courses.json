@@ -530,7 +530,8 @@
      "backStandard": 439,
      "standard": 419,
      "frontStandard": 385
-    }
+    },
+    "image": "rot-9"
    }
   ],
   "overview": "uebersicht"
@@ -1569,7 +1570,8 @@
      "backStandard": 439,
      "standard": 419,
      "frontStandard": 385
-    }
+    },
+    "image": "rot-9"
    }
   ],
   "overview": "uebersicht"
@@ -2034,7 +2036,8 @@
      "backStandard": 439,
      "standard": 419,
      "frontStandard": 385
-    }
+    },
+    "image": "rot-9"
    },
    {
     "number": 10,
@@ -2320,7 +2323,8 @@
      "backStandard": 439,
      "standard": 419,
      "frontStandard": 385
-    }
+    },
+    "image": "rot-9"
    },
    {
     "number": 10,
@@ -2642,7 +2646,8 @@
      "backStandard": 439,
      "standard": 419,
      "frontStandard": 385
-    }
+    },
+    "image": "rot-9"
    },
    {
     "number": 13,

@@ -38,5 +38,6 @@ export const holeImages: Record<string, ImageSourcePropType> = {
   'rot-6': require('../../assets/holes/rot-6.webp'),
   'rot-7': require('../../assets/holes/rot-7.webp'),
   'rot-8': require('../../assets/holes/rot-8.webp'),
+  'rot-9': require('../../assets/holes/rot-9.webp'),
   'uebersicht': require('../../assets/holes/uebersicht.webp'),
 };
