@@ -1,7 +1,7 @@
 import React, { useMemo, useState } from 'react';
-import { Alert, Pressable, ScrollView, Text, View } from 'react-native';
+import { Pressable, ScrollView, Text, View } from 'react-native';
 import { HoleStatsTable, RoundTable } from '../components/Tables';
-import { Card, H, colors, fmtDate } from '../components/ui';
+import { Card, H, colors, confirmDialog, fmtDate } from '../components/ui';
 import { courses, getCourse } from '../data/courses';
 import { holeStats, roundTotals } from '../lib/scoring';
 import { useStore } from '../store/useStore';
@@ -46,8 +46,7 @@ export default function StatsScreen({ navigation }: any) {
       <Card>
         <H>Historie</H>
         {withTotals.map(({ r, t }) => (
-          <Pressable key={r.id} onPress={() => navigation.navigate('RoundDetail', { roundId: r.id })} onLongPress={() =>
-            Alert.alert('Runde löschen?', r.courseName, [{ text: 'Abbrechen', style: 'cancel' }, { text: 'Löschen', style: 'destructive', onPress: () => deleteRound(r.id) }])}
+          <Pressable key={r.id} onPress={() => navigation.navigate('RoundDetail', { roundId: r.id })} onLongPress={() => confirmDialog('Runde löschen?', r.courseName, 'Löschen', () => deleteRound(r.id), true)}
             style={{ paddingVertical: 8, borderTopWidth: 0.5, borderColor: colors.line }}>
             <Text style={{ fontWeight: '600' }}>{r.courseName}</Text>
             <Text style={{ color: colors.mute }}>{fmtDate(r.date)} · Brutto {t.gross} · Netto {t.net} · Stbf {t.stableford}</Text>

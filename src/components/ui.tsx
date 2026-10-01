@@ -1,5 +1,5 @@
 import React from 'react';
-import { Pressable, StyleSheet, Text, TextInput, TextInputProps, View, ViewStyle } from 'react-native';
+import { Alert, Platform, Pressable, StyleSheet, Text, TextInput, TextInputProps, View, ViewStyle } from 'react-native';
 
 export const colors = { green: '#1f7a3a', light: '#e8f3ec', text: '#14213d', mute: '#6b7280', line: '#e5e7eb', bad: '#b42318', bg: '#f7f8f7' };
 
@@ -38,3 +38,15 @@ const s = StyleSheet.create({
   label: { fontSize: 12, color: colors.mute, marginBottom: 4 },
   input: { borderWidth: 1, borderColor: colors.line, borderRadius: 8, padding: 10, fontSize: 16, backgroundColor: '#fff', color: colors.text },
 });
+
+/** Bestätigungsdialog; Alert.alert mit Buttons funktioniert im Web nicht, dort window.confirm. */
+export function confirmDialog(title: string, message: string, okLabel: string, onOk: () => void, destructive = false) {
+  if (Platform.OS === 'web') {
+    if (window.confirm(`${title}\n\n${message}`)) onOk();
+    return;
+  }
+  Alert.alert(title, message, [
+    { text: 'Abbrechen', style: 'cancel' },
+    { text: okLabel, style: destructive ? 'destructive' : 'default', onPress: onOk },
+  ]);
+}

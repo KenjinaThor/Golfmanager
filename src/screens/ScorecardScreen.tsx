@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Alert, ScrollView, Text, View } from 'react-native';
-import { Btn, Card, colors, Row } from '../components/ui';
+import { ScrollView, Text, View } from 'react-native';
+import { Btn, Card, colors, confirmDialog, Row } from '../components/ui';
 import { getCourse } from '../data/courses';
 import { roundTotals, strokesReceived, stableford } from '../lib/scoring';
 import { useStore } from '../store/useStore';
@@ -66,16 +66,11 @@ export default function ScorecardScreen({ navigation }: any) {
 
       <Btn title="Runde beenden & speichern" onPress={() => {
         if (tot.played < course.holes.length)
-          Alert.alert('Runde unvollständig', `${course.holes.length - tot.played} Löcher ohne Score. Trotzdem speichern?`, [
-            { text: 'Abbrechen', style: 'cancel' }, { text: 'Speichern', onPress: finish },
-          ]);
+          confirmDialog('Runde unvollständig', `${course.holes.length - tot.played} Löcher ohne Score. Trotzdem speichern?`, 'Speichern', finish);
         else finish();
       }} />
       <Btn kind="danger" title="Runde verwerfen" onPress={() =>
-        Alert.alert('Runde verwerfen?', 'Verlorene Bälle werden dem Bag wieder gutgeschrieben.', [
-          { text: 'Abbrechen', style: 'cancel' },
-          { text: 'Verwerfen', style: 'destructive', onPress: () => { discardRound(); navigation.popToTop(); } },
-        ])} />
+        confirmDialog('Runde verwerfen?', 'Verlorene Bälle werden dem Bag wieder gutgeschrieben.', 'Verwerfen', () => { discardRound(); navigation.popToTop(); }, true)} />
     </ScrollView>
   );
 }
