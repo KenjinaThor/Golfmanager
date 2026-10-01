@@ -1,0 +1,181 @@
+id,name,region,verified,hole,par,index,white,yellow,blue,red
+golf-club-zuerich,"Golf Club Zürich (Zumikon)",Zürich,false,1,4,7,385,365,340,305
+golf-club-zuerich,"Golf Club Zürich (Zumikon)",Zürich,false,2,4,1,385,365,340,305
+golf-club-zuerich,"Golf Club Zürich (Zumikon)",Zürich,false,3,3,15,165,150,135,115
+golf-club-zuerich,"Golf Club Zürich (Zumikon)",Zürich,false,4,5,9,510,485,455,415
+golf-club-zuerich,"Golf Club Zürich (Zumikon)",Zürich,false,5,4,3,385,365,340,305
+golf-club-zuerich,"Golf Club Zürich (Zumikon)",Zürich,false,6,4,11,385,365,340,305
+golf-club-zuerich,"Golf Club Zürich (Zumikon)",Zürich,false,7,3,17,165,150,135,115
+golf-club-zuerich,"Golf Club Zürich (Zumikon)",Zürich,false,8,5,5,510,485,455,415
+golf-club-zuerich,"Golf Club Zürich (Zumikon)",Zürich,false,9,4,13,385,365,340,305
+golf-club-zuerich,"Golf Club Zürich (Zumikon)",Zürich,false,10,4,8,385,365,340,305
+golf-club-zuerich,"Golf Club Zürich (Zumikon)",Zürich,false,11,5,2,510,485,455,415
+golf-club-zuerich,"Golf Club Zürich (Zumikon)",Zürich,false,12,3,16,165,150,135,115
+golf-club-zuerich,"Golf Club Zürich (Zumikon)",Zürich,false,13,4,4,385,365,340,305
+golf-club-zuerich,"Golf Club Zürich (Zumikon)",Zürich,false,14,4,10,385,365,340,305
+golf-club-zuerich,"Golf Club Zürich (Zumikon)",Zürich,false,15,5,6,510,485,455,415
+golf-club-zuerich,"Golf Club Zürich (Zumikon)",Zürich,false,16,3,18,165,150,135,115
+golf-club-zuerich,"Golf Club Zürich (Zumikon)",Zürich,false,17,4,12,385,365,340,305
+golf-club-zuerich,"Golf Club Zürich (Zumikon)",Zürich,false,18,4,14,385,365,340,305
+schloss-schoenbuehl,"Golf Schloss Schönbühl",Bern,false,1,4,7,385,365,340,305
+schloss-schoenbuehl,"Golf Schloss Schönbühl",Bern,false,2,4,1,385,365,340,305
+schloss-schoenbuehl,"Golf Schloss Schönbühl",Bern,false,3,3,15,165,150,135,115
+schloss-schoenbuehl,"Golf Schloss Schönbühl",Bern,false,4,5,9,510,485,455,415
+schloss-schoenbuehl,"Golf Schloss Schönbühl",Bern,false,5,4,3,385,365,340,305
+schloss-schoenbuehl,"Golf Schloss Schönbühl",Bern,false,6,4,11,385,365,340,305
+schloss-schoenbuehl,"Golf Schloss Schönbühl",Bern,false,7,3,17,165,150,135,115
+schloss-schoenbuehl,"Golf Schloss Schönbühl",Bern,false,8,5,5,510,485,455,415
+schloss-schoenbuehl,"Golf Schloss Schönbühl",Bern,false,9,4,13,385,365,340,305
+schloss-schoenbuehl,"Golf Schloss Schönbühl",Bern,false,10,4,8,385,365,340,305
+schloss-schoenbuehl,"Golf Schloss Schönbühl",Bern,false,11,5,2,510,485,455,415
+schloss-schoenbuehl,"Golf Schloss Schönbühl",Bern,false,12,3,16,165,150,135,115
+schloss-schoenbuehl,"Golf Schloss Schönbühl",Bern,false,13,4,4,385,365,340,305
+schloss-schoenbuehl,"Golf Schloss Schönbühl",Bern,false,14,4,10,385,365,340,305
+schloss-schoenbuehl,"Golf Schloss Schönbühl",Bern,false,15,5,6,510,485,455,415
+schloss-schoenbuehl,"Golf Schloss Schönbühl",Bern,false,16,3,18,165,150,135,115
+schloss-schoenbuehl,"Golf Schloss Schönbühl",Bern,false,17,4,12,385,365,340,305
+schloss-schoenbuehl,"Golf Schloss Schönbühl",Bern,false,18,4,14,385,365,340,305
+lausanne,"Golf Club de Lausanne",Waadt,false,1,4,7,385,365,340,305
+lausanne,"Golf Club de Lausanne",Waadt,false,2,4,1,385,365,340,305
+lausanne,"Golf Club de Lausanne",Waadt,false,3,3,15,165,150,135,115
+lausanne,"Golf Club de Lausanne",Waadt,false,4,5,9,510,485,455,415
+lausanne,"Golf Club de Lausanne",Waadt,false,5,4,3,385,365,340,305
+lausanne,"Golf Club de Lausanne",Waadt,false,6,4,11,385,365,340,305
+lausanne,"Golf Club de Lausanne",Waadt,false,7,3,17,165,150,135,115
+lausanne,"Golf Club de Lausanne",Waadt,false,8,5,5,510,485,455,415
+lausanne,"Golf Club de Lausanne",Waadt,false,9,4,13,385,365,340,305
+lausanne,"Golf Club de Lausanne",Waadt,false,10,4,8,385,365,340,305
+lausanne,"Golf Club de Lausanne",Waadt,false,11,5,2,510,485,455,415
+lausanne,"Golf Club de Lausanne",Waadt,false,12,3,16,165,150,135,115
+lausanne,"Golf Club de Lausanne",Waadt,false,13,4,4,385,365,340,305
+lausanne,"Golf Club de Lausanne",Waadt,false,14,4,10,385,365,340,305
+lausanne,"Golf Club de Lausanne",Waadt,false,15,5,6,510,485,455,415
+lausanne,"Golf Club de Lausanne",Waadt,false,16,3,18,165,150,135,115
+lausanne,"Golf Club de Lausanne",Waadt,false,17,4,12,385,365,340,305
+lausanne,"Golf Club de Lausanne",Waadt,false,18,4,14,385,365,340,305
+crans-sur-sierre,"Golf Club Crans-sur-Sierre",Wallis,false,1,4,7,385,365,340,305
+crans-sur-sierre,"Golf Club Crans-sur-Sierre",Wallis,false,2,4,1,385,365,340,305
+crans-sur-sierre,"Golf Club Crans-sur-Sierre",Wallis,false,3,3,15,165,150,135,115
+crans-sur-sierre,"Golf Club Crans-sur-Sierre",Wallis,false,4,5,9,510,485,455,415
+crans-sur-sierre,"Golf Club Crans-sur-Sierre",Wallis,false,5,4,3,385,365,340,305
+crans-sur-sierre,"Golf Club Crans-sur-Sierre",Wallis,false,6,4,11,385,365,340,305
+crans-sur-sierre,"Golf Club Crans-sur-Sierre",Wallis,false,7,3,17,165,150,135,115
+crans-sur-sierre,"Golf Club Crans-sur-Sierre",Wallis,false,8,5,5,510,485,455,415
+crans-sur-sierre,"Golf Club Crans-sur-Sierre",Wallis,false,9,4,13,385,365,340,305
+crans-sur-sierre,"Golf Club Crans-sur-Sierre",Wallis,false,10,4,8,385,365,340,305
+crans-sur-sierre,"Golf Club Crans-sur-Sierre",Wallis,false,11,5,2,510,485,455,415
+crans-sur-sierre,"Golf Club Crans-sur-Sierre",Wallis,false,12,3,16,165,150,135,115
+crans-sur-sierre,"Golf Club Crans-sur-Sierre",Wallis,false,13,4,4,385,365,340,305
+crans-sur-sierre,"Golf Club Crans-sur-Sierre",Wallis,false,14,4,10,385,365,340,305
+crans-sur-sierre,"Golf Club Crans-sur-Sierre",Wallis,false,15,5,6,510,485,455,415
+crans-sur-sierre,"Golf Club Crans-sur-Sierre",Wallis,false,16,3,18,165,150,135,115
+crans-sur-sierre,"Golf Club Crans-sur-Sierre",Wallis,false,17,4,12,385,365,340,305
+crans-sur-sierre,"Golf Club Crans-sur-Sierre",Wallis,false,18,4,14,385,365,340,305
+bad-ragaz,"Golf Club Bad Ragaz",St. Gallen,false,1,4,7,385,365,340,305
+bad-ragaz,"Golf Club Bad Ragaz",St. Gallen,false,2,4,1,385,365,340,305
+bad-ragaz,"Golf Club Bad Ragaz",St. Gallen,false,3,3,15,165,150,135,115
+bad-ragaz,"Golf Club Bad Ragaz",St. Gallen,false,4,5,9,510,485,455,415
+bad-ragaz,"Golf Club Bad Ragaz",St. Gallen,false,5,4,3,385,365,340,305
+bad-ragaz,"Golf Club Bad Ragaz",St. Gallen,false,6,4,11,385,365,340,305
+bad-ragaz,"Golf Club Bad Ragaz",St. Gallen,false,7,3,17,165,150,135,115
+bad-ragaz,"Golf Club Bad Ragaz",St. Gallen,false,8,5,5,510,485,455,415
+bad-ragaz,"Golf Club Bad Ragaz",St. Gallen,false,9,4,13,385,365,340,305
+bad-ragaz,"Golf Club Bad Ragaz",St. Gallen,false,10,4,8,385,365,340,305
+bad-ragaz,"Golf Club Bad Ragaz",St. Gallen,false,11,5,2,510,485,455,415
+bad-ragaz,"Golf Club Bad Ragaz",St. Gallen,false,12,3,16,165,150,135,115
+bad-ragaz,"Golf Club Bad Ragaz",St. Gallen,false,13,4,4,385,365,340,305
+bad-ragaz,"Golf Club Bad Ragaz",St. Gallen,false,14,4,10,385,365,340,305
+bad-ragaz,"Golf Club Bad Ragaz",St. Gallen,false,15,5,6,510,485,455,415
+bad-ragaz,"Golf Club Bad Ragaz",St. Gallen,false,16,3,18,165,150,135,115
+bad-ragaz,"Golf Club Bad Ragaz",St. Gallen,false,17,4,12,385,365,340,305
+bad-ragaz,"Golf Club Bad Ragaz",St. Gallen,false,18,4,14,385,365,340,305
+davos,"Golf Club Davos",Graubünden,false,1,4,7,385,365,340,305
+davos,"Golf Club Davos",Graubünden,false,2,4,1,385,365,340,305
+davos,"Golf Club Davos",Graubünden,false,3,3,15,165,150,135,115
+davos,"Golf Club Davos",Graubünden,false,4,5,9,510,485,455,415
+davos,"Golf Club Davos",Graubünden,false,5,4,3,385,365,340,305
+davos,"Golf Club Davos",Graubünden,false,6,4,11,385,365,340,305
+davos,"Golf Club Davos",Graubünden,false,7,3,17,165,150,135,115
+davos,"Golf Club Davos",Graubünden,false,8,5,5,510,485,455,415
+davos,"Golf Club Davos",Graubünden,false,9,4,13,385,365,340,305
+davos,"Golf Club Davos",Graubünden,false,10,4,8,385,365,340,305
+davos,"Golf Club Davos",Graubünden,false,11,5,2,510,485,455,415
+davos,"Golf Club Davos",Graubünden,false,12,3,16,165,150,135,115
+davos,"Golf Club Davos",Graubünden,false,13,4,4,385,365,340,305
+davos,"Golf Club Davos",Graubünden,false,14,4,10,385,365,340,305
+davos,"Golf Club Davos",Graubünden,false,15,5,6,510,485,455,415
+davos,"Golf Club Davos",Graubünden,false,16,3,18,165,150,135,115
+davos,"Golf Club Davos",Graubünden,false,17,4,12,385,365,340,305
+davos,"Golf Club Davos",Graubünden,false,18,4,14,385,365,340,305
+interlaken,"Golf Club Interlaken-Unterseen",Bern,false,1,4,7,385,365,340,305
+interlaken,"Golf Club Interlaken-Unterseen",Bern,false,2,4,1,385,365,340,305
+interlaken,"Golf Club Interlaken-Unterseen",Bern,false,3,3,15,165,150,135,115
+interlaken,"Golf Club Interlaken-Unterseen",Bern,false,4,5,9,510,485,455,415
+interlaken,"Golf Club Interlaken-Unterseen",Bern,false,5,4,3,385,365,340,305
+interlaken,"Golf Club Interlaken-Unterseen",Bern,false,6,4,11,385,365,340,305
+interlaken,"Golf Club Interlaken-Unterseen",Bern,false,7,3,17,165,150,135,115
+interlaken,"Golf Club Interlaken-Unterseen",Bern,false,8,5,5,510,485,455,415
+interlaken,"Golf Club Interlaken-Unterseen",Bern,false,9,4,13,385,365,340,305
+interlaken,"Golf Club Interlaken-Unterseen",Bern,false,10,4,8,385,365,340,305
+interlaken,"Golf Club Interlaken-Unterseen",Bern,false,11,5,2,510,485,455,415
+interlaken,"Golf Club Interlaken-Unterseen",Bern,false,12,3,16,165,150,135,115
+interlaken,"Golf Club Interlaken-Unterseen",Bern,false,13,4,4,385,365,340,305
+interlaken,"Golf Club Interlaken-Unterseen",Bern,false,14,4,10,385,365,340,305
+interlaken,"Golf Club Interlaken-Unterseen",Bern,false,15,5,6,510,485,455,415
+interlaken,"Golf Club Interlaken-Unterseen",Bern,false,16,3,18,165,150,135,115
+interlaken,"Golf Club Interlaken-Unterseen",Bern,false,17,4,12,385,365,340,305
+interlaken,"Golf Club Interlaken-Unterseen",Bern,false,18,4,14,385,365,340,305
+lugano,"Golf Club Lugano",Tessin,false,1,4,7,385,365,340,305
+lugano,"Golf Club Lugano",Tessin,false,2,4,1,385,365,340,305
+lugano,"Golf Club Lugano",Tessin,false,3,3,15,165,150,135,115
+lugano,"Golf Club Lugano",Tessin,false,4,5,9,510,485,455,415
+lugano,"Golf Club Lugano",Tessin,false,5,4,3,385,365,340,305
+lugano,"Golf Club Lugano",Tessin,false,6,4,11,385,365,340,305
+lugano,"Golf Club Lugano",Tessin,false,7,3,17,165,150,135,115
+lugano,"Golf Club Lugano",Tessin,false,8,5,5,510,485,455,415
+lugano,"Golf Club Lugano",Tessin,false,9,4,13,385,365,340,305
+lugano,"Golf Club Lugano",Tessin,false,10,4,8,385,365,340,305
+lugano,"Golf Club Lugano",Tessin,false,11,5,2,510,485,455,415
+lugano,"Golf Club Lugano",Tessin,false,12,3,16,165,150,135,115
+lugano,"Golf Club Lugano",Tessin,false,13,4,4,385,365,340,305
+lugano,"Golf Club Lugano",Tessin,false,14,4,10,385,365,340,305
+lugano,"Golf Club Lugano",Tessin,false,15,5,6,510,485,455,415
+lugano,"Golf Club Lugano",Tessin,false,16,3,18,165,150,135,115
+lugano,"Golf Club Lugano",Tessin,false,17,4,12,385,365,340,305
+lugano,"Golf Club Lugano",Tessin,false,18,4,14,385,365,340,305
+basel,"Golf Club Basel",Basel,false,1,4,7,385,365,340,305
+basel,"Golf Club Basel",Basel,false,2,4,1,385,365,340,305
+basel,"Golf Club Basel",Basel,false,3,3,15,165,150,135,115
+basel,"Golf Club Basel",Basel,false,4,5,9,510,485,455,415
+basel,"Golf Club Basel",Basel,false,5,4,3,385,365,340,305
+basel,"Golf Club Basel",Basel,false,6,4,11,385,365,340,305
+basel,"Golf Club Basel",Basel,false,7,3,17,165,150,135,115
+basel,"Golf Club Basel",Basel,false,8,5,5,510,485,455,415
+basel,"Golf Club Basel",Basel,false,9,4,13,385,365,340,305
+basel,"Golf Club Basel",Basel,false,10,4,8,385,365,340,305
+basel,"Golf Club Basel",Basel,false,11,5,2,510,485,455,415
+basel,"Golf Club Basel",Basel,false,12,3,16,165,150,135,115
+basel,"Golf Club Basel",Basel,false,13,4,4,385,365,340,305
+basel,"Golf Club Basel",Basel,false,14,4,10,385,365,340,305
+basel,"Golf Club Basel",Basel,false,15,5,6,510,485,455,415
+basel,"Golf Club Basel",Basel,false,16,3,18,165,150,135,115
+basel,"Golf Club Basel",Basel,false,17,4,12,385,365,340,305
+basel,"Golf Club Basel",Basel,false,18,4,14,385,365,340,305
+zuerichsee,"Golf & Country Club Zürichsee",Schwyz,false,1,4,7,385,365,340,305
+zuerichsee,"Golf & Country Club Zürichsee",Schwyz,false,2,4,1,385,365,340,305
+zuerichsee,"Golf & Country Club Zürichsee",Schwyz,false,3,3,15,165,150,135,115
+zuerichsee,"Golf & Country Club Zürichsee",Schwyz,false,4,5,9,510,485,455,415
+zuerichsee,"Golf & Country Club Zürichsee",Schwyz,false,5,4,3,385,365,340,305
+zuerichsee,"Golf & Country Club Zürichsee",Schwyz,false,6,4,11,385,365,340,305
+zuerichsee,"Golf & Country Club Zürichsee",Schwyz,false,7,3,17,165,150,135,115
+zuerichsee,"Golf & Country Club Zürichsee",Schwyz,false,8,5,5,510,485,455,415
+zuerichsee,"Golf & Country Club Zürichsee",Schwyz,false,9,4,13,385,365,340,305
+zuerichsee,"Golf & Country Club Zürichsee",Schwyz,false,10,4,8,385,365,340,305
+zuerichsee,"Golf & Country Club Zürichsee",Schwyz,false,11,5,2,510,485,455,415
+zuerichsee,"Golf & Country Club Zürichsee",Schwyz,false,12,3,16,165,150,135,115
+zuerichsee,"Golf & Country Club Zürichsee",Schwyz,false,13,4,4,385,365,340,305
+zuerichsee,"Golf & Country Club Zürichsee",Schwyz,false,14,4,10,385,365,340,305
+zuerichsee,"Golf & Country Club Zürichsee",Schwyz,false,15,5,6,510,485,455,415
+zuerichsee,"Golf & Country Club Zürichsee",Schwyz,false,16,3,18,165,150,135,115
+zuerichsee,"Golf & Country Club Zürichsee",Schwyz,false,17,4,12,385,365,340,305
+zuerichsee,"Golf & Country Club Zürichsee",Schwyz,false,18,4,14,385,365,340,305

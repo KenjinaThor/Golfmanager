@@ -1,0 +1,2322 @@
+[
+ {
+  "id": "golf-club-zuerich",
+  "name": "Golf Club Zürich (Zumikon)",
+  "region": "Zürich",
+  "verified": false,
+  "tees": [
+   {
+    "id": "white",
+    "name": "Weiss",
+    "rating": 72.4,
+    "slope": 132
+   },
+   {
+    "id": "yellow",
+    "name": "Gelb",
+    "rating": 70.8,
+    "slope": 128
+   },
+   {
+    "id": "blue",
+    "name": "Blau",
+    "rating": 69,
+    "slope": 122
+   },
+   {
+    "id": "red",
+    "name": "Rot",
+    "rating": 71.2,
+    "slope": 125
+   }
+  ],
+  "holes": [
+   {
+    "number": 1,
+    "par": 4,
+    "hcpIndex": 7,
+    "distances": {
+     "white": 385,
+     "yellow": 365,
+     "blue": 340,
+     "red": 305
+    }
+   },
+   {
+    "number": 2,
+    "par": 4,
+    "hcpIndex": 1,
+    "distances": {
+     "white": 385,
+     "yellow": 365,
+     "blue": 340,
+     "red": 305
+    }
+   },
+   {
+    "number": 3,
+    "par": 3,
+    "hcpIndex": 15,
+    "distances": {
+     "white": 165,
+     "yellow": 150,
+     "blue": 135,
+     "red": 115
+    }
+   },
+   {
+    "number": 4,
+    "par": 5,
+    "hcpIndex": 9,
+    "distances": {
+     "white": 510,
+     "yellow": 485,
+     "blue": 455,
+     "red": 415
+    }
+   },
+   {
+    "number": 5,
+    "par": 4,
+    "hcpIndex": 3,
+    "distances": {
+     "white": 385,
+     "yellow": 365,
+     "blue": 340,
+     "red": 305
+    }
+   },
+   {
+    "number": 6,
+    "par": 4,
+    "hcpIndex": 11,
+    "distances": {
+     "white": 385,
+     "yellow": 365,
+     "blue": 340,
+     "red": 305
+    }
+   },
+   {
+    "number": 7,
+    "par": 3,
+    "hcpIndex": 17,
+    "distances": {
+     "white": 165,
+     "yellow": 150,
+     "blue": 135,
+     "red": 115
+    }
+   },
+   {
+    "number": 8,
+    "par": 5,
+    "hcpIndex": 5,
+    "distances": {
+     "white": 510,
+     "yellow": 485,
+     "blue": 455,
+     "red": 415
+    }
+   },
+   {
+    "number": 9,
+    "par": 4,
+    "hcpIndex": 13,
+    "distances": {
+     "white": 385,
+     "yellow": 365,
+     "blue": 340,
+     "red": 305
+    }
+   },
+   {
+    "number": 10,
+    "par": 4,
+    "hcpIndex": 8,
+    "distances": {
+     "white": 385,
+     "yellow": 365,
+     "blue": 340,
+     "red": 305
+    }
+   },
+   {
+    "number": 11,
+    "par": 5,
+    "hcpIndex": 2,
+    "distances": {
+     "white": 510,
+     "yellow": 485,
+     "blue": 455,
+     "red": 415
+    }
+   },
+   {
+    "number": 12,
+    "par": 3,
+    "hcpIndex": 16,
+    "distances": {
+     "white": 165,
+     "yellow": 150,
+     "blue": 135,
+     "red": 115
+    }
+   },
+   {
+    "number": 13,
+    "par": 4,
+    "hcpIndex": 4,
+    "distances": {
+     "white": 385,
+     "yellow": 365,
+     "blue": 340,
+     "red": 305
+    }
+   },
+   {
+    "number": 14,
+    "par": 4,
+    "hcpIndex": 10,
+    "distances": {
+     "white": 385,
+     "yellow": 365,
+     "blue": 340,
+     "red": 305
+    }
+   },
+   {
+    "number": 15,
+    "par": 5,
+    "hcpIndex": 6,
+    "distances": {
+     "white": 510,
+     "yellow": 485,
+     "blue": 455,
+     "red": 415
+    }
+   },
+   {
+    "number": 16,
+    "par": 3,
+    "hcpIndex": 18,
+    "distances": {
+     "white": 165,
+     "yellow": 150,
+     "blue": 135,
+     "red": 115
+    }
+   },
+   {
+    "number": 17,
+    "par": 4,
+    "hcpIndex": 12,
+    "distances": {
+     "white": 385,
+     "yellow": 365,
+     "blue": 340,
+     "red": 305
+    }
+   },
+   {
+    "number": 18,
+    "par": 4,
+    "hcpIndex": 14,
+    "distances": {
+     "white": 385,
+     "yellow": 365,
+     "blue": 340,
+     "red": 305
+    }
+   }
+  ]
+ },
+ {
+  "id": "schloss-schoenbuehl",
+  "name": "Golf Schloss Schönbühl",
+  "region": "Bern",
+  "verified": false,
+  "tees": [
+   {
+    "id": "white",
+    "name": "Weiss",
+    "rating": 72.4,
+    "slope": 132
+   },
+   {
+    "id": "yellow",
+    "name": "Gelb",
+    "rating": 70.8,
+    "slope": 128
+   },
+   {
+    "id": "blue",
+    "name": "Blau",
+    "rating": 69,
+    "slope": 122
+   },
+   {
+    "id": "red",
+    "name": "Rot",
+    "rating": 71.2,
+    "slope": 125
+   }
+  ],
+  "holes": [
+   {
+    "number": 1,
+    "par": 4,
+    "hcpIndex": 7,
+    "distances": {
+     "white": 385,
+     "yellow": 365,
+     "blue": 340,
+     "red": 305
+    }
+   },
+   {
+    "number": 2,
+    "par": 4,
+    "hcpIndex": 1,
+    "distances": {
+     "white": 385,
+     "yellow": 365,
+     "blue": 340,
+     "red": 305
+    }
+   },
+   {
+    "number": 3,
+    "par": 3,
+    "hcpIndex": 15,
+    "distances": {
+     "white": 165,
+     "yellow": 150,
+     "blue": 135,
+     "red": 115
+    }
+   },
+   {
+    "number": 4,
+    "par": 5,
+    "hcpIndex": 9,
+    "distances": {
+     "white": 510,
+     "yellow": 485,
+     "blue": 455,
+     "red": 415
+    }
+   },
+   {
+    "number": 5,
+    "par": 4,
+    "hcpIndex": 3,
+    "distances": {
+     "white": 385,
+     "yellow": 365,
+     "blue": 340,
+     "red": 305
+    }
+   },
+   {
+    "number": 6,
+    "par": 4,
+    "hcpIndex": 11,
+    "distances": {
+     "white": 385,
+     "yellow": 365,
+     "blue": 340,
+     "red": 305
+    }
+   },
+   {
+    "number": 7,
+    "par": 3,
+    "hcpIndex": 17,
+    "distances": {
+     "white": 165,
+     "yellow": 150,
+     "blue": 135,
+     "red": 115
+    }
+   },
+   {
+    "number": 8,
+    "par": 5,
+    "hcpIndex": 5,
+    "distances": {
+     "white": 510,
+     "yellow": 485,
+     "blue": 455,
+     "red": 415
+    }
+   },
+   {
+    "number": 9,
+    "par": 4,
+    "hcpIndex": 13,
+    "distances": {
+     "white": 385,
+     "yellow": 365,
+     "blue": 340,
+     "red": 305
+    }
+   },
+   {
+    "number": 10,
+    "par": 4,
+    "hcpIndex": 8,
+    "distances": {
+     "white": 385,
+     "yellow": 365,
+     "blue": 340,
+     "red": 305
+    }
+   },
+   {
+    "number": 11,
+    "par": 5,
+    "hcpIndex": 2,
+    "distances": {
+     "white": 510,
+     "yellow": 485,
+     "blue": 455,
+     "red": 415
+    }
+   },
+   {
+    "number": 12,
+    "par": 3,
+    "hcpIndex": 16,
+    "distances": {
+     "white": 165,
+     "yellow": 150,
+     "blue": 135,
+     "red": 115
+    }
+   },
+   {
+    "number": 13,
+    "par": 4,
+    "hcpIndex": 4,
+    "distances": {
+     "white": 385,
+     "yellow": 365,
+     "blue": 340,
+     "red": 305
+    }
+   },
+   {
+    "number": 14,
+    "par": 4,
+    "hcpIndex": 10,
+    "distances": {
+     "white": 385,
+     "yellow": 365,
+     "blue": 340,
+     "red": 305
+    }
+   },
+   {
+    "number": 15,
+    "par": 5,
+    "hcpIndex": 6,
+    "distances": {
+     "white": 510,
+     "yellow": 485,
+     "blue": 455,
+     "red": 415
+    }
+   },
+   {
+    "number": 16,
+    "par": 3,
+    "hcpIndex": 18,
+    "distances": {
+     "white": 165,
+     "yellow": 150,
+     "blue": 135,
+     "red": 115
+    }
+   },
+   {
+    "number": 17,
+    "par": 4,
+    "hcpIndex": 12,
+    "distances": {
+     "white": 385,
+     "yellow": 365,
+     "blue": 340,
+     "red": 305
+    }
+   },
+   {
+    "number": 18,
+    "par": 4,
+    "hcpIndex": 14,
+    "distances": {
+     "white": 385,
+     "yellow": 365,
+     "blue": 340,
+     "red": 305
+    }
+   }
+  ]
+ },
+ {
+  "id": "lausanne",
+  "name": "Golf Club de Lausanne",
+  "region": "Waadt",
+  "verified": false,
+  "tees": [
+   {
+    "id": "white",
+    "name": "Weiss",
+    "rating": 72.4,
+    "slope": 132
+   },
+   {
+    "id": "yellow",
+    "name": "Gelb",
+    "rating": 70.8,
+    "slope": 128
+   },
+   {
+    "id": "blue",
+    "name": "Blau",
+    "rating": 69,
+    "slope": 122
+   },
+   {
+    "id": "red",
+    "name": "Rot",
+    "rating": 71.2,
+    "slope": 125
+   }
+  ],
+  "holes": [
+   {
+    "number": 1,
+    "par": 4,
+    "hcpIndex": 7,
+    "distances": {
+     "white": 385,
+     "yellow": 365,
+     "blue": 340,
+     "red": 305
+    }
+   },
+   {
+    "number": 2,
+    "par": 4,
+    "hcpIndex": 1,
+    "distances": {
+     "white": 385,
+     "yellow": 365,
+     "blue": 340,
+     "red": 305
+    }
+   },
+   {
+    "number": 3,
+    "par": 3,
+    "hcpIndex": 15,
+    "distances": {
+     "white": 165,
+     "yellow": 150,
+     "blue": 135,
+     "red": 115
+    }
+   },
+   {
+    "number": 4,
+    "par": 5,
+    "hcpIndex": 9,
+    "distances": {
+     "white": 510,
+     "yellow": 485,
+     "blue": 455,
+     "red": 415
+    }
+   },
+   {
+    "number": 5,
+    "par": 4,
+    "hcpIndex": 3,
+    "distances": {
+     "white": 385,
+     "yellow": 365,
+     "blue": 340,
+     "red": 305
+    }
+   },
+   {
+    "number": 6,
+    "par": 4,
+    "hcpIndex": 11,
+    "distances": {
+     "white": 385,
+     "yellow": 365,
+     "blue": 340,
+     "red": 305
+    }
+   },
+   {
+    "number": 7,
+    "par": 3,
+    "hcpIndex": 17,
+    "distances": {
+     "white": 165,
+     "yellow": 150,
+     "blue": 135,
+     "red": 115
+    }
+   },
+   {
+    "number": 8,
+    "par": 5,
+    "hcpIndex": 5,
+    "distances": {
+     "white": 510,
+     "yellow": 485,
+     "blue": 455,
+     "red": 415
+    }
+   },
+   {
+    "number": 9,
+    "par": 4,
+    "hcpIndex": 13,
+    "distances": {
+     "white": 385,
+     "yellow": 365,
+     "blue": 340,
+     "red": 305
+    }
+   },
+   {
+    "number": 10,
+    "par": 4,
+    "hcpIndex": 8,
+    "distances": {
+     "white": 385,
+     "yellow": 365,
+     "blue": 340,
+     "red": 305
+    }
+   },
+   {
+    "number": 11,
+    "par": 5,
+    "hcpIndex": 2,
+    "distances": {
+     "white": 510,
+     "yellow": 485,
+     "blue": 455,
+     "red": 415
+    }
+   },
+   {
+    "number": 12,
+    "par": 3,
+    "hcpIndex": 16,
+    "distances": {
+     "white": 165,
+     "yellow": 150,
+     "blue": 135,
+     "red": 115
+    }
+   },
+   {
+    "number": 13,
+    "par": 4,
+    "hcpIndex": 4,
+    "distances": {
+     "white": 385,
+     "yellow": 365,
+     "blue": 340,
+     "red": 305
+    }
+   },
+   {
+    "number": 14,
+    "par": 4,
+    "hcpIndex": 10,
+    "distances": {
+     "white": 385,
+     "yellow": 365,
+     "blue": 340,
+     "red": 305
+    }
+   },
+   {
+    "number": 15,
+    "par": 5,
+    "hcpIndex": 6,
+    "distances": {
+     "white": 510,
+     "yellow": 485,
+     "blue": 455,
+     "red": 415
+    }
+   },
+   {
+    "number": 16,
+    "par": 3,
+    "hcpIndex": 18,
+    "distances": {
+     "white": 165,
+     "yellow": 150,
+     "blue": 135,
+     "red": 115
+    }
+   },
+   {
+    "number": 17,
+    "par": 4,
+    "hcpIndex": 12,
+    "distances": {
+     "white": 385,
+     "yellow": 365,
+     "blue": 340,
+     "red": 305
+    }
+   },
+   {
+    "number": 18,
+    "par": 4,
+    "hcpIndex": 14,
+    "distances": {
+     "white": 385,
+     "yellow": 365,
+     "blue": 340,
+     "red": 305
+    }
+   }
+  ]
+ },
+ {
+  "id": "crans-sur-sierre",
+  "name": "Golf Club Crans-sur-Sierre",
+  "region": "Wallis",
+  "verified": false,
+  "tees": [
+   {
+    "id": "white",
+    "name": "Weiss",
+    "rating": 72.4,
+    "slope": 132
+   },
+   {
+    "id": "yellow",
+    "name": "Gelb",
+    "rating": 70.8,
+    "slope": 128
+   },
+   {
+    "id": "blue",
+    "name": "Blau",
+    "rating": 69,
+    "slope": 122
+   },
+   {
+    "id": "red",
+    "name": "Rot",
+    "rating": 71.2,
+    "slope": 125
+   }
+  ],
+  "holes": [
+   {
+    "number": 1,
+    "par": 4,
+    "hcpIndex": 7,
+    "distances": {
+     "white": 385,
+     "yellow": 365,
+     "blue": 340,
+     "red": 305
+    }
+   },
+   {
+    "number": 2,
+    "par": 4,
+    "hcpIndex": 1,
+    "distances": {
+     "white": 385,
+     "yellow": 365,
+     "blue": 340,
+     "red": 305
+    }
+   },
+   {
+    "number": 3,
+    "par": 3,
+    "hcpIndex": 15,
+    "distances": {
+     "white": 165,
+     "yellow": 150,
+     "blue": 135,
+     "red": 115
+    }
+   },
+   {
+    "number": 4,
+    "par": 5,
+    "hcpIndex": 9,
+    "distances": {
+     "white": 510,
+     "yellow": 485,
+     "blue": 455,
+     "red": 415
+    }
+   },
+   {
+    "number": 5,
+    "par": 4,
+    "hcpIndex": 3,
+    "distances": {
+     "white": 385,
+     "yellow": 365,
+     "blue": 340,
+     "red": 305
+    }
+   },
+   {
+    "number": 6,
+    "par": 4,
+    "hcpIndex": 11,
+    "distances": {
+     "white": 385,
+     "yellow": 365,
+     "blue": 340,
+     "red": 305
+    }
+   },
+   {
+    "number": 7,
+    "par": 3,
+    "hcpIndex": 17,
+    "distances": {
+     "white": 165,
+     "yellow": 150,
+     "blue": 135,
+     "red": 115
+    }
+   },
+   {
+    "number": 8,
+    "par": 5,
+    "hcpIndex": 5,
+    "distances": {
+     "white": 510,
+     "yellow": 485,
+     "blue": 455,
+     "red": 415
+    }
+   },
+   {
+    "number": 9,
+    "par": 4,
+    "hcpIndex": 13,
+    "distances": {
+     "white": 385,
+     "yellow": 365,
+     "blue": 340,
+     "red": 305
+    }
+   },
+   {
+    "number": 10,
+    "par": 4,
+    "hcpIndex": 8,
+    "distances": {
+     "white": 385,
+     "yellow": 365,
+     "blue": 340,
+     "red": 305
+    }
+   },
+   {
+    "number": 11,
+    "par": 5,
+    "hcpIndex": 2,
+    "distances": {
+     "white": 510,
+     "yellow": 485,
+     "blue": 455,
+     "red": 415
+    }
+   },
+   {
+    "number": 12,
+    "par": 3,
+    "hcpIndex": 16,
+    "distances": {
+     "white": 165,
+     "yellow": 150,
+     "blue": 135,
+     "red": 115
+    }
+   },
+   {
+    "number": 13,
+    "par": 4,
+    "hcpIndex": 4,
+    "distances": {
+     "white": 385,
+     "yellow": 365,
+     "blue": 340,
+     "red": 305
+    }
+   },
+   {
+    "number": 14,
+    "par": 4,
+    "hcpIndex": 10,
+    "distances": {
+     "white": 385,
+     "yellow": 365,
+     "blue": 340,
+     "red": 305
+    }
+   },
+   {
+    "number": 15,
+    "par": 5,
+    "hcpIndex": 6,
+    "distances": {
+     "white": 510,
+     "yellow": 485,
+     "blue": 455,
+     "red": 415
+    }
+   },
+   {
+    "number": 16,
+    "par": 3,
+    "hcpIndex": 18,
+    "distances": {
+     "white": 165,
+     "yellow": 150,
+     "blue": 135,
+     "red": 115
+    }
+   },
+   {
+    "number": 17,
+    "par": 4,
+    "hcpIndex": 12,
+    "distances": {
+     "white": 385,
+     "yellow": 365,
+     "blue": 340,
+     "red": 305
+    }
+   },
+   {
+    "number": 18,
+    "par": 4,
+    "hcpIndex": 14,
+    "distances": {
+     "white": 385,
+     "yellow": 365,
+     "blue": 340,
+     "red": 305
+    }
+   }
+  ]
+ },
+ {
+  "id": "bad-ragaz",
+  "name": "Golf Club Bad Ragaz",
+  "region": "St. Gallen",
+  "verified": false,
+  "tees": [
+   {
+    "id": "white",
+    "name": "Weiss",
+    "rating": 72.4,
+    "slope": 132
+   },
+   {
+    "id": "yellow",
+    "name": "Gelb",
+    "rating": 70.8,
+    "slope": 128
+   },
+   {
+    "id": "blue",
+    "name": "Blau",
+    "rating": 69,
+    "slope": 122
+   },
+   {
+    "id": "red",
+    "name": "Rot",
+    "rating": 71.2,
+    "slope": 125
+   }
+  ],
+  "holes": [
+   {
+    "number": 1,
+    "par": 4,
+    "hcpIndex": 7,
+    "distances": {
+     "white": 385,
+     "yellow": 365,
+     "blue": 340,
+     "red": 305
+    }
+   },
+   {
+    "number": 2,
+    "par": 4,
+    "hcpIndex": 1,
+    "distances": {
+     "white": 385,
+     "yellow": 365,
+     "blue": 340,
+     "red": 305
+    }
+   },
+   {
+    "number": 3,
+    "par": 3,
+    "hcpIndex": 15,
+    "distances": {
+     "white": 165,
+     "yellow": 150,
+     "blue": 135,
+     "red": 115
+    }
+   },
+   {
+    "number": 4,
+    "par": 5,
+    "hcpIndex": 9,
+    "distances": {
+     "white": 510,
+     "yellow": 485,
+     "blue": 455,
+     "red": 415
+    }
+   },
+   {
+    "number": 5,
+    "par": 4,
+    "hcpIndex": 3,
+    "distances": {
+     "white": 385,
+     "yellow": 365,
+     "blue": 340,
+     "red": 305
+    }
+   },
+   {
+    "number": 6,
+    "par": 4,
+    "hcpIndex": 11,
+    "distances": {
+     "white": 385,
+     "yellow": 365,
+     "blue": 340,
+     "red": 305
+    }
+   },
+   {
+    "number": 7,
+    "par": 3,
+    "hcpIndex": 17,
+    "distances": {
+     "white": 165,
+     "yellow": 150,
+     "blue": 135,
+     "red": 115
+    }
+   },
+   {
+    "number": 8,
+    "par": 5,
+    "hcpIndex": 5,
+    "distances": {
+     "white": 510,
+     "yellow": 485,
+     "blue": 455,
+     "red": 415
+    }
+   },
+   {
+    "number": 9,
+    "par": 4,
+    "hcpIndex": 13,
+    "distances": {
+     "white": 385,
+     "yellow": 365,
+     "blue": 340,
+     "red": 305
+    }
+   },
+   {
+    "number": 10,
+    "par": 4,
+    "hcpIndex": 8,
+    "distances": {
+     "white": 385,
+     "yellow": 365,
+     "blue": 340,
+     "red": 305
+    }
+   },
+   {
+    "number": 11,
+    "par": 5,
+    "hcpIndex": 2,
+    "distances": {
+     "white": 510,
+     "yellow": 485,
+     "blue": 455,
+     "red": 415
+    }
+   },
+   {
+    "number": 12,
+    "par": 3,
+    "hcpIndex": 16,
+    "distances": {
+     "white": 165,
+     "yellow": 150,
+     "blue": 135,
+     "red": 115
+    }
+   },
+   {
+    "number": 13,
+    "par": 4,
+    "hcpIndex": 4,
+    "distances": {
+     "white": 385,
+     "yellow": 365,
+     "blue": 340,
+     "red": 305
+    }
+   },
+   {
+    "number": 14,
+    "par": 4,
+    "hcpIndex": 10,
+    "distances": {
+     "white": 385,
+     "yellow": 365,
+     "blue": 340,
+     "red": 305
+    }
+   },
+   {
+    "number": 15,
+    "par": 5,
+    "hcpIndex": 6,
+    "distances": {
+     "white": 510,
+     "yellow": 485,
+     "blue": 455,
+     "red": 415
+    }
+   },
+   {
+    "number": 16,
+    "par": 3,
+    "hcpIndex": 18,
+    "distances": {
+     "white": 165,
+     "yellow": 150,
+     "blue": 135,
+     "red": 115
+    }
+   },
+   {
+    "number": 17,
+    "par": 4,
+    "hcpIndex": 12,
+    "distances": {
+     "white": 385,
+     "yellow": 365,
+     "blue": 340,
+     "red": 305
+    }
+   },
+   {
+    "number": 18,
+    "par": 4,
+    "hcpIndex": 14,
+    "distances": {
+     "white": 385,
+     "yellow": 365,
+     "blue": 340,
+     "red": 305
+    }
+   }
+  ]
+ },
+ {
+  "id": "davos",
+  "name": "Golf Club Davos",
+  "region": "Graubünden",
+  "verified": false,
+  "tees": [
+   {
+    "id": "white",
+    "name": "Weiss",
+    "rating": 72.4,
+    "slope": 132
+   },
+   {
+    "id": "yellow",
+    "name": "Gelb",
+    "rating": 70.8,
+    "slope": 128
+   },
+   {
+    "id": "blue",
+    "name": "Blau",
+    "rating": 69,
+    "slope": 122
+   },
+   {
+    "id": "red",
+    "name": "Rot",
+    "rating": 71.2,
+    "slope": 125
+   }
+  ],
+  "holes": [
+   {
+    "number": 1,
+    "par": 4,
+    "hcpIndex": 7,
+    "distances": {
+     "white": 385,
+     "yellow": 365,
+     "blue": 340,
+     "red": 305
+    }
+   },
+   {
+    "number": 2,
+    "par": 4,
+    "hcpIndex": 1,
+    "distances": {
+     "white": 385,
+     "yellow": 365,
+     "blue": 340,
+     "red": 305
+    }
+   },
+   {
+    "number": 3,
+    "par": 3,
+    "hcpIndex": 15,
+    "distances": {
+     "white": 165,
+     "yellow": 150,
+     "blue": 135,
+     "red": 115
+    }
+   },
+   {
+    "number": 4,
+    "par": 5,
+    "hcpIndex": 9,
+    "distances": {
+     "white": 510,
+     "yellow": 485,
+     "blue": 455,
+     "red": 415
+    }
+   },
+   {
+    "number": 5,
+    "par": 4,
+    "hcpIndex": 3,
+    "distances": {
+     "white": 385,
+     "yellow": 365,
+     "blue": 340,
+     "red": 305
+    }
+   },
+   {
+    "number": 6,
+    "par": 4,
+    "hcpIndex": 11,
+    "distances": {
+     "white": 385,
+     "yellow": 365,
+     "blue": 340,
+     "red": 305
+    }
+   },
+   {
+    "number": 7,
+    "par": 3,
+    "hcpIndex": 17,
+    "distances": {
+     "white": 165,
+     "yellow": 150,
+     "blue": 135,
+     "red": 115
+    }
+   },
+   {
+    "number": 8,
+    "par": 5,
+    "hcpIndex": 5,
+    "distances": {
+     "white": 510,
+     "yellow": 485,
+     "blue": 455,
+     "red": 415
+    }
+   },
+   {
+    "number": 9,
+    "par": 4,
+    "hcpIndex": 13,
+    "distances": {
+     "white": 385,
+     "yellow": 365,
+     "blue": 340,
+     "red": 305
+    }
+   },
+   {
+    "number": 10,
+    "par": 4,
+    "hcpIndex": 8,
+    "distances": {
+     "white": 385,
+     "yellow": 365,
+     "blue": 340,
+     "red": 305
+    }
+   },
+   {
+    "number": 11,
+    "par": 5,
+    "hcpIndex": 2,
+    "distances": {
+     "white": 510,
+     "yellow": 485,
+     "blue": 455,
+     "red": 415
+    }
+   },
+   {
+    "number": 12,
+    "par": 3,
+    "hcpIndex": 16,
+    "distances": {
+     "white": 165,
+     "yellow": 150,
+     "blue": 135,
+     "red": 115
+    }
+   },
+   {
+    "number": 13,
+    "par": 4,
+    "hcpIndex": 4,
+    "distances": {
+     "white": 385,
+     "yellow": 365,
+     "blue": 340,
+     "red": 305
+    }
+   },
+   {
+    "number": 14,
+    "par": 4,
+    "hcpIndex": 10,
+    "distances": {
+     "white": 385,
+     "yellow": 365,
+     "blue": 340,
+     "red": 305
+    }
+   },
+   {
+    "number": 15,
+    "par": 5,
+    "hcpIndex": 6,
+    "distances": {
+     "white": 510,
+     "yellow": 485,
+     "blue": 455,
+     "red": 415
+    }
+   },
+   {
+    "number": 16,
+    "par": 3,
+    "hcpIndex": 18,
+    "distances": {
+     "white": 165,
+     "yellow": 150,
+     "blue": 135,
+     "red": 115
+    }
+   },
+   {
+    "number": 17,
+    "par": 4,
+    "hcpIndex": 12,
+    "distances": {
+     "white": 385,
+     "yellow": 365,
+     "blue": 340,
+     "red": 305
+    }
+   },
+   {
+    "number": 18,
+    "par": 4,
+    "hcpIndex": 14,
+    "distances": {
+     "white": 385,
+     "yellow": 365,
+     "blue": 340,
+     "red": 305
+    }
+   }
+  ]
+ },
+ {
+  "id": "interlaken",
+  "name": "Golf Club Interlaken-Unterseen",
+  "region": "Bern",
+  "verified": false,
+  "tees": [
+   {
+    "id": "white",
+    "name": "Weiss",
+    "rating": 72.4,
+    "slope": 132
+   },
+   {
+    "id": "yellow",
+    "name": "Gelb",
+    "rating": 70.8,
+    "slope": 128
+   },
+   {
+    "id": "blue",
+    "name": "Blau",
+    "rating": 69,
+    "slope": 122
+   },
+   {
+    "id": "red",
+    "name": "Rot",
+    "rating": 71.2,
+    "slope": 125
+   }
+  ],
+  "holes": [
+   {
+    "number": 1,
+    "par": 4,
+    "hcpIndex": 7,
+    "distances": {
+     "white": 385,
+     "yellow": 365,
+     "blue": 340,
+     "red": 305
+    }
+   },
+   {
+    "number": 2,
+    "par": 4,
+    "hcpIndex": 1,
+    "distances": {
+     "white": 385,
+     "yellow": 365,
+     "blue": 340,
+     "red": 305
+    }
+   },
+   {
+    "number": 3,
+    "par": 3,
+    "hcpIndex": 15,
+    "distances": {
+     "white": 165,
+     "yellow": 150,
+     "blue": 135,
+     "red": 115
+    }
+   },
+   {
+    "number": 4,
+    "par": 5,
+    "hcpIndex": 9,
+    "distances": {
+     "white": 510,
+     "yellow": 485,
+     "blue": 455,
+     "red": 415
+    }
+   },
+   {
+    "number": 5,
+    "par": 4,
+    "hcpIndex": 3,
+    "distances": {
+     "white": 385,
+     "yellow": 365,
+     "blue": 340,
+     "red": 305
+    }
+   },
+   {
+    "number": 6,
+    "par": 4,
+    "hcpIndex": 11,
+    "distances": {
+     "white": 385,
+     "yellow": 365,
+     "blue": 340,
+     "red": 305
+    }
+   },
+   {
+    "number": 7,
+    "par": 3,
+    "hcpIndex": 17,
+    "distances": {
+     "white": 165,
+     "yellow": 150,
+     "blue": 135,
+     "red": 115
+    }
+   },
+   {
+    "number": 8,
+    "par": 5,
+    "hcpIndex": 5,
+    "distances": {
+     "white": 510,
+     "yellow": 485,
+     "blue": 455,
+     "red": 415
+    }
+   },
+   {
+    "number": 9,
+    "par": 4,
+    "hcpIndex": 13,
+    "distances": {
+     "white": 385,
+     "yellow": 365,
+     "blue": 340,
+     "red": 305
+    }
+   },
+   {
+    "number": 10,
+    "par": 4,
+    "hcpIndex": 8,
+    "distances": {
+     "white": 385,
+     "yellow": 365,
+     "blue": 340,
+     "red": 305
+    }
+   },
+   {
+    "number": 11,
+    "par": 5,
+    "hcpIndex": 2,
+    "distances": {
+     "white": 510,
+     "yellow": 485,
+     "blue": 455,
+     "red": 415
+    }
+   },
+   {
+    "number": 12,
+    "par": 3,
+    "hcpIndex": 16,
+    "distances": {
+     "white": 165,
+     "yellow": 150,
+     "blue": 135,
+     "red": 115
+    }
+   },
+   {
+    "number": 13,
+    "par": 4,
+    "hcpIndex": 4,
+    "distances": {
+     "white": 385,
+     "yellow": 365,
+     "blue": 340,
+     "red": 305
+    }
+   },
+   {
+    "number": 14,
+    "par": 4,
+    "hcpIndex": 10,
+    "distances": {
+     "white": 385,
+     "yellow": 365,
+     "blue": 340,
+     "red": 305
+    }
+   },
+   {
+    "number": 15,
+    "par": 5,
+    "hcpIndex": 6,
+    "distances": {
+     "white": 510,
+     "yellow": 485,
+     "blue": 455,
+     "red": 415
+    }
+   },
+   {
+    "number": 16,
+    "par": 3,
+    "hcpIndex": 18,
+    "distances": {
+     "white": 165,
+     "yellow": 150,
+     "blue": 135,
+     "red": 115
+    }
+   },
+   {
+    "number": 17,
+    "par": 4,
+    "hcpIndex": 12,
+    "distances": {
+     "white": 385,
+     "yellow": 365,
+     "blue": 340,
+     "red": 305
+    }
+   },
+   {
+    "number": 18,
+    "par": 4,
+    "hcpIndex": 14,
+    "distances": {
+     "white": 385,
+     "yellow": 365,
+     "blue": 340,
+     "red": 305
+    }
+   }
+  ]
+ },
+ {
+  "id": "lugano",
+  "name": "Golf Club Lugano",
+  "region": "Tessin",
+  "verified": false,
+  "tees": [
+   {
+    "id": "white",
+    "name": "Weiss",
+    "rating": 72.4,
+    "slope": 132
+   },
+   {
+    "id": "yellow",
+    "name": "Gelb",
+    "rating": 70.8,
+    "slope": 128
+   },
+   {
+    "id": "blue",
+    "name": "Blau",
+    "rating": 69,
+    "slope": 122
+   },
+   {
+    "id": "red",
+    "name": "Rot",
+    "rating": 71.2,
+    "slope": 125
+   }
+  ],
+  "holes": [
+   {
+    "number": 1,
+    "par": 4,
+    "hcpIndex": 7,
+    "distances": {
+     "white": 385,
+     "yellow": 365,
+     "blue": 340,
+     "red": 305
+    }
+   },
+   {
+    "number": 2,
+    "par": 4,
+    "hcpIndex": 1,
+    "distances": {
+     "white": 385,
+     "yellow": 365,
+     "blue": 340,
+     "red": 305
+    }
+   },
+   {
+    "number": 3,
+    "par": 3,
+    "hcpIndex": 15,
+    "distances": {
+     "white": 165,
+     "yellow": 150,
+     "blue": 135,
+     "red": 115
+    }
+   },
+   {
+    "number": 4,
+    "par": 5,
+    "hcpIndex": 9,
+    "distances": {
+     "white": 510,
+     "yellow": 485,
+     "blue": 455,
+     "red": 415
+    }
+   },
+   {
+    "number": 5,
+    "par": 4,
+    "hcpIndex": 3,
+    "distances": {
+     "white": 385,
+     "yellow": 365,
+     "blue": 340,
+     "red": 305
+    }
+   },
+   {
+    "number": 6,
+    "par": 4,
+    "hcpIndex": 11,
+    "distances": {
+     "white": 385,
+     "yellow": 365,
+     "blue": 340,
+     "red": 305
+    }
+   },
+   {
+    "number": 7,
+    "par": 3,
+    "hcpIndex": 17,
+    "distances": {
+     "white": 165,
+     "yellow": 150,
+     "blue": 135,
+     "red": 115
+    }
+   },
+   {
+    "number": 8,
+    "par": 5,
+    "hcpIndex": 5,
+    "distances": {
+     "white": 510,
+     "yellow": 485,
+     "blue": 455,
+     "red": 415
+    }
+   },
+   {
+    "number": 9,
+    "par": 4,
+    "hcpIndex": 13,
+    "distances": {
+     "white": 385,
+     "yellow": 365,
+     "blue": 340,
+     "red": 305
+    }
+   },
+   {
+    "number": 10,
+    "par": 4,
+    "hcpIndex": 8,
+    "distances": {
+     "white": 385,
+     "yellow": 365,
+     "blue": 340,
+     "red": 305
+    }
+   },
+   {
+    "number": 11,
+    "par": 5,
+    "hcpIndex": 2,
+    "distances": {
+     "white": 510,
+     "yellow": 485,
+     "blue": 455,
+     "red": 415
+    }
+   },
+   {
+    "number": 12,
+    "par": 3,
+    "hcpIndex": 16,
+    "distances": {
+     "white": 165,
+     "yellow": 150,
+     "blue": 135,
+     "red": 115
+    }
+   },
+   {
+    "number": 13,
+    "par": 4,
+    "hcpIndex": 4,
+    "distances": {
+     "white": 385,
+     "yellow": 365,
+     "blue": 340,
+     "red": 305
+    }
+   },
+   {
+    "number": 14,
+    "par": 4,
+    "hcpIndex": 10,
+    "distances": {
+     "white": 385,
+     "yellow": 365,
+     "blue": 340,
+     "red": 305
+    }
+   },
+   {
+    "number": 15,
+    "par": 5,
+    "hcpIndex": 6,
+    "distances": {
+     "white": 510,
+     "yellow": 485,
+     "blue": 455,
+     "red": 415
+    }
+   },
+   {
+    "number": 16,
+    "par": 3,
+    "hcpIndex": 18,
+    "distances": {
+     "white": 165,
+     "yellow": 150,
+     "blue": 135,
+     "red": 115
+    }
+   },
+   {
+    "number": 17,
+    "par": 4,
+    "hcpIndex": 12,
+    "distances": {
+     "white": 385,
+     "yellow": 365,
+     "blue": 340,
+     "red": 305
+    }
+   },
+   {
+    "number": 18,
+    "par": 4,
+    "hcpIndex": 14,
+    "distances": {
+     "white": 385,
+     "yellow": 365,
+     "blue": 340,
+     "red": 305
+    }
+   }
+  ]
+ },
+ {
+  "id": "basel",
+  "name": "Golf Club Basel",
+  "region": "Basel",
+  "verified": false,
+  "tees": [
+   {
+    "id": "white",
+    "name": "Weiss",
+    "rating": 72.4,
+    "slope": 132
+   },
+   {
+    "id": "yellow",
+    "name": "Gelb",
+    "rating": 70.8,
+    "slope": 128
+   },
+   {
+    "id": "blue",
+    "name": "Blau",
+    "rating": 69,
+    "slope": 122
+   },
+   {
+    "id": "red",
+    "name": "Rot",
+    "rating": 71.2,
+    "slope": 125
+   }
+  ],
+  "holes": [
+   {
+    "number": 1,
+    "par": 4,
+    "hcpIndex": 7,
+    "distances": {
+     "white": 385,
+     "yellow": 365,
+     "blue": 340,
+     "red": 305
+    }
+   },
+   {
+    "number": 2,
+    "par": 4,
+    "hcpIndex": 1,
+    "distances": {
+     "white": 385,
+     "yellow": 365,
+     "blue": 340,
+     "red": 305
+    }
+   },
+   {
+    "number": 3,
+    "par": 3,
+    "hcpIndex": 15,
+    "distances": {
+     "white": 165,
+     "yellow": 150,
+     "blue": 135,
+     "red": 115
+    }
+   },
+   {
+    "number": 4,
+    "par": 5,
+    "hcpIndex": 9,
+    "distances": {
+     "white": 510,
+     "yellow": 485,
+     "blue": 455,
+     "red": 415
+    }
+   },
+   {
+    "number": 5,
+    "par": 4,
+    "hcpIndex": 3,
+    "distances": {
+     "white": 385,
+     "yellow": 365,
+     "blue": 340,
+     "red": 305
+    }
+   },
+   {
+    "number": 6,
+    "par": 4,
+    "hcpIndex": 11,
+    "distances": {
+     "white": 385,
+     "yellow": 365,
+     "blue": 340,
+     "red": 305
+    }
+   },
+   {
+    "number": 7,
+    "par": 3,
+    "hcpIndex": 17,
+    "distances": {
+     "white": 165,
+     "yellow": 150,
+     "blue": 135,
+     "red": 115
+    }
+   },
+   {
+    "number": 8,
+    "par": 5,
+    "hcpIndex": 5,
+    "distances": {
+     "white": 510,
+     "yellow": 485,
+     "blue": 455,
+     "red": 415
+    }
+   },
+   {
+    "number": 9,
+    "par": 4,
+    "hcpIndex": 13,
+    "distances": {
+     "white": 385,
+     "yellow": 365,
+     "blue": 340,
+     "red": 305
+    }
+   },
+   {
+    "number": 10,
+    "par": 4,
+    "hcpIndex": 8,
+    "distances": {
+     "white": 385,
+     "yellow": 365,
+     "blue": 340,
+     "red": 305
+    }
+   },
+   {
+    "number": 11,
+    "par": 5,
+    "hcpIndex": 2,
+    "distances": {
+     "white": 510,
+     "yellow": 485,
+     "blue": 455,
+     "red": 415
+    }
+   },
+   {
+    "number": 12,
+    "par": 3,
+    "hcpIndex": 16,
+    "distances": {
+     "white": 165,
+     "yellow": 150,
+     "blue": 135,
+     "red": 115
+    }
+   },
+   {
+    "number": 13,
+    "par": 4,
+    "hcpIndex": 4,
+    "distances": {
+     "white": 385,
+     "yellow": 365,
+     "blue": 340,
+     "red": 305
+    }
+   },
+   {
+    "number": 14,
+    "par": 4,
+    "hcpIndex": 10,
+    "distances": {
+     "white": 385,
+     "yellow": 365,
+     "blue": 340,
+     "red": 305
+    }
+   },
+   {
+    "number": 15,
+    "par": 5,
+    "hcpIndex": 6,
+    "distances": {
+     "white": 510,
+     "yellow": 485,
+     "blue": 455,
+     "red": 415
+    }
+   },
+   {
+    "number": 16,
+    "par": 3,
+    "hcpIndex": 18,
+    "distances": {
+     "white": 165,
+     "yellow": 150,
+     "blue": 135,
+     "red": 115
+    }
+   },
+   {
+    "number": 17,
+    "par": 4,
+    "hcpIndex": 12,
+    "distances": {
+     "white": 385,
+     "yellow": 365,
+     "blue": 340,
+     "red": 305
+    }
+   },
+   {
+    "number": 18,
+    "par": 4,
+    "hcpIndex": 14,
+    "distances": {
+     "white": 385,
+     "yellow": 365,
+     "blue": 340,
+     "red": 305
+    }
+   }
+  ]
+ },
+ {
+  "id": "zuerichsee",
+  "name": "Golf & Country Club Zürichsee",
+  "region": "Schwyz",
+  "verified": false,
+  "tees": [
+   {
+    "id": "white",
+    "name": "Weiss",
+    "rating": 72.4,
+    "slope": 132
+   },
+   {
+    "id": "yellow",
+    "name": "Gelb",
+    "rating": 70.8,
+    "slope": 128
+   },
+   {
+    "id": "blue",
+    "name": "Blau",
+    "rating": 69,
+    "slope": 122
+   },
+   {
+    "id": "red",
+    "name": "Rot",
+    "rating": 71.2,
+    "slope": 125
+   }
+  ],
+  "holes": [
+   {
+    "number": 1,
+    "par": 4,
+    "hcpIndex": 7,
+    "distances": {
+     "white": 385,
+     "yellow": 365,
+     "blue": 340,
+     "red": 305
+    }
+   },
+   {
+    "number": 2,
+    "par": 4,
+    "hcpIndex": 1,
+    "distances": {
+     "white": 385,
+     "yellow": 365,
+     "blue": 340,
+     "red": 305
+    }
+   },
+   {
+    "number": 3,
+    "par": 3,
+    "hcpIndex": 15,
+    "distances": {
+     "white": 165,
+     "yellow": 150,
+     "blue": 135,
+     "red": 115
+    }
+   },
+   {
+    "number": 4,
+    "par": 5,
+    "hcpIndex": 9,
+    "distances": {
+     "white": 510,
+     "yellow": 485,
+     "blue": 455,
+     "red": 415
+    }
+   },
+   {
+    "number": 5,
+    "par": 4,
+    "hcpIndex": 3,
+    "distances": {
+     "white": 385,
+     "yellow": 365,
+     "blue": 340,
+     "red": 305
+    }
+   },
+   {
+    "number": 6,
+    "par": 4,
+    "hcpIndex": 11,
+    "distances": {
+     "white": 385,
+     "yellow": 365,
+     "blue": 340,
+     "red": 305
+    }
+   },
+   {
+    "number": 7,
+    "par": 3,
+    "hcpIndex": 17,
+    "distances": {
+     "white": 165,
+     "yellow": 150,
+     "blue": 135,
+     "red": 115
+    }
+   },
+   {
+    "number": 8,
+    "par": 5,
+    "hcpIndex": 5,
+    "distances": {
+     "white": 510,
+     "yellow": 485,
+     "blue": 455,
+     "red": 415
+    }
+   },
+   {
+    "number": 9,
+    "par": 4,
+    "hcpIndex": 13,
+    "distances": {
+     "white": 385,
+     "yellow": 365,
+     "blue": 340,
+     "red": 305
+    }
+   },
+   {
+    "number": 10,
+    "par": 4,
+    "hcpIndex": 8,
+    "distances": {
+     "white": 385,
+     "yellow": 365,
+     "blue": 340,
+     "red": 305
+    }
+   },
+   {
+    "number": 11,
+    "par": 5,
+    "hcpIndex": 2,
+    "distances": {
+     "white": 510,
+     "yellow": 485,
+     "blue": 455,
+     "red": 415
+    }
+   },
+   {
+    "number": 12,
+    "par": 3,
+    "hcpIndex": 16,
+    "distances": {
+     "white": 165,
+     "yellow": 150,
+     "blue": 135,
+     "red": 115
+    }
+   },
+   {
+    "number": 13,
+    "par": 4,
+    "hcpIndex": 4,
+    "distances": {
+     "white": 385,
+     "yellow": 365,
+     "blue": 340,
+     "red": 305
+    }
+   },
+   {
+    "number": 14,
+    "par": 4,
+    "hcpIndex": 10,
+    "distances": {
+     "white": 385,
+     "yellow": 365,
+     "blue": 340,
+     "red": 305
+    }
+   },
+   {
+    "number": 15,
+    "par": 5,
+    "hcpIndex": 6,
+    "distances": {
+     "white": 510,
+     "yellow": 485,
+     "blue": 455,
+     "red": 415
+    }
+   },
+   {
+    "number": 16,
+    "par": 3,
+    "hcpIndex": 18,
+    "distances": {
+     "white": 165,
+     "yellow": 150,
+     "blue": 135,
+     "red": 115
+    }
+   },
+   {
+    "number": 17,
+    "par": 4,
+    "hcpIndex": 12,
+    "distances": {
+     "white": 385,
+     "yellow": 365,
+     "blue": 340,
+     "red": 305
+    }
+   },
+   {
+    "number": 18,
+    "par": 4,
+    "hcpIndex": 14,
+    "distances": {
+     "white": 385,
+     "yellow": 365,
+     "blue": 340,
+     "red": 305
+    }
+   }
+  ]
+ }
+]
