@@ -21,6 +21,8 @@ export interface Hole {
   par: number;
   hcpIndex: number; // Stroke Index 1..18 (1 = schwerstes Loch)
   distances: Record<TeeId, number>; // Meter pro Abschlag
+  /** Schlüssel des Lochbilds in src/data/holeImages.ts (fehlt, wenn kein Bild vorhanden) */
+  image?: string;
 }
 
 export interface Course {
@@ -33,6 +35,8 @@ export interface Course {
   verified: boolean;
   /** true = Übungsplatz ohne Rating: keine Platzvorgabe, nur Brutto */
   noHandicap?: boolean;
+  /** Schlüssel der Platzübersicht in src/data/holeImages.ts */
+  overview?: string;
 }
 
 export interface Profile {

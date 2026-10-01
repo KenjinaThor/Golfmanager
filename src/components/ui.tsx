@@ -15,9 +15,25 @@ export const Btn = ({ title, onPress, kind = 'primary', disabled }: { title: str
   </Pressable>
 );
 
-export const Field = ({ label, inputRef, ...p }: { label: string; inputRef?: React.Ref<TextInput> } & TextInputProps) => (
+export type Visibility = 'public' | 'friends';
+const TAGS: Record<Visibility, { text: string; bg: string; fg: string }> = {
+  public: { text: 'öffentlich', bg: '#fff1d6', fg: '#8a4b00' },
+  friends: { text: 'Freunde', bg: '#e3edff', fg: '#1c46b8' },
+};
+
+/** Kennzeichnet, wer ein Datenfeld nach der Übertragung sehen kann. */
+export const Tag = ({ kind }: { kind: Visibility }) => (
+  <View style={{ backgroundColor: TAGS[kind].bg, borderRadius: 999, paddingHorizontal: 8, paddingVertical: 2 }}>
+    <Text style={{ color: TAGS[kind].fg, fontSize: 11, fontWeight: '700' }}>{TAGS[kind].text}</Text>
+  </View>
+);
+
+export const Field = ({ label, inputRef, visible, ...p }: { label: string; inputRef?: React.Ref<TextInput>; visible?: Visibility } & TextInputProps) => (
   <View style={{ marginBottom: 12 }}>
-    <Text style={s.label}>{label}</Text>
+    <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', gap: 8, marginBottom: 4 }}>
+      <Text style={[s.label, { flex: 1, marginBottom: 0 }]}>{label}</Text>
+      {visible && <Tag kind={visible} />}
+    </View>
     <TextInput {...p} ref={inputRef} style={s.input} placeholderTextColor="#9ca3af" />
   </View>
 );

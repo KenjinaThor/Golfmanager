@@ -17,3 +17,10 @@ Quelle: offizielle Blätter «Waldkirch … 2026 – Course Handicaps» (12 Rout
 
 ## waldkirch-kurzplatz.csv
 Quelle: «26_SK_Waldkirch_03_Loch» (Kurzplatz). 3 Löcher A–C (Par 3, Par 9 gesamt); zwei Abschlagzeilen (Marker 04: 379 m, Marker 03: 349 m). Die Karte bietet Platz für zwei Runden (A–C steht zweimal), der Platz selbst hat nur 3 Löcher. Kein Rating/Slope → in der App ohne Platzvorgabe, nur Brutto. Stroke Index 3/2/1.
+
+## Lochbilder (`assets/holes/*.webp`)
+Ausschnitte aus dem Platzführer «Waldkirch» (Strokesaver / Migros Golf Waldkirch), pro Loch eine Seite mit Layout, Distanzen und Index beider Nummerierungen.
+- Dateiname = Schlüssel: `blau-1` … `gruen-9`; dazu `uebersicht` (Platzplan) und `legende` (Zeichenerklärung).
+- `npm run import-courses` verknüpft jedes Loch aller Routen mit seinem Bild und erzeugt `src/data/holeImages.ts` (nicht von Hand ändern).
+- Lücke: **Rot 9** hat noch kein Bild (Datei `assets/holes/rot-9.webp` ablegen und `npm run import-courses` ausführen).
+- Die Bilder gehören dem Golfpark bzw. Strokesaver. Vor einer öffentlichen Veröffentlichung der App die Nutzungserlaubnis klären.

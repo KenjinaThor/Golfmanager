@@ -1,10 +1,14 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { StatusBar } from 'expo-status-bar';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { colors, ConfirmHost } from './components/ui';
+import { refreshIncoming, useFriends } from './lib/friends';
+import { supabase } from './lib/supabase';
+import { syncAll } from './lib/sync';
+import { useStore } from './store/useStore';
 import CourseDetailScreen from './screens/CourseDetailScreen';
 import CourseListScreen from './screens/CourseListScreen';
 import FriendDetailScreen from './screens/FriendDetailScreen';
@@ -38,18 +42,40 @@ const FriendsStack = () => (
   </Friends.Navigator>
 );
 
+/** Gleicht nach Anmeldung/App-Start Profil und Runden ab und fragt regelmässig nach neuen Freundschaftsanfragen. */
+function BackgroundSync() {
+  useEffect(() => {
+    if (!supabase) return;
+    const run = () => {
+      const st = useStore.getState();
+      void syncAll(st.profile, st.rounds);
+      void refreshIncoming();
+    };
+    supabase.auth.getSession().then(({ data }) => { if (data.session) run(); });
+    const { data } = supabase.auth.onAuthStateChange((event, session) => {
+      if (!session) useFriends.setState({ incoming: 0 });
+      else if (event === 'SIGNED_IN') run();
+    });
+    const timer = setInterval(() => void refreshIncoming(), 45000);
+    return () => { data.subscription.unsubscribe(); clearInterval(timer); };
+  }, []);
+  return null;
+}
+
 export default function App() {
+  const incoming = useFriends((s) => s.incoming);
   return (
     <SafeAreaProvider>
       <NavigationContainer>
         <Tabs.Navigator screenOptions={{ headerShown: false, tabBarActiveTintColor: colors.green }}>
           <Tabs.Screen name="Platz" component={PlayStack} />
           <Tabs.Screen name="Statistik" component={StatsStack} />
-          <Tabs.Screen name="Freunde" component={FriendsStack} />
+          <Tabs.Screen name="Freunde" component={FriendsStack} options={{ tabBarBadge: incoming > 0 ? incoming : undefined, tabBarBadgeStyle: { backgroundColor: colors.bad } }} />
           <Tabs.Screen name="Profil" component={ProfileScreen} options={{ headerShown: true }} />
         </Tabs.Navigator>
         <StatusBar style="auto" />
       </NavigationContainer>
+      <BackgroundSync />
       <ConfirmHost />
     </SafeAreaProvider>
   );
