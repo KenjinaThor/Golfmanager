@@ -5,6 +5,7 @@ import { Btn, Card, Field, H, Row, colors, confirmDialog, notify } from '../comp
 import { supabase, supabaseConfigError, supabaseHost } from '../lib/supabase';
 import { checkCredentials, friendlyAuthError } from '../lib/supabaseConfig';
 import { useStore } from '../store/useStore';
+import { deleteAccount } from '../lib/sync';
 import { runSync } from '../lib/runSync';
 import { refreshIncoming, useFriends } from '../lib/friends';
 
@@ -194,6 +195,20 @@ export default function FriendsScreen({ navigation }: any) {
         )}
       </Card>
       <Btn kind="ghost" title="Abmelden" onPress={() => supabase!.auth.signOut()} />
+      <Btn kind="ghost" title="Konto löschen" onPress={() => confirmDialog(
+        'Konto löschen?',
+        'Dein Login, dein Profil, alle Runden in der Cloud und alle Freundschaften werden endgültig gelöscht. Die Daten auf diesem Gerät bleiben erhalten. Das kann nicht rückgängig gemacht werden.',
+        'Weiter',
+        () => confirmDialog('Wirklich löschen?', 'Letzte Bestätigung: Das Konto wird jetzt unwiderruflich gelöscht.', 'Konto endgültig löschen', async () => {
+          const err = await deleteAccount();
+          if (err) notify('Konto nicht gelöscht', err);
+          else {
+            useStore.getState().forgetCloud();
+            notify('Konto gelöscht', 'Dein Konto und deine Cloud-Daten wurden gelöscht.');
+          }
+        }, true),
+        true,
+      )} />
     </ScrollView>
   );
 }

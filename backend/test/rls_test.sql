@@ -134,5 +134,19 @@ begin
   assert n = 0, 'anon liest Profile';
   reset role;
 
+  -- Konto löschen: nur das eigene, alles Zugehörige verschwindet
+  perform as_user(s);
+  perform delete_my_account();
+  perform as_user(c);
+  select count(*) into n from profiles where id = s; assert n = 0, 'Profil nach Kontolöschung noch da';
+  select count(*) into n from profiles where id = c; assert n = 1, 'Fremdes Konto mitgelöscht';
+  reset role;
+  select count(*) into n from auth.users; assert n = 3, 'Falsche Anzahl Konten nach Löschung';
+  ok := false;
+  reset role; set local role anon;
+  begin perform delete_my_account(); exception when others then ok := true; end;
+  reset role;
+  assert ok, 'Anonym darf kein Konto löschen';
+
   raise notice 'ALLE RLS-TESTS BESTANDEN';
 end $$;

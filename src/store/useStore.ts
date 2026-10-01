@@ -30,6 +30,8 @@ interface State {
   deleteRound: (id: string) => void;
   /** Ergebnis eines Cloud-Abgleichs übernehmen */
   applySync: (r: SyncResult) => void;
+  /** Nach dem Löschen des Kontos: Abgleichsmerker zurücksetzen (lokale Daten bleiben auf dem Gerät) */
+  forgetCloud: () => void;
 }
 
 export const useStore = create<State>()(
@@ -123,6 +125,8 @@ export const useStore = create<State>()(
           if (ok) set((s) => ({ deletedRoundIds: (s.deletedRoundIds ?? []).filter((x) => x !== id) }));
         });
       },
+
+      forgetCloud: () => set({ syncedRoundIds: [], deletedRoundIds: [] }),
 
       applySync: (r) =>
         set((s) => {

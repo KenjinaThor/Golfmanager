@@ -148,3 +148,16 @@ export function scheduleProfilePush(get: () => Profile, delayMs = 1500) {
   if (timer) clearTimeout(timer);
   timer = setTimeout(() => void pushProfile(get()), delayMs);
 }
+
+/** Eigenes Konto samt allen Cloud-Daten löschen und abmelden. Gibt eine Fehlermeldung zurück oder null bei Erfolg. */
+export async function deleteAccount(): Promise<string | null> {
+  if (!supabase || !(await uid())) return 'Nicht angemeldet.';
+  const { error } = await supabase.rpc('delete_my_account');
+  if (error) {
+    return /delete_my_account|function|schema cache/i.test(error.message)
+      ? 'Die Löschfunktion fehlt in der Datenbank. Bitte backend/schema.sql im Supabase-SQL-Editor ausführen.'
+      : error.message;
+  }
+  await supabase.auth.signOut();
+  return null;
+}
