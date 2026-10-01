@@ -52,6 +52,38 @@ for (const r of parseCsv('data/tees.csv')) {
     (hole.dist[+r.tee_row] ??= []).push(+r.distance_m);
   }
   const teeRowsOf = (loop: string) => Object.keys(loops[loop][0].dist).map(Number).sort((a, b) => b - a);
+  // Offizielle 18-Loch-Routen laut Heft «Waldkirch» (Strokesaver): Ablauf und Stroke Index je Loch.
+  // Schwarz: Grün 1–9, dann Rot 7,8,9,1–6 (Index = Kartenwerte). Orange: Blau 1–2, Gelb 9, Gelb 1–8, Blau 3–9
+  // (eigener Index, weicht bei Blau 1/2 und Gelb 7/8 von der Karte ab).
+  const seq = (loop: string, from: number, to: number) =>
+    Array.from({ length: to - from + 1 }, (_, i) => [loop, from + i] as [string, number]);
+  const ROUTES = [
+    {
+      id: 'waldkirch-schwarz', name: 'Golfpark Waldkirch – Schwarz (Grün/Rot)',
+      holes: [...seq('gruen', 1, 9), ...seq('rot', 7, 9), ...seq('rot', 1, 6)],
+      index: [7, 9, 11, 3, 15, 5, 13, 1, 17, 2, 18, 8, 6, 16, 4, 14, 10, 12],
+    },
+    {
+      id: 'waldkirch-orange', name: 'Golfpark Waldkirch – Orange (Blau/Gelb)',
+      holes: [...seq('blau', 1, 2), ...seq('gelb', 9, 9), ...seq('gelb', 1, 8), ...seq('blau', 3, 9)],
+      index: [9, 7, 15, 13, 3, 11, 5, 17, 1, 6, 4, 10, 14, 16, 2, 8, 12, 18],
+    },
+  ];
+  for (const r of ROUTES) {
+    courses.set(r.id, {
+      id: r.id,
+      name: r.name,
+      region: 'St. Gallen',
+      verified: true,
+      tees: WALDKIRCH_TEES.map((t) => ({ id: t, name: TEE_NAMES[t], rating: null, slope: null })),
+      holes: r.holes.map(([loop, n], i) => ({
+        number: i + 1,
+        par: loops[loop][n - 1].par,
+        hcpIndex: r.index[i],
+        distances: Object.fromEntries(WALDKIRCH_TEES.map((t, k) => [t, loops[loop][n - 1].dist[teeRowsOf(loop)[k]][0]])),
+      })),
+    });
+  }
   for (const a of Object.keys(loops)) for (const b of Object.keys(loops)) {
     if (a === b) continue;
     const id = `waldkirch-${a}-${b}`;

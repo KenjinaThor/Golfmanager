@@ -14,3 +14,9 @@ Quelle: «Blau 9-Loch Waldkirch 2026 – Course Handicaps» (Stand 25.03.26), of
 - Abschläge heissen laut PDF nach Markern: B28 Back Tees, B27 Back Standard, B25 Standard, B24 Front Standard – **keine Farben**
   (die frühere Annahme Weiss/Gelb/Blau/Rot ist damit nicht belegt). Herren und Damen haben getrennte CR/Slope.
 - Werte sind 9-Loch-Ratings (Par 35). Kontrolle der Tabelle: Platzvorgabe(9) = HI/2 × Slope/113 + (CR − Par).
+
+## Offizielle 18-Loch-Routen (Heft «Waldkirch», Strokesaver)
+- **Schwarz** = Grün 1–9, dann Rot 7,8,9,1–6 (Par 70, Marker 56/53/49/47 vorne bzw. 58/56/52/50 hinten).
+- **Orange** = Blau 1–2, Gelb 9, Gelb 1–8, Blau 3–9 (Par 71, Marker 58/56/52/50, eigener Stroke Index).
+- Totale OUT/IN/TOT und alle Indizes sind gegen die offiziellen Kartenseiten «Platz Orange/Schwarz» geprüft (`tests/waldkirch.test.ts`).
+- Rating/Slope der Routen sind weiterhin unbekannt (`null`).

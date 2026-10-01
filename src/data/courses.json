@@ -2320,6 +2320,470 @@
   ]
  },
  {
+  "id": "waldkirch-schwarz",
+  "name": "Golfpark Waldkirch – Schwarz (Grün/Rot)",
+  "region": "St. Gallen",
+  "verified": true,
+  "tees": [
+   {
+    "id": "white",
+    "name": "Weiss",
+    "rating": null,
+    "slope": null
+   },
+   {
+    "id": "yellow",
+    "name": "Gelb",
+    "rating": null,
+    "slope": null
+   },
+   {
+    "id": "blue",
+    "name": "Blau",
+    "rating": null,
+    "slope": null
+   },
+   {
+    "id": "red",
+    "name": "Rot",
+    "rating": null,
+    "slope": null
+   }
+  ],
+  "holes": [
+   {
+    "number": 1,
+    "par": 4,
+    "hcpIndex": 7,
+    "distances": {
+     "white": 358,
+     "yellow": 338,
+     "blue": 315,
+     "red": 296
+    }
+   },
+   {
+    "number": 2,
+    "par": 4,
+    "hcpIndex": 9,
+    "distances": {
+     "white": 327,
+     "yellow": 327,
+     "blue": 307,
+     "red": 307
+    }
+   },
+   {
+    "number": 3,
+    "par": 3,
+    "hcpIndex": 11,
+    "distances": {
+     "white": 182,
+     "yellow": 161,
+     "blue": 141,
+     "red": 131
+    }
+   },
+   {
+    "number": 4,
+    "par": 5,
+    "hcpIndex": 3,
+    "distances": {
+     "white": 443,
+     "yellow": 424,
+     "blue": 372,
+     "red": 364
+    }
+   },
+   {
+    "number": 5,
+    "par": 3,
+    "hcpIndex": 15,
+    "distances": {
+     "white": 173,
+     "yellow": 153,
+     "blue": 140,
+     "red": 127
+    }
+   },
+   {
+    "number": 6,
+    "par": 4,
+    "hcpIndex": 5,
+    "distances": {
+     "white": 367,
+     "yellow": 351,
+     "blue": 321,
+     "red": 312
+    }
+   },
+   {
+    "number": 7,
+    "par": 5,
+    "hcpIndex": 13,
+    "distances": {
+     "white": 462,
+     "yellow": 422,
+     "blue": 407,
+     "red": 383
+    }
+   },
+   {
+    "number": 8,
+    "par": 4,
+    "hcpIndex": 1,
+    "distances": {
+     "white": 340,
+     "yellow": 330,
+     "blue": 308,
+     "red": 298
+    }
+   },
+   {
+    "number": 9,
+    "par": 3,
+    "hcpIndex": 17,
+    "distances": {
+     "white": 140,
+     "yellow": 140,
+     "blue": 120,
+     "red": 120
+    }
+   },
+   {
+    "number": 10,
+    "par": 4,
+    "hcpIndex": 2,
+    "distances": {
+     "white": 343,
+     "yellow": 334,
+     "blue": 303,
+     "red": 282
+    }
+   },
+   {
+    "number": 11,
+    "par": 3,
+    "hcpIndex": 18,
+    "distances": {
+     "white": 126,
+     "yellow": 126,
+     "blue": 113,
+     "red": 113
+    }
+   },
+   {
+    "number": 12,
+    "par": 5,
+    "hcpIndex": 8,
+    "distances": {
+     "white": 461,
+     "yellow": 439,
+     "blue": 419,
+     "red": 385
+    }
+   },
+   {
+    "number": 13,
+    "par": 5,
+    "hcpIndex": 6,
+    "distances": {
+     "white": 451,
+     "yellow": 414,
+     "blue": 385,
+     "red": 365
+    }
+   },
+   {
+    "number": 14,
+    "par": 3,
+    "hcpIndex": 16,
+    "distances": {
+     "white": 192,
+     "yellow": 164,
+     "blue": 143,
+     "red": 131
+    }
+   },
+   {
+    "number": 15,
+    "par": 4,
+    "hcpIndex": 4,
+    "distances": {
+     "white": 372,
+     "yellow": 357,
+     "blue": 341,
+     "red": 323
+    }
+   },
+   {
+    "number": 16,
+    "par": 4,
+    "hcpIndex": 14,
+    "distances": {
+     "white": 350,
+     "yellow": 350,
+     "blue": 340,
+     "red": 340
+    }
+   },
+   {
+    "number": 17,
+    "par": 3,
+    "hcpIndex": 10,
+    "distances": {
+     "white": 169,
+     "yellow": 159,
+     "blue": 139,
+     "red": 134
+    }
+   },
+   {
+    "number": 18,
+    "par": 4,
+    "hcpIndex": 12,
+    "distances": {
+     "white": 348,
+     "yellow": 334,
+     "blue": 305,
+     "red": 295
+    }
+   }
+  ]
+ },
+ {
+  "id": "waldkirch-orange",
+  "name": "Golfpark Waldkirch – Orange (Blau/Gelb)",
+  "region": "St. Gallen",
+  "verified": true,
+  "tees": [
+   {
+    "id": "white",
+    "name": "Weiss",
+    "rating": null,
+    "slope": null
+   },
+   {
+    "id": "yellow",
+    "name": "Gelb",
+    "rating": null,
+    "slope": null
+   },
+   {
+    "id": "blue",
+    "name": "Blau",
+    "rating": null,
+    "slope": null
+   },
+   {
+    "id": "red",
+    "name": "Rot",
+    "rating": null,
+    "slope": null
+   }
+  ],
+  "holes": [
+   {
+    "number": 1,
+    "par": 4,
+    "hcpIndex": 9,
+    "distances": {
+     "white": 335,
+     "yellow": 315,
+     "blue": 295,
+     "red": 285
+    }
+   },
+   {
+    "number": 2,
+    "par": 5,
+    "hcpIndex": 7,
+    "distances": {
+     "white": 494,
+     "yellow": 478,
+     "blue": 450,
+     "red": 429
+    }
+   },
+   {
+    "number": 3,
+    "par": 5,
+    "hcpIndex": 15,
+    "distances": {
+     "white": 448,
+     "yellow": 431,
+     "blue": 405,
+     "red": 393
+    }
+   },
+   {
+    "number": 4,
+    "par": 4,
+    "hcpIndex": 13,
+    "distances": {
+     "white": 342,
+     "yellow": 330,
+     "blue": 304,
+     "red": 292
+    }
+   },
+   {
+    "number": 5,
+    "par": 4,
+    "hcpIndex": 3,
+    "distances": {
+     "white": 393,
+     "yellow": 381,
+     "blue": 348,
+     "red": 336
+    }
+   },
+   {
+    "number": 6,
+    "par": 3,
+    "hcpIndex": 11,
+    "distances": {
+     "white": 173,
+     "yellow": 162,
+     "blue": 145,
+     "red": 135
+    }
+   },
+   {
+    "number": 7,
+    "par": 5,
+    "hcpIndex": 5,
+    "distances": {
+     "white": 513,
+     "yellow": 501,
+     "blue": 458,
+     "red": 446
+    }
+   },
+   {
+    "number": 8,
+    "par": 3,
+    "hcpIndex": 17,
+    "distances": {
+     "white": 152,
+     "yellow": 152,
+     "blue": 136,
+     "red": 136
+    }
+   },
+   {
+    "number": 9,
+    "par": 4,
+    "hcpIndex": 1,
+    "distances": {
+     "white": 358,
+     "yellow": 338,
+     "blue": 321,
+     "red": 304
+    }
+   },
+   {
+    "number": 10,
+    "par": 4,
+    "hcpIndex": 6,
+    "distances": {
+     "white": 338,
+     "yellow": 327,
+     "blue": 298,
+     "red": 286
+    }
+   },
+   {
+    "number": 11,
+    "par": 4,
+    "hcpIndex": 4,
+    "distances": {
+     "white": 311,
+     "yellow": 302,
+     "blue": 282,
+     "red": 272
+    }
+   },
+   {
+    "number": 12,
+    "par": 4,
+    "hcpIndex": 10,
+    "distances": {
+     "white": 321,
+     "yellow": 311,
+     "blue": 293,
+     "red": 286
+    }
+   },
+   {
+    "number": 13,
+    "par": 4,
+    "hcpIndex": 14,
+    "distances": {
+     "white": 310,
+     "yellow": 305,
+     "blue": 292,
+     "red": 287
+    }
+   },
+   {
+    "number": 14,
+    "par": 3,
+    "hcpIndex": 16,
+    "distances": {
+     "white": 182,
+     "yellow": 162,
+     "blue": 142,
+     "red": 122
+    }
+   },
+   {
+    "number": 15,
+    "par": 4,
+    "hcpIndex": 2,
+    "distances": {
+     "white": 365,
+     "yellow": 347,
+     "blue": 327,
+     "red": 307
+    }
+   },
+   {
+    "number": 16,
+    "par": 3,
+    "hcpIndex": 8,
+    "distances": {
+     "white": 180,
+     "yellow": 152,
+     "blue": 137,
+     "red": 137
+    }
+   },
+   {
+    "number": 17,
+    "par": 5,
+    "hcpIndex": 12,
+    "distances": {
+     "white": 481,
+     "yellow": 450,
+     "blue": 424,
+     "red": 384
+    }
+   },
+   {
+    "number": 18,
+    "par": 3,
+    "hcpIndex": 18,
+    "distances": {
+     "white": 139,
+     "yellow": 139,
+     "blue": 120,
+     "red": 120
+    }
+   }
+  ]
+ },
+ {
   "id": "waldkirch-blau-gelb",
   "name": "Golfpark Waldkirch – Blau/Gelb",
   "region": "St. Gallen",
