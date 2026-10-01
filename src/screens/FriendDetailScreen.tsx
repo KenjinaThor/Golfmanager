@@ -3,7 +3,7 @@ import { ScrollView, Text } from 'react-native';
 import { HoleStatsTable } from '../components/Tables';
 import { Card, H, colors, fmtDate } from '../components/ui';
 import { getCourse } from '../data/courses';
-import { holeStats, roundTotals } from '../lib/scoring';
+import { holeStats, roundLabels, roundTotals } from '../lib/scoring';
 import { supabase } from '../lib/supabase';
 import { Profile, Round } from '../types';
 
@@ -26,6 +26,7 @@ export default function FriendDetailScreen({ route }: any) {
   }, [user.id]);
 
   const course = courseId ? getCourse(courseId) : undefined;
+  const labels = roundLabels(rounds);
   return (
     <ScrollView contentContainerStyle={{ padding: 12 }}>
       <Card>
@@ -43,7 +44,7 @@ export default function FriendDetailScreen({ route }: any) {
       {course && courseId && (
         <Card>
           <H>Pro Loch: {course.name}</H>
-          <HoleStatsTable stats={holeStats(rounds, courseId, course.holes.length)} par={course.holes.map((h) => h.par)} />
+          <HoleStatsTable stats={holeStats(rounds, courseId, course.holes.length)} par={course.holes.map((h) => h.par)} labels={labels} />
         </Card>
       )}
       <Card>
@@ -52,7 +53,7 @@ export default function FriendDetailScreen({ route }: any) {
           const t = roundTotals(r, getCourse(r.courseId)?.holes ?? []);
           return (
             <Text key={r.id} style={{ paddingVertical: 4 }}>
-              {fmtDate(r.date)} · {r.courseName} · Brutto {t.gross} · Stbf {t.stableford}
+              {fmtDate(r.date)}{labels[r.id] ? ` (${labels[r.id]})` : ''} · {r.courseName} · Brutto {t.gross} · Stbf {t.stableford}
             </Text>
           );
         })}

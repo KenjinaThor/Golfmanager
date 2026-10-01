@@ -16,4 +16,4 @@ Quelle: offizielle Blätter «Waldkirch … 2026 – Course Handicaps» (12 Rout
 - Kontrolle: `npm run import-courses` prüft Par je Route gegen das Rating-Blatt; die Formel stimmt bei 10.817 von 10.828 Tabellenwerten exakt (Rest: ±1 an Tabellenkanten).
 
 ## waldkirch-kurzplatz.csv
-Quelle: «26_SK_Waldkirch_03_Loch» (Kurzplatz). 3 Löcher A–C (Par 3), auf der Karte zweimal hintereinander (6 Löcher, Par 18); zwei Abschlagzeilen (Marker 04: 758 m, Marker 03: 698 m). Kein Rating/Slope → in der App ohne Platzvorgabe, nur Brutto. Der Stroke Index (3/2/1) ist nur für 3 Löcher angegeben und wird nicht angewendet.
+Quelle: «26_SK_Waldkirch_03_Loch» (Kurzplatz). 3 Löcher A–C (Par 3, Par 9 gesamt); zwei Abschlagzeilen (Marker 04: 379 m, Marker 03: 349 m). Die Karte bietet Platz für zwei Runden (A–C steht zweimal), der Platz selbst hat nur 3 Löcher. Kein Rating/Slope → in der App ohne Platzvorgabe, nur Brutto. Stroke Index 3/2/1.
