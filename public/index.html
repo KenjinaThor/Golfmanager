@@ -26,6 +26,31 @@
     <noscript>Golfmanager braucht JavaScript.</noscript>
     <div id="root"></div>
     <script>
+      // Startfehler sichtbar machen: bleibt die App leer, zeigt die Seite den Fehler und einen Reset-Knopf.
+      (function () {
+        var lastError = '';
+        window.addEventListener('error', function (e) { lastError = e.message || String(e.error || ''); });
+        window.addEventListener('unhandledrejection', function (e) { lastError = String((e.reason && e.reason.message) || e.reason || ''); });
+        window.addEventListener('load', function () {
+          setTimeout(function () {
+            var root = document.getElementById('root');
+            if (root && root.childNodes.length) return;
+            root.style.cssText = 'display:block;padding:24px;font-family:system-ui,sans-serif;color:#14213d';
+            root.innerHTML = '<h2>Golfmanager konnte nicht starten</h2><p style="color:#b42318;word-break:break-word"></p>' +
+              '<p>Meist hilft es, den Zwischenspeicher der App zu leeren.</p>' +
+              '<button style="padding:12px 16px;border:0;border-radius:10px;background:#1f7a3a;color:#fff;font-size:16px">Zwischenspeicher leeren und neu laden</button>';
+            root.querySelector('p').textContent = lastError || 'Kein Fehlertext verfügbar.';
+            root.querySelector('button').onclick = function () {
+              Promise.all([
+                navigator.serviceWorker ? navigator.serviceWorker.getRegistrations().then(function (rs) { return Promise.all(rs.map(function (r) { return r.unregister(); })); }) : 0,
+                window.caches ? caches.keys().then(function (ks) { return Promise.all(ks.map(function (k) { return caches.delete(k); })); }) : 0,
+              ]).then(function () { location.reload(); });
+            };
+          }, 4000);
+        });
+      })();
+    </script>
+    <script>
       // Offline-Betrieb: Service Worker nur über https (oder localhost) registrieren
       if ('serviceWorker' in navigator) {
         window.addEventListener('load', function () {

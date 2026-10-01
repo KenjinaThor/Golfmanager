@@ -2,7 +2,7 @@ import React, { useCallback, useEffect, useState } from 'react';
 import { Pressable, ScrollView, Text, View } from 'react-native';
 import { useFocusEffect } from '@react-navigation/native';
 import { Btn, Card, Field, H, Row, colors, notify } from '../components/ui';
-import { supabase } from '../lib/supabase';
+import { supabase, supabaseConfigError } from '../lib/supabase';
 import { useStore } from '../store/useStore';
 import { pushProfile } from '../lib/sync';
 
@@ -42,7 +42,8 @@ export default function FriendsScreen({ navigation }: any) {
   if (!supabase)
     return (
       <View style={{ padding: 20 }}>
-        <H>Vernetzung nicht konfiguriert</H>
+        <H>{supabaseConfigError ? 'Vernetzung: Konfiguration fehlerhaft' : 'Vernetzung nicht konfiguriert'}</H>
+        {supabaseConfigError && <Text style={{ color: colors.bad, marginBottom: 8 }}>{supabaseConfigError}</Text>}
         <Text>Setze EXPO_PUBLIC_SUPABASE_URL und EXPO_PUBLIC_SUPABASE_ANON_KEY (siehe README), um dich mit anderen Spielern zu vernetzen. Alles andere funktioniert auch offline.</Text>
       </View>
     );

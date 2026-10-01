@@ -1,14 +1,25 @@
 import 'react-native-url-polyfill/auto';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { createClient } from '@supabase/supabase-js';
+import { createClient, SupabaseClient } from '@supabase/supabase-js';
+import { resolveSupabaseConfig } from './supabaseConfig';
 
-const url = process.env.EXPO_PUBLIC_SUPABASE_URL;
-const key = process.env.EXPO_PUBLIC_SUPABASE_ANON_KEY;
+// Die EXPO_PUBLIC_*-Zugriffe müssen so stehen bleiben (Expo ersetzt sie beim Build).
+const config = resolveSupabaseConfig(process.env.EXPO_PUBLIC_SUPABASE_URL, process.env.EXPO_PUBLIC_SUPABASE_ANON_KEY);
 
-/** null, wenn kein Backend konfiguriert ist – die App läuft dann rein lokal. */
-export const supabase =
-  url && key
-    ? createClient(url, key, {
-        auth: { storage: AsyncStorage, autoRefreshToken: true, persistSession: true, detectSessionInUrl: false },
-      })
-    : null;
+let client: SupabaseClient | null = null;
+let error: string | null = config && 'error' in config ? config.error : null;
+
+if (config && 'url' in config) {
+  try {
+    client = createClient(config.url, config.key, {
+      auth: { storage: AsyncStorage, autoRefreshToken: true, persistSession: true, detectSessionInUrl: false },
+    });
+  } catch (e) {
+    error = `Supabase konnte nicht gestartet werden: ${e instanceof Error ? e.message : String(e)}`;
+  }
+}
+
+/** null, wenn kein Backend konfiguriert oder die Konfiguration fehlerhaft ist – die App läuft dann rein lokal. */
+export const supabase = client;
+/** Beschreibung, falls die Konfiguration vorhanden, aber fehlerhaft ist. */
+export const supabaseConfigError = error;
