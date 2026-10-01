@@ -1,6 +1,5 @@
 import 'react-native-url-polyfill/auto';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { Platform } from 'react-native';
 import { createClient, SupabaseClient } from '@supabase/supabase-js';
 import { resolveSupabaseConfig } from './supabaseConfig';
 
@@ -13,7 +12,7 @@ let error: string | null = config && 'error' in config ? config.error : null;
 if (config && 'url' in config) {
   try {
     client = createClient(config.url, config.key, {
-      auth: { storage: AsyncStorage, autoRefreshToken: true, persistSession: true, detectSessionInUrl: Platform.OS === 'web' },
+      auth: { storage: AsyncStorage, autoRefreshToken: true, persistSession: true, detectSessionInUrl: false },
     });
   } catch (e) {
     error = `Supabase konnte nicht gestartet werden: ${e instanceof Error ? e.message : String(e)}`;

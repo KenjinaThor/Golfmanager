@@ -1,9 +1,9 @@
 import React, { useCallback, useEffect, useRef, useState, type ComponentRef } from 'react';
-import { Platform, Pressable, ScrollView, Text, TextInput, View } from 'react-native';
+import { Pressable, ScrollView, Text, TextInput, View } from 'react-native';
 import { useFocusEffect } from '@react-navigation/native';
 import { Btn, Card, Field, H, Row, colors, confirmDialog, notify } from '../components/ui';
 import { supabase, supabaseConfigError, supabaseHost } from '../lib/supabase';
-import { checkCredentials, friendlyAuthError, oauthErrorFromUrl } from '../lib/supabaseConfig';
+import { checkCredentials, friendlyAuthError } from '../lib/supabaseConfig';
 import { useStore } from '../store/useStore';
 import { runSync } from '../lib/runSync';
 import { refreshIncoming, useFriends } from '../lib/friends';
@@ -24,14 +24,6 @@ export default function FriendsScreen({ navigation }: any) {
   const pwRef = useRef<ComponentRef<typeof TextInput>>(null);
 
   useEffect(() => {
-    // Rückkehr von Google mit Fehler (z. B. abgebrochen, nicht erlaubt): verständlich melden und Adresse säubern
-    if (Platform.OS === 'web') {
-      const err = oauthErrorFromUrl(window.location.hash, window.location.search);
-      if (err) {
-        notify('Anmeldung mit Google', err);
-        window.history.replaceState(null, '', window.location.pathname);
-      }
-    }
     if (!supabase) return;
     supabase.auth.getSession().then(({ data }) => setMe(data.session?.user.id ?? null));
     const { data } = supabase.auth.onAuthStateChange((_e, sess) => setMe(sess?.user.id ?? null));
@@ -88,18 +80,6 @@ export default function FriendsScreen({ navigation }: any) {
             const { error } = await supabase!.auth.signInWithPassword({ email: c.email, password: c.password });
             if (error) notify('Fehler', friendlyAuthError(error.message, supabaseHost)); else void runSync();
           }} />
-          {Platform.OS === 'web' && (
-            <>
-              <Text style={{ color: colors.mute, textAlign: 'center', marginVertical: 6 }}>oder</Text>
-              <Btn kind="ghost" title="Mit Google anmelden" onPress={async () => {
-                const { error } = await supabase!.auth.signInWithOAuth({
-                  provider: 'google',
-                  options: { redirectTo: window.location.origin + window.location.pathname, queryParams: { prompt: 'select_account' } },
-                });
-                if (error) notify('Fehler', friendlyAuthError(error.message, supabaseHost));
-              }} />
-            </>
-          )}
           <Btn kind="ghost" title="Konto erstellen" onPress={async () => {
             const c = credentials(false);
             if (!c) return;
