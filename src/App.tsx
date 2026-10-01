@@ -7,8 +7,7 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { colors, ConfirmHost } from './components/ui';
 import { refreshIncoming, useFriends } from './lib/friends';
 import { supabase } from './lib/supabase';
-import { syncAll } from './lib/sync';
-import { useStore } from './store/useStore';
+import { runSync } from './lib/runSync';
 import CourseDetailScreen from './screens/CourseDetailScreen';
 import CourseListScreen from './screens/CourseListScreen';
 import FriendDetailScreen from './screens/FriendDetailScreen';
@@ -47,8 +46,7 @@ function BackgroundSync() {
   useEffect(() => {
     if (!supabase) return;
     const run = () => {
-      const st = useStore.getState();
-      void syncAll(st.profile, st.rounds);
+      void runSync();
       void refreshIncoming();
     };
     supabase.auth.getSession().then(({ data }) => { if (data.session) run(); });

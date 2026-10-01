@@ -5,7 +5,7 @@ import { getCourse } from '../data/courses';
 import { courseHandicap, coursePar, emptyScores } from '../lib/scoring';
 import { Profile, Round, TeeId } from '../types';
 import { defaultProfile } from './defaultProfile';
-import { deleteRemoteRound, pushProfile, pushRound, scheduleProfilePush } from '../lib/sync';
+import { deleteRemoteRound, pushProfile, pushRound, scheduleProfilePush, type SyncResult } from '../lib/sync';
 
 export { defaultProfile };
 
@@ -15,6 +15,10 @@ interface State {
   profile: Profile;
   rounds: Round[]; // abgeschlossene Runden (Historie)
   active: Round | null; // laufende Runde
+  /** Runden, die dieses Gerät schon in der Cloud gesehen hat (damit anderswo gelöschte Runden nicht wieder auftauchen) */
+  syncedRoundIds: string[];
+  /** lokal gelöschte Runden, deren Löschung in der Cloud noch aussteht */
+  deletedRoundIds: string[];
 
   setProfile: (p: Partial<Profile>) => void;
   startRound: (courseId: string, teeId: TeeId) => void;
@@ -24,6 +28,8 @@ interface State {
   finishRound: () => void;
   discardRound: () => void;
   deleteRound: (id: string) => void;
+  /** Ergebnis eines Cloud-Abgleichs übernehmen */
+  applySync: (r: SyncResult) => void;
 }
 
 export const useStore = create<State>()(
@@ -32,9 +38,11 @@ export const useStore = create<State>()(
       profile: defaultProfile,
       rounds: [],
       active: null,
+      syncedRoundIds: [],
+      deletedRoundIds: [],
 
       setProfile: (p) => {
-        set((s) => ({ profile: { ...s.profile, ...p } }));
+        set((s) => ({ profile: { ...s.profile, ...p, updatedAt: Date.now() } }));
         void pushProfile(get().profile);
       },
 
@@ -74,7 +82,7 @@ export const useStore = create<State>()(
           if (delta === -1 && cur === 0) return s;
           if (delta === 1 && s.profile.ballCount === 0) return s; // kein Ball mehr im Bag
           return {
-            profile: { ...s.profile, ballCount: s.profile.ballCount - delta },
+            profile: { ...s.profile, ballCount: s.profile.ballCount - delta, updatedAt: Date.now() },
             active: {
               ...s.active,
               holes: s.active.holes.map((h) => (h.number === hole ? { ...h, lostBalls: cur + delta } : h)),
@@ -89,23 +97,47 @@ export const useStore = create<State>()(
         if (!a) return;
         const done = { ...a, completed: true };
         set((s) => ({ rounds: [done, ...s.rounds], active: null }));
-        void pushRound(done);
         void pushProfile(get().profile);
+        void pushRound(done).then((ok) => {
+          if (ok) set((s) => ({ syncedRoundIds: [...new Set([...(s.syncedRoundIds ?? []), done.id])] }));
+        });
       },
 
       discardRound: () => {
         set((s) => {
           // verlorene Bälle der verworfenen Runde zurückbuchen
           const lost = s.active?.holes.reduce((n, h) => n + h.lostBalls, 0) ?? 0;
-          return { active: null, profile: { ...s.profile, ballCount: s.profile.ballCount + lost } };
+          return { active: null, profile: { ...s.profile, ballCount: s.profile.ballCount + lost, updatedAt: Date.now() } };
         });
         scheduleProfilePush(() => get().profile);
       },
 
       deleteRound: (id) => {
-        set((s) => ({ rounds: s.rounds.filter((r) => r.id !== id) }));
-        void deleteRemoteRound(id);
+        set((s) => ({
+          rounds: s.rounds.filter((r) => r.id !== id),
+          syncedRoundIds: (s.syncedRoundIds ?? []).filter((x) => x !== id),
+          deletedRoundIds: [...new Set([...(s.deletedRoundIds ?? []), id])],
+        }));
+        // Löschung in der Cloud; schlägt sie fehl (offline), bleibt sie vorgemerkt und wird beim nächsten Abgleich erledigt
+        void deleteRemoteRound(id).then((ok) => {
+          if (ok) set((s) => ({ deletedRoundIds: (s.deletedRoundIds ?? []).filter((x) => x !== id) }));
+        });
       },
+
+      applySync: (r) =>
+        set((s) => {
+          const gone = new Set(r.removeRoundIds);
+          const have = new Set(s.rounds.map((x) => x.id));
+          const rounds = [...s.rounds.filter((x) => !gone.has(x.id)), ...r.addRounds.filter((x) => !have.has(x.id))].sort((a, b) =>
+            b.date.localeCompare(a.date),
+          );
+          return {
+            profile: r.profile,
+            rounds,
+            syncedRoundIds: r.syncedRoundIds,
+            deletedRoundIds: (s.deletedRoundIds ?? []).filter((x) => !r.clearedDeletes.includes(x)),
+          };
+        }),
     }),
     { name: 'golfmanager-v1', storage: createJSONStorage(() => AsyncStorage) },
   ),

@@ -3,7 +3,8 @@ import { useFocusEffect } from '@react-navigation/native';
 import { ScrollView, Text, View } from 'react-native';
 import { Btn, Card, Field, H, Row, Tag, colors } from '../components/ui';
 import { supabase } from '../lib/supabase';
-import { syncAll, useSyncInfo } from '../lib/sync';
+import { runSync } from '../lib/runSync';
+import { useSyncInfo } from '../lib/sync';
 import { useStore } from '../store/useStore';
 import { Profile } from '../types';
 
@@ -12,7 +13,6 @@ const num = (v: string) => (v.trim() === '' ? null : Number(v.replace(',', '.'))
 export default function ProfileScreen() {
   const profile = useStore((s) => s.profile);
   const setProfile = useStore((s) => s.setProfile);
-  const rounds = useStore((s) => s.rounds);
   const info = useSyncInfo();
   const fromProfile = () => ({
     name: profile.name, username: profile.username, handicapIndex: String(profile.handicapIndex),
@@ -52,7 +52,7 @@ export default function ProfileScreen() {
               {info.state === 'ok' ? '✓ ' : info.state === 'error' ? '✗ ' : ''}{info.message}
               {info.at ? ` (${new Date(info.at).toLocaleTimeString('de-CH', { hour: '2-digit', minute: '2-digit' })})` : ''}
             </Text>
-            <Btn kind="ghost" title={info.busy ? 'Überträgt …' : 'Jetzt übertragen'} disabled={info.busy} onPress={() => void syncAll(profile, rounds)} />
+            <Btn kind="ghost" title={info.busy ? 'Überträgt …' : 'Jetzt übertragen'} disabled={info.busy} onPress={() => void runSync()} />
           </View>
         )}
       </Card>

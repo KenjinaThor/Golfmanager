@@ -2,6 +2,7 @@ import { create } from 'zustand';
 import { Profile, Round } from '../types';
 import { supabase } from './supabase';
 import { profileRows, roundRow } from './syncRows';
+import { mergeProfile, mergeRounds } from './syncMerge';
 
 export interface SyncInfo {
   state: 'idle' | 'ok' | 'error';
@@ -49,8 +50,10 @@ export async function pushRound(r: Round): Promise<boolean> {
   return pushRounds([r]);
 }
 
+/** true nur, wenn die Runden tatsächlich in der Cloud angekommen sind (nicht bei fehlender Anmeldung oder Konfiguration). */
 export async function pushRounds(rounds: Round[]): Promise<boolean> {
-  if (!supabase || !rounds.length) return true;
+  if (!supabase) return false;
+  if (!rounds.length) return true;
   const id = await uid();
   if (!id) return false;
   const { error } = await supabase.from('rounds').upsert(rounds.map((r) => roundRow(id, r)));
@@ -61,18 +64,76 @@ export async function pushRounds(rounds: Round[]): Promise<boolean> {
   return true;
 }
 
-/** Profil und alle abgeschlossenen Runden abgleichen (nach Anmeldung, beim Start und auf Knopfdruck). */
-export async function syncAll(profile: Profile, rounds: Round[]): Promise<boolean> {
-  const ok = await pushProfile(profile);
-  if (!ok) return false;
-  const roundsOk = await pushRounds(rounds);
-  if (roundsOk) setInfo({ state: 'ok', message: `Profil und ${rounds.length} Runde${rounds.length === 1 ? '' : 'n'} übertragen.`, at: Date.now(), busy: false });
-  return roundsOk;
+export interface SyncInput {
+  profile: Profile;
+  rounds: Round[];
+  syncedRoundIds: string[];
+  deletedRoundIds: string[];
+}
+export interface SyncResult {
+  profile: Profile;
+  addRounds: Round[];
+  removeRoundIds: string[];
+  syncedRoundIds: string[];
+  /** Löschungen, die in der Cloud erledigt sind */
+  clearedDeletes: string[];
 }
 
-export async function deleteRemoteRound(id: string): Promise<void> {
-  if (!supabase || !(await uid())) return;
-  await supabase.from('rounds').delete().eq('id', id);
+/**
+ * Abgleich in beide Richtungen (nach Anmeldung, App-Start, «Jetzt übertragen»):
+ * holt Profil und Runden aus der Cloud, führt sie mit dem Gerät zusammen und lädt Neues hoch.
+ * Gibt null zurück, wenn etwas schiefging (Grund in useSyncInfo); lokal wird dann nichts verändert.
+ */
+export async function syncAll(i: SyncInput): Promise<SyncResult | null> {
+  if (!supabase) return null;
+  const me = await uid();
+  if (!me) {
+    setInfo({ state: 'idle', message: 'Nicht angemeldet: Die Daten bleiben auf diesem Gerät.' });
+    return null;
+  }
+  setInfo({ busy: true });
+  const fail = (what: string, message: string) => {
+    setInfo({ state: 'error', message: `${what}: ${message}`, busy: false });
+    return null;
+  };
+
+  // 1. Cloud lesen (eigene Daten; RLS würde sonst auch Freunde liefern)
+  const det = await supabase.from('profile_details').select('data').eq('id', me).maybeSingle();
+  if (det.error) return fail('Profil laden fehlgeschlagen', det.error.message);
+  const rem = await supabase.from('rounds').select('data').eq('user_id', me);
+  if (rem.error) return fail('Runden laden fehlgeschlagen', rem.error.message);
+  const cloudProfile = (det.data?.data as Profile | undefined) ?? null;
+  const remoteRounds = (rem.data ?? []).map((x) => x.data as Round);
+
+  // 2. Zusammenführen
+  const mp = mergeProfile(i.profile, cloudProfile);
+  const mr = mergeRounds(i.rounds, remoteRounds, i.syncedRoundIds, i.deletedRoundIds);
+
+  // 3. Lokal gelöschte Runden in der Cloud löschen, Neues hochladen
+  const cleared: string[] = [];
+  if (mr.deleteRemote.length) {
+    const del = await supabase.from('rounds').delete().in('id', mr.deleteRemote);
+    if (!del.error) cleared.push(...mr.deleteRemote);
+  }
+  if (mr.upload.length) {
+    const up = await supabase.from('rounds').upsert(mr.upload.map((r) => roundRow(me, r)));
+    if (up.error) return fail('Runden hochladen fehlgeschlagen', up.error.message);
+  }
+  if (mp.push && !(await pushProfile(mp.profile))) return null;
+
+  const parts = [mp.profile === cloudProfile && cloudProfile ? 'Profil aus der Cloud geladen' : 'Profil abgeglichen'];
+  if (mr.add.length) parts.push(`${mr.add.length} Runde${mr.add.length === 1 ? '' : 'n'} geladen`);
+  if (mr.upload.length) parts.push(`${mr.upload.length} hochgeladen`);
+  if (mr.removeIds.length) parts.push(`${mr.removeIds.length} entfernt (anderswo gelöscht)`);
+  setInfo({ state: 'ok', message: parts.join(', ') + '.', at: Date.now(), busy: false });
+  return { profile: mp.profile, addRounds: mr.add, removeRoundIds: mr.removeIds, syncedRoundIds: mr.synced, clearedDeletes: cleared };
+}
+
+/** true, wenn die Runde in der Cloud gelöscht wurde (sonst bleibt die Löschung vorgemerkt und wird beim nächsten Abgleich erledigt). */
+export async function deleteRemoteRound(id: string): Promise<boolean> {
+  if (!supabase || !(await uid())) return false;
+  const { error } = await supabase.from('rounds').delete().eq('id', id);
+  return !error;
 }
 
 let timer: ReturnType<typeof setTimeout> | undefined;
