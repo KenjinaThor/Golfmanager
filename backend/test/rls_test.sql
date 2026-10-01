@@ -22,6 +22,7 @@ begin
   perform as_user(a);
   insert into profiles values (a, 'alice', 'Alice', 10.0, '{"age": 36}');
   insert into profile_details values (a, '{"club":"X"}');
+  insert into profile_private values (a, '{"bio":"geheim"}');
   insert into rounds values ('r-a', a, 'c', '2026-01-01', '{}');
   perform as_user(b);
   insert into profiles values (b, 'bob', 'Bob', 20.0, '{}');
@@ -30,6 +31,9 @@ begin
   insert into profiles values (c, 'carl', 'Carl', 30.0, '{}');
   perform as_user(s);
   insert into profiles values (s, 'carl2', 'Carl2', 30.0, '{}');
+
+  perform as_user(a);
+  select count(*) into n from profile_private where id = a; assert n = 1, 'Alice sieht eigenen privaten Speicher nicht';
 
   -- 1. Suche: alle Eingeloggten sehen Username/Name/Handicap, aber keine Runden/Details von Fremden
   perform as_user(b);
@@ -54,11 +58,16 @@ begin
   perform as_user(b);
   select count(*) into n from rounds where user_id = a; assert n = 1, 'Bob sieht Alices Runden nicht';
   select count(*) into n from profile_details where id = a; assert n = 1, 'Bob sieht Alices Details nicht';
+  select count(*) into n from profile_private where id = a; assert n = 0, 'Freund sieht privaten Speicher';
 
   -- 4. Fremder sieht weiterhin nichts
   perform as_user(c);
   select count(*) into n from rounds where user_id in (a, b); assert n = 0, 'Fremder sieht Runden';
   select count(*) into n from profile_details where id in (a, b); assert n = 0, 'Fremder sieht Details';
+  select count(*) into n from profile_private; assert n = 0, 'Fremder sieht privaten Speicher';
+  ok := false;
+  begin insert into profile_private values (a, '{}'); exception when others then ok := true; end;
+  assert ok, 'Fremder schreibt in fremden privaten Speicher';
 
   -- 5. Fremder kann nichts in fremdem Namen schreiben
   ok := false;

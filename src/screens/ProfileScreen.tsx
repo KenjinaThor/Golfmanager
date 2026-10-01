@@ -66,7 +66,7 @@ export default function ProfileScreen() {
         <Text style={{ color: colors.text, marginBottom: 8 }}>
           Bei jedem Feld wählst du selbst, wer es sieht. Übertragen wird nur, wenn du im Tab «Freunde» angemeldet bist.
         </Text>
-        <Row style={{ gap: 8, marginBottom: 4, alignItems: 'flex-start' }}><Tag kind="private" /><Text style={{ flex: 1, color: colors.mute, fontSize: 12 }}>Bleibt auf diesem Gerät und wird nicht übertragen (auch nicht auf deine anderen Geräte).</Text></Row>
+        <Row style={{ gap: 8, marginBottom: 4, alignItems: 'flex-start' }}><Tag kind="private" /><Text style={{ flex: 1, color: colors.mute, fontSize: 12 }}>Liegt nur in deinem Cloud-Konto: kein anderer Spieler sieht es, auf deinen eigenen Geräten erscheint es nach der Anmeldung.</Text></Row>
         <Row style={{ gap: 8, marginBottom: 4, alignItems: 'flex-start' }}><Tag kind="friends" /><Text style={{ flex: 1, color: colors.mute, fontSize: 12 }}>Nur bestätigte Freunde sehen es.</Text></Row>
         <Row style={{ gap: 8, marginBottom: 8, alignItems: 'flex-start' }}><Tag kind="public" /><Text style={{ flex: 1, color: colors.mute, fontSize: 12 }}>Alle angemeldeten Spieler sehen es, zum Beispiel bei der Suche.</Text></Row>
         <Text style={{ color: colors.mute, fontSize: 12 }}>
