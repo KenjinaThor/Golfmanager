@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Alert, Platform, Pressable, StyleSheet, Text, TextInput, TextInputProps, View, ViewStyle } from 'react-native';
 
 export const colors = { green: '#1f7a3a', light: '#e8f3ec', text: '#14213d', mute: '#6b7280', line: '#e5e7eb', bad: '#b42318', bg: '#f7f8f7' };
@@ -35,14 +35,41 @@ const s = StyleSheet.create({
   ghost: { backgroundColor: colors.light },
   danger: { backgroundColor: colors.bad },
   btnT: { color: '#fff', fontWeight: '600', fontSize: 15 },
+  overlay: { position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, backgroundColor: 'rgba(0,0,0,0.45)', justifyContent: 'center', padding: 24, zIndex: 100 },
+  dialog: { backgroundColor: '#fff', borderRadius: 12, padding: 16 },
   label: { fontSize: 12, color: colors.mute, marginBottom: 4 },
   input: { borderWidth: 1, borderColor: colors.line, borderRadius: 8, padding: 10, fontSize: 16, backgroundColor: '#fff', color: colors.text },
 });
 
-/** Bestätigungsdialog; Alert.alert mit Buttons funktioniert im Web nicht, dort window.confirm. */
+type Pending = { title: string; message: string; okLabel: string; onOk: () => void; destructive: boolean } | null;
+let showPending: ((p: Pending) => void) | null = null;
+
+/** Im Web gerendert (einmal in App), weil window.confirm/Alert dort nicht überall verfügbar sind. */
+export function ConfirmHost() {
+  const [p, setP] = useState<Pending>(null);
+  useEffect(() => {
+    showPending = setP;
+    return () => { showPending = null; };
+  }, []);
+  if (!p) return null;
+  const close = () => setP(null);
+  return (
+    <View style={s.overlay}>
+      <View style={s.dialog}>
+        <Text style={s.h}>{p.title}</Text>
+        <Text style={{ color: colors.text, marginBottom: 8 }}>{p.message}</Text>
+        <Btn title={p.okLabel} kind={p.destructive ? 'danger' : 'primary'} onPress={() => { close(); p.onOk(); }} />
+        <Btn title="Abbrechen" kind="ghost" onPress={close} />
+      </View>
+    </View>
+  );
+}
+
+/** Bestätigungsdialog: nativ Alert.alert, im Web eine In-App-Bestätigung. */
 export function confirmDialog(title: string, message: string, okLabel: string, onOk: () => void, destructive = false) {
   if (Platform.OS === 'web') {
-    if (window.confirm(`${title}\n\n${message}`)) onOk();
+    if (showPending) showPending({ title, message, okLabel, onOk, destructive });
+    else onOk();
     return;
   }
   Alert.alert(title, message, [

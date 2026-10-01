@@ -4,7 +4,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { StatusBar } from 'expo-status-bar';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
-import { colors } from './components/ui';
+import { colors, ConfirmHost } from './components/ui';
 import CourseDetailScreen from './screens/CourseDetailScreen';
 import CourseListScreen from './screens/CourseListScreen';
 import FriendDetailScreen from './screens/FriendDetailScreen';
@@ -50,6 +50,7 @@ export default function App() {
         </Tabs.Navigator>
         <StatusBar style="auto" />
       </NavigationContainer>
+      <ConfirmHost />
     </SafeAreaProvider>
   );
 }
