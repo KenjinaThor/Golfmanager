@@ -26,3 +26,16 @@ export function resolveSupabaseConfig(rawUrl?: string, rawKey?: string): Supabas
   }
   return { url, key };
 }
+
+/** Verständliche Meldung für typische Anmelde-/Netzwerkfehler. */
+export function friendlyAuthError(message: string, host?: string | null): string {
+  const m = message.toLowerCase();
+  if (/failed to fetch|networkerror|load failed|network request failed/.test(m))
+    return `Der Server${host ? ` «${host}»` : ''} ist nicht erreichbar.\n\nPrüfe:\n• Stimmt die Adresse im GitHub-Secret (Supabase → Connect)?\n• Blockiert Firmennetz, VPN oder Werbeblocker supabase.co? Teste mit mobilen Daten.\n• Ist das Supabase-Projekt aktiv (nicht pausiert)?`;
+  if (/user already registered/.test(m)) return 'Diese E-Mail ist schon registriert. Bitte anmelden.';
+  if (/email not confirmed/.test(m)) return 'Die E-Mail ist noch nicht bestätigt. Bitte den Link in der Bestätigungs-Mail öffnen.';
+  if (/invalid login credentials/.test(m)) return 'E-Mail oder Passwort stimmt nicht.';
+  if (/rate limit/.test(m)) return 'Zu viele E-Mails in kurzer Zeit. Bitte etwas warten und erneut versuchen.';
+  if (/password should be at least/.test(m)) return 'Das Passwort braucht mindestens 6 Zeichen.';
+  return message;
+}

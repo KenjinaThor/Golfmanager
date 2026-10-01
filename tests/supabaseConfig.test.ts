@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { resolveSupabaseConfig } from '../src/lib/supabaseConfig';
+import { friendlyAuthError, resolveSupabaseConfig } from '../src/lib/supabaseConfig';
 
 test('nicht konfiguriert → null (App läuft lokal)', () => {
   assert.equal(resolveSupabaseConfig('', ''), null);
@@ -22,4 +22,12 @@ test('geheime Schlüssel werden abgelehnt', () => {
   const jwt = (role: string) => `eyJhbGciOiJIUzI1NiJ9.${Buffer.from(JSON.stringify({ role })).toString('base64url')}.sig`;
   assert.ok('error' in (resolveSupabaseConfig('https://abc.supabase.co', jwt('service_role')) as object));
   assert.deepEqual(resolveSupabaseConfig('https://abc.supabase.co', jwt('anon')), { url: 'https://abc.supabase.co', key: jwt('anon') });
+});
+
+test('Netzwerkfehler werden verständlich erklärt, andere Fehler übersetzt', () => {
+  const msg = friendlyAuthError('Failed to fetch', 'abc.supabase.co');
+  assert.ok(msg.includes('abc.supabase.co') && msg.includes('nicht erreichbar'));
+  assert.equal(friendlyAuthError('User already registered'), 'Diese E-Mail ist schon registriert. Bitte anmelden.');
+  assert.equal(friendlyAuthError('Invalid login credentials'), 'E-Mail oder Passwort stimmt nicht.');
+  assert.equal(friendlyAuthError('Etwas Unbekanntes'), 'Etwas Unbekanntes');
 });
