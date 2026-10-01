@@ -14,3 +14,6 @@ Quelle: offizielle Blätter «Waldkirch … 2026 – Course Handicaps» (12 Rout
 - Kombinationen: Markerpaare wie `R27-Gr28` wählen je Platz die Distanzzeile (Loch 1–9 erster, 10–18 zweiter Platz).
 - 9-Loch-Plätze: Stroke Index = Rang 1–9 der «vorne»-Werte (entspricht dem Heft). Platzvorgabe = HI/2 × Slope/113 + (CR − Par).
 - Kontrolle: `npm run import-courses` prüft Par je Route gegen das Rating-Blatt; die Formel stimmt bei 10.817 von 10.828 Tabellenwerten exakt (Rest: ±1 an Tabellenkanten).
+
+## waldkirch-kurzplatz.csv
+Quelle: «26_SK_Waldkirch_03_Loch» (Kurzplatz). 3 Löcher A–C (Par 3), auf der Karte zweimal hintereinander (6 Löcher, Par 18); zwei Abschlagzeilen (Marker 04: 758 m, Marker 03: 698 m). Kein Rating/Slope → in der App ohne Platzvorgabe, nur Brutto. Der Stroke Index (3/2/1) ist nur für 3 Löcher angegeben und wird nicht angewendet.

@@ -31,6 +31,8 @@ export interface Course {
   holes: Hole[];
   /** false = Daten sind Platzhalter und müssen geprüft werden */
   verified: boolean;
+  /** true = Übungsplatz ohne Rating: keine Platzvorgabe, nur Brutto */
+  noHandicap?: boolean;
 }
 
 export interface Profile {

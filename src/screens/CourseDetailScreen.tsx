@@ -32,13 +32,18 @@ export default function CourseDetailScreen({ route, navigation }: any) {
         <Text>
           {teeInfo.markers ? `${teeInfo.markers} · ` : ''}{rating ? `CR ${rating.rating} · Slope ${rating.slope}` : 'CR/Slope unbekannt'} · Par {par}
         </Text>
-        {!rating && (
+        {course.noHandicap && (
+          <Text style={{ color: colors.mute, fontSize: 12 }}>
+            Übungsplatz ohne Rating: keine Platzvorgabe, es zählen nur die Bruttoschläge.
+          </Text>
+        )}
+        {!rating && !course.noHandicap && (
           <Text style={{ color: colors.mute, fontSize: 12 }}>
             Ohne offizielles Rating/Slope wird die Platzvorgabe nur angenähert (≈ Handicap-Index).
           </Text>
         )}
         <Text style={{ fontWeight: '700', marginTop: 4 }}>
-          Deine Platzvorgabe: {courseHandicap(hcp, teeInfo, par, gender, course.holes.length)} (HCP-Index {hcp})
+          {course.noHandicap ? 'Keine Platzvorgabe' : `Deine Platzvorgabe: ${courseHandicap(hcp, teeInfo, par, gender, course.holes.length)} (HCP-Index ${hcp})`}
         </Text>
         <Btn
           title="Runde starten"

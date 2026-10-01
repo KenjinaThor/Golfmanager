@@ -145,10 +145,26 @@ for (const r of parseCsv('data/tees.csv')) {
     });
   }
 }
+// Waldkirch Kurzplatz (Übungsplatz): Löcher A–C, auf der Karte zweimal gespielt (6 Löcher, Par 18), ohne Rating.
+{
+  const rows = parseCsv('data/scorecards/waldkirch-kurzplatz.csv');
+  courses.set('waldkirch-kurzplatz', {
+    id: 'waldkirch-kurzplatz',
+    name: 'Golfpark Waldkirch – Kurzplatz (3 Loch A–C, 2× gespielt)',
+    region: 'St. Gallen',
+    verified: true,
+    noHandicap: true,
+    tees: [
+      { id: 'm04', name: 'Marker 04', markers: '04', ratings: {} },
+      { id: 'm03', name: 'Marker 03', markers: '03', ratings: {} },
+    ],
+    holes: rows.map((r) => ({ number: +r.hole, par: +r.par, hcpIndex: +r.index, distances: { m04: +r.dist_m04, m03: +r.dist_m03 } })),
+  });
+}
 for (const c of courses.values()) {
   c.holes.sort((a, b) => a.number - b.number);
   const idx = c.holes.map((h) => h.hcpIndex).sort((a, b) => a - b).join();
-  if (idx !== Array.from({ length: c.holes.length }, (_, i) => i + 1).join())
+  if (!c.noHandicap && idx !== Array.from({ length: c.holes.length }, (_, i) => i + 1).join())
     throw new Error(`${c.id}: Stroke Index nicht 1..${c.holes.length} eindeutig`);
 }
 writeFileSync('src/data/courses.json', JSON.stringify([...courses.values()], null, 1) + '\n');

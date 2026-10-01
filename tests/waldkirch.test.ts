@@ -35,7 +35,7 @@ for (const [id, card] of Object.entries(CARDS)) {
 }
 
 test('alle Waldkirch-Plätze haben Stroke Index 1..n genau einmal', () => {
-  for (const c of courses.filter((x) => x.id.startsWith('waldkirch'))) {
+  for (const c of courses.filter((x) => x.id.startsWith('waldkirch') && !x.noHandicap)) {
     assert.deepEqual(c.holes.map((h) => h.hcpIndex).sort((a, b) => a - b), Array.from({ length: c.holes.length }, (_, i) => i + 1), c.id);
   }
 });
@@ -71,4 +71,18 @@ test('Waldkirch: Marker wählt die Distanzzeile je Platz (Rot-Grün, Back Standa
 test('Waldkirch: 9-Loch-Plätze haben Stroke Index 1–9', () => {
   const c = get('waldkirch-blau-9');
   assert.deepEqual(c.holes.map((h) => h.hcpIndex), [3, 2, 5, 7, 8, 1, 4, 6, 9]); // wie im Heft
+});
+
+test('Waldkirch Kurzplatz: 6 Löcher, Par 18, Distanz-Totale wie auf der Karte, keine Platzvorgabe', () => {
+  const c = get('waldkirch-kurzplatz');
+  assert.equal(c.holes.length, 6);
+  assert.equal(c.holes.reduce((s, h) => s + h.par, 0), 18);
+  assert.equal(c.holes.reduce((s, h) => s + h.distances.m04, 0), 758);
+  assert.equal(c.holes.reduce((s, h) => s + h.distances.m03, 0), 698);
+  assert.equal(c.noHandicap, true);
+});
+
+test('Es sind nur Waldkirch-Plätze freigeschaltet', () => {
+  assert.equal(courses.length, 13);
+  assert.ok(courses.every((c) => c.id.startsWith('waldkirch') && c.verified));
 });

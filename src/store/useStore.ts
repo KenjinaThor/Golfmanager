@@ -63,7 +63,9 @@ export const useStore = create<State>()(
             teeId,
             date: new Date().toISOString(),
             handicapIndex: profile.handicapIndex,
-            courseHandicap: courseHandicap(profile.handicapIndex, tee, coursePar(course), profile.gender ?? 'men', course.holes.length),
+            courseHandicap: course.noHandicap
+              ? 0
+              : courseHandicap(profile.handicapIndex, tee, coursePar(course), profile.gender ?? 'men', course.holes.length),
             holes: emptyScores(course.holes),
             completed: false,
           },
