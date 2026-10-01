@@ -5,10 +5,10 @@
  * Nutzung: npm run import-courses
  */
 import { readFileSync, writeFileSync } from 'node:fs';
-import { Course, Tee, TeeId } from '../src/types';
+import { Course, Tee } from '../src/types';
 
-const TEE_IDS: TeeId[] = ['white', 'yellow', 'blue', 'red'];
-const TEE_NAMES: Record<TeeId, string> = { white: 'Weiss', yellow: 'Gelb', blue: 'Blau', red: 'Rot' };
+const TEE_IDS = ['white', 'yellow', 'blue', 'red'];
+const TEE_NAMES: Record<string, string> = { white: 'Weiss', yellow: 'Gelb', blue: 'Blau', red: 'Rot' };
 
 function parseCsv(path: string): Record<string, string>[] {
   const [head, ...lines] = readFileSync(path, 'utf8').trim().split(/\r?\n/);
@@ -35,70 +35,112 @@ for (const r of parseCsv('data/courses.csv')) {
   });
 }
 for (const r of parseCsv('data/tees.csv')) {
-  const tee: Tee = { id: r.tee as TeeId, name: TEE_NAMES[r.tee as TeeId], rating: +r.rating, slope: +r.slope };
+  const rt = { rating: +r.rating, slope: +r.slope };
+  const tee: Tee = { id: r.tee, name: TEE_NAMES[r.tee], ratings: { men: rt, ladies: rt } };
   courses.get(r.id)?.tees.push(tee);
 }
-// Waldkirch: 4 Neunlochplätze, je 2 (geordnet) zu einer 18-Loch-Runde kombinierbar.
-// Loch 1–9 = erster Platz mit index_front, Loch 10–18 = zweiter Platz mit index_back (Kartenspalte «1/10»).
-// Zeilenreihenfolge der Abschläge = Weiss, Gelb, Blau, Rot (längste → kürzeste Zeile; deckt sich mit Golfpass-Totalen).
-// Course Rating/Slope sind für die Kombinationen nicht bekannt → null.
+// ---------------------------------------------------------------------------------------------
+// Golfpark Waldkirch (offizielle Scorekarten + Rating-Blätter 2026)
+//   data/scorecards/waldkirch-loops.csv    Lochdaten der 4 Neunlochplätze
+//   data/scorecards/waldkirch-ratings.csv  CR/Slope je Route, Geschlecht und Abschlag (Herren/Damen)
+// Routen: 4× 9 Loch, 6 Kombinationen (Loch 1–9 = erster Platz mit Index «vorne», Loch 10–18 = zweiter Platz mit
+// Index «hinten»), sowie die zwei Heft-Routen Orange und Schwarz mit eigenem Ablauf und Index.
+// ---------------------------------------------------------------------------------------------
 {
-  const WALDKIRCH_TEES: TeeId[] = ['white', 'yellow', 'blue', 'red'];
-  const LOOP_NAMES: Record<string, string> = { blau: 'Blau', gelb: 'Gelb', rot: 'Rot', gruen: 'Grün' };
-  type Row = { par: number; front: number; back: number; dist: Record<number, number[]> };
-  const loops: Record<string, Row[]> = {};
+  const TEES = [
+    { id: 'back', name: 'Back Tees' },
+    { id: 'backStandard', name: 'Back Standard Tees' },
+    { id: 'standard', name: 'Standard Tees' },
+    { id: 'frontStandard', name: 'Front Standard Tees' },
+  ];
+  const LOOP_LABEL: Record<string, string> = { blau: 'Blau', gelb: 'Gelb', rot: 'Rot', gruen: 'Grün' };
+  const CODE: Record<string, string> = { b: 'blau', g: 'gelb', gr: 'gruen', r: 'rot' }; // Markerkürzel, z. B. B28, Gr26
+
+  type LoopHole = { par: number; front: number; back: number; dist: Record<number, number> };
+  const loops: Record<string, LoopHole[]> = {};
   for (const r of parseCsv('data/scorecards/waldkirch-loops.csv')) {
-    const hole = (loops[r.loop] ??= [])[+r.hole - 1] ??= { par: +r.par, front: +r.index_front, back: +r.index_back, dist: {} };
-    (hole.dist[+r.tee_row] ??= []).push(+r.distance_m);
+    (loops[r.loop] ??= [])[+r.hole - 1] ??= { par: +r.par, front: +r.index_front, back: +r.index_back, dist: {} };
+    loops[r.loop][+r.hole - 1].dist[+r.tee_row] = +r.distance_m;
   }
-  const teeRowsOf = (loop: string) => Object.keys(loops[loop][0].dist).map(Number).sort((a, b) => b - a);
-  // Offizielle 18-Loch-Routen laut Heft «Waldkirch» (Strokesaver): Ablauf und Stroke Index je Loch.
-  // Schwarz: Grün 1–9, dann Rot 7,8,9,1–6 (Index = Kartenwerte). Orange: Blau 1–2, Gelb 9, Gelb 1–8, Blau 3–9
-  // (eigener Index, weicht bei Blau 1/2 und Gelb 7/8 von der Karte ab).
+  const rowsOf = (loop: string) => Object.keys(loops[loop][0].dist).map(Number).sort((a, b) => b - a); // lang → kurz
+
+  type Rating = { gender: 'men' | 'ladies'; markers: string; rating: number; par: number; slope: number };
+  const ratings = new Map<string, Map<string, Rating>>(); // route → tee_name → men/ladies
+  const ratingKey = (route: string) => route;
+  for (const r of parseCsv('data/scorecards/waldkirch-ratings.csv')) {
+    const m = ratings.get(ratingKey(r.route)) ?? new Map<string, Rating>();
+    m.set(`${r.tee_name}|${r.gender}`, { gender: r.gender as 'men' | 'ladies', markers: r.markers, rating: +r.course_rating, par: +r.par, slope: +r.slope });
+    ratings.set(ratingKey(r.route), m);
+  }
+
+  const slug = (label: string) => 'waldkirch-' + label.toLowerCase().replace(/ü/g, 'ue').replace(/[^a-z0-9]+/g, '-');
   const seq = (loop: string, from: number, to: number) =>
     Array.from({ length: to - from + 1 }, (_, i) => [loop, from + i] as [string, number]);
-  const ROUTES = [
-    {
-      id: 'waldkirch-schwarz', name: 'Golfpark Waldkirch – Schwarz (Grün/Rot)',
-      holes: [...seq('gruen', 1, 9), ...seq('rot', 7, 9), ...seq('rot', 1, 6)],
-      index: [7, 9, 11, 3, 15, 5, 13, 1, 17, 2, 18, 8, 6, 16, 4, 14, 10, 12],
-    },
-    {
-      id: 'waldkirch-orange', name: 'Golfpark Waldkirch – Orange (Blau/Gelb)',
-      holes: [...seq('blau', 1, 2), ...seq('gelb', 9, 9), ...seq('gelb', 1, 8), ...seq('blau', 3, 9)],
-      index: [9, 7, 15, 13, 3, 11, 5, 17, 1, 6, 4, 10, 14, 16, 2, 8, 12, 18],
-    },
-  ];
-  for (const r of ROUTES) {
-    courses.set(r.id, {
-      id: r.id,
-      name: r.name,
-      region: 'St. Gallen',
-      verified: true,
-      tees: WALDKIRCH_TEES.map((t) => ({ id: t, name: TEE_NAMES[t], rating: null, slope: null })),
-      holes: r.holes.map(([loop, n], i) => ({
-        number: i + 1,
-        par: loops[loop][n - 1].par,
-        hcpIndex: r.index[i],
-        distances: Object.fromEntries(WALDKIRCH_TEES.map((t, k) => [t, loops[loop][n - 1].dist[teeRowsOf(loop)[k]][0]])),
-      })),
+  const rank9 = (vals: number[]) => vals.map((v) => [...vals].sort((a, b) => a - b).indexOf(v) + 1);
+
+  interface RouteDef {
+    label: string; // Schlüssel in waldkirch-ratings.csv
+    name: string;
+    holes: [string, number][]; // [Platz, Lochnummer im Neunlochplatz]
+    index: number[];
+    /** liefert pro Abschlag-Position (0..3) und Loch die Distanz */
+    dist: (tee: number, holeNo: number, loop: string, n: number, markers: string) => number;
+  }
+  const byPosition: RouteDef['dist'] = (tee, _h, loop, n) => loops[loop][n - 1].dist[rowsOf(loop)[tee]];
+  // Marker wie «R27-Gr28» wählen je Platz die genaue Distanzzeile (Kombinationen)
+  const byMarker: RouteDef['dist'] = (_t, holeNo, loop, n, markers) => {
+    const row = markers.split('-').map((m) => /^([A-Za-z]+)(\d+)$/.exec(m)!).map(([, c, num]) => [CODE[c.toLowerCase()], +num]).find(([l]) => l === loop);
+    return loops[loop][n - 1].dist[row![1] as number];
+  };
+
+  const defs: RouteDef[] = [];
+  for (const l of Object.keys(loops)) {
+    defs.push({
+      label: LOOP_LABEL[l], name: `Golfpark Waldkirch – ${LOOP_LABEL[l]} (9 Loch)`, holes: seq(l, 1, 9),
+      index: rank9(loops[l].map((h) => h.front)), dist: byMarker,
     });
   }
-  for (const a of Object.keys(loops)) for (const b of Object.keys(loops)) {
-    if (a === b) continue;
-    const id = `waldkirch-${a}-${b}`;
-    const holes = [...loops[a].map((h, i) => ({ h, i, front: true, loop: a })), ...loops[b].map((h, i) => ({ h, i, front: false, loop: b }))];
+  for (const [a, b] of [['blau', 'gelb'], ['blau', 'gruen'], ['blau', 'rot'], ['gruen', 'gelb'], ['rot', 'gelb'], ['rot', 'gruen']]) {
+    defs.push({
+      label: `${LOOP_LABEL[a]}-${LOOP_LABEL[b]}`, name: `Golfpark Waldkirch – ${LOOP_LABEL[a]}/${LOOP_LABEL[b]}`,
+      holes: [...seq(a, 1, 9), ...seq(b, 1, 9)],
+      index: [...loops[a].map((h) => h.front), ...loops[b].map((h) => h.back)], dist: byMarker,
+    });
+  }
+  defs.push(
+    {
+      label: 'Schwarz', name: 'Golfpark Waldkirch – Schwarz (Grün/Rot)',
+      holes: [...seq('gruen', 1, 9), ...seq('rot', 7, 9), ...seq('rot', 1, 6)],
+      index: [7, 9, 11, 3, 15, 5, 13, 1, 17, 2, 18, 8, 6, 16, 4, 14, 10, 12], dist: byPosition,
+    },
+    {
+      label: 'Orange', name: 'Golfpark Waldkirch – Orange (Blau/Gelb)',
+      holes: [...seq('blau', 1, 2), ...seq('gelb', 9, 9), ...seq('gelb', 1, 8), ...seq('blau', 3, 9)],
+      index: [9, 7, 15, 13, 3, 11, 5, 17, 1, 6, 4, 10, 14, 16, 2, 8, 12, 18], dist: byPosition,
+    },
+  );
+
+  for (const d of defs) {
+    const rt = ratings.get(d.label);
+    if (!rt) throw new Error(`Keine Ratings für ${d.label}`);
+    const par = d.holes.reduce((sum, [l, n]) => sum + loops[l][n - 1].par, 0);
+    const tees: Tee[] = TEES.map((t, k) => {
+      const men = rt.get(`${t.name}|men`)!;
+      const ladies = rt.get(`${t.name}|ladies`)!;
+      for (const x of [men, ladies]) if (x.par !== par) throw new Error(`${d.label}: Par ${par} ≠ Rating-Blatt ${x.par}`);
+      return {
+        id: t.id, name: t.name, markers: men.markers,
+        ratings: { men: { rating: men.rating, slope: men.slope }, ladies: { rating: ladies.rating, slope: ladies.slope } },
+      };
+    });
+    const id = slug(d.label.replace(/^(Blau|Gelb|Grün|Rot)$/, '$1-9'));
     courses.set(id, {
-      id,
-      name: `Golfpark Waldkirch – ${LOOP_NAMES[a]}/${LOOP_NAMES[b]}`,
-      region: 'St. Gallen',
-      verified: true,
-      tees: WALDKIRCH_TEES.map((t) => ({ id: t, name: TEE_NAMES[t], rating: null, slope: null })),
-      holes: holes.map(({ h, i, front, loop }, n) => ({
-        number: n + 1,
-        par: h.par,
-        hcpIndex: front ? h.front : h.back,
-        distances: Object.fromEntries(WALDKIRCH_TEES.map((t, k) => [t, h.dist[teeRowsOf(loop)[k]][0]])),
+      id, name: d.name, region: 'St. Gallen', verified: true, tees,
+      holes: d.holes.map(([loop, n], i) => ({
+        number: i + 1,
+        par: loops[loop][n - 1].par,
+        hcpIndex: d.index[i],
+        distances: Object.fromEntries(TEES.map((t, k) => [t.id, d.dist(k, i + 1, loop, n, tees[k].markers!)])),
       })),
     });
   }

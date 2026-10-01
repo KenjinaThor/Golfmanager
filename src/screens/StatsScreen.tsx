@@ -15,7 +15,7 @@ export default function StatsScreen({ navigation }: any) {
   const course = sel ? getCourse(sel) : undefined;
 
   const withTotals = rounds.map((r) => ({ r, t: roundTotals(r, getCourse(r.courseId)?.holes ?? []) }));
-  const complete = withTotals.filter((x) => x.r.completed && x.t.played === 18);
+  const complete = withTotals.filter((x) => x.r.completed && x.t.played === (getCourse(x.r.courseId)?.holes.length ?? 18));
   const bestGross = complete.length ? Math.min(...complete.map((x) => x.t.gross)) : null;
   const bestSbf = complete.length ? Math.max(...complete.map((x) => x.t.stableford)) : null;
   const lost = withTotals.reduce((n, x) => n + x.t.lostBalls, 0);
@@ -28,7 +28,7 @@ export default function StatsScreen({ navigation }: any) {
       <Card>
         <H>Übersicht</H>
         <Text>Runden: {rounds.length} · Verlorene Bälle total: {lost}</Text>
-        <Text>Beste Brutto-Runde (18 L.): {bestGross ?? '-'} · Bester Stableford: {bestSbf ?? '-'}</Text>
+        <Text>Beste Brutto-Runde (komplett): {bestGross ?? '-'} · Bester Stableford: {bestSbf ?? '-'}</Text>
       </Card>
 
       <Card>

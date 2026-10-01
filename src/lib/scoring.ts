@@ -1,13 +1,20 @@
-import { Course, Hole, HoleScore, Round, Tee } from '../types';
+import { Course, Gender, Hole, HoleScore, Round, Tee } from '../types';
 
 export const coursePar = (c: Pick<Course, 'holes'>) => c.holes.reduce((s, h) => s + h.par, 0);
 
-/** WHS: Platzvorgabe = HCP-Index × Slope/113 + (Course Rating − Par) */
-export function courseHandicap(handicapIndex: number, tee: Tee, par: number): number {
-  // Ohne offizielles Rating/Slope: Näherung Platzvorgabe ≈ Handicap-Index
-  if (tee.rating == null || tee.slope == null) return Math.round(handicapIndex);
-  return Math.round(handicapIndex * (tee.slope / 113) + (tee.rating - par));
+/**
+ * WHS: Platzvorgabe = HCP-Index × Slope/113 + (Course Rating − Par).
+ * Bei 9 Löchern gilt der halbe Handicap-Index (so auch in den Waldkirch-Tabellen).
+ * Ohne Rating/Slope: Näherung über den Handicap-Index.
+ */
+export function courseHandicap(handicapIndex: number, tee: Tee, par: number, gender: Gender = 'men', holeCount = 18): number {
+  const hi = holeCount === 9 ? handicapIndex / 2 : handicapIndex;
+  const r = tee.ratings[gender] ?? tee.ratings.men;
+  if (!r) return Math.round(hi);
+  return Math.round(hi * (r.slope / 113) + (r.rating - par));
 }
+
+export const teeRating = (tee: Tee, gender: Gender) => tee.ratings[gender] ?? tee.ratings.men ?? null;
 
 /** Vorgabeschläge auf einem Loch (auch Plus-Handicaps: negative Werte). */
 export function strokesReceived(ch: number, hcpIndex: number, holeCount = 18): number {

@@ -5,7 +5,7 @@ import { Course } from '../src/types';
 
 const courses = raw as Course[];
 const get = (id: string) => courses.find((c) => c.id === id)!;
-const tees = ['white', 'yellow', 'blue', 'red'] as const;
+const tees = ['back', 'backStandard', 'standard', 'frontStandard'] as const;
 const sum = (c: Course, t: (typeof tees)[number], a: number, b: number) =>
   c.holes.slice(a, b).reduce((s, h) => s + (h.distances[t] ?? 0), 0);
 
@@ -34,8 +34,41 @@ for (const [id, card] of Object.entries(CARDS)) {
   });
 }
 
-test('alle Waldkirch-Plätze haben Stroke Index 1–18 genau einmal', () => {
+test('alle Waldkirch-Plätze haben Stroke Index 1..n genau einmal', () => {
   for (const c of courses.filter((x) => x.id.startsWith('waldkirch'))) {
-    assert.deepEqual(c.holes.map((h) => h.hcpIndex).sort((a, b) => a - b), Array.from({ length: 18 }, (_, i) => i + 1), c.id);
+    assert.deepEqual(c.holes.map((h) => h.hcpIndex).sort((a, b) => a - b), Array.from({ length: c.holes.length }, (_, i) => i + 1), c.id);
   }
+});
+
+test('Waldkirch: 12 Routen mit Rating, Par wie auf den Rating-Blättern', () => {
+  const pars: Record<string, number> = {
+    'waldkirch-blau-9': 35, 'waldkirch-gelb-9': 36, 'waldkirch-rot-9': 35, 'waldkirch-gruen-9': 35,
+    'waldkirch-blau-gelb': 71, 'waldkirch-blau-gruen': 70, 'waldkirch-blau-rot': 70,
+    'waldkirch-gruen-gelb': 71, 'waldkirch-rot-gelb': 71, 'waldkirch-rot-gruen': 70,
+    'waldkirch-schwarz': 70, 'waldkirch-orange': 71,
+  };
+  for (const [id, par] of Object.entries(pars)) {
+    const c = get(id);
+    assert.equal(c.holes.reduce((s, h) => s + h.par, 0), par, id);
+    for (const t of c.tees) assert.ok(t.ratings.men && t.ratings.ladies, `${id} ${t.id}`);
+  }
+});
+
+test('Waldkirch: Ratings aus den Blättern (Stichproben)', () => {
+  assert.deepEqual(get('waldkirch-blau-9').tees[0].ratings.men, { rating: 35.1, slope: 127 });
+  assert.deepEqual(get('waldkirch-rot-gruen').tees[1].ratings.ladies, { rating: 75.0, slope: 135 });
+  assert.deepEqual(get('waldkirch-orange').tees[3].ratings.men, { rating: 66.7, slope: 123 });
+  assert.equal(get('waldkirch-schwarz').tees[0].markers, '56');
+});
+
+test('Waldkirch: Marker wählt die Distanzzeile je Platz (Rot-Grün, Back Standard = R27-Gr28)', () => {
+  const c = get('waldkirch-rot-gruen');
+  assert.equal(c.tees[1].markers, 'R27-Gr28');
+  assert.equal(c.holes[0].distances.backStandard, 414); // Rot 1, Zeile 27
+  assert.equal(c.holes[9].distances.backStandard, 358); // Grün 1, Zeile 28 (nicht 338)
+});
+
+test('Waldkirch: 9-Loch-Plätze haben Stroke Index 1–9', () => {
+  const c = get('waldkirch-blau-9');
+  assert.deepEqual(c.holes.map((h) => h.hcpIndex), [3, 2, 5, 7, 8, 1, 4, 6, 9]); // wie im Heft
 });

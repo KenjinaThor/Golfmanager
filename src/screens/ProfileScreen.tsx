@@ -36,6 +36,12 @@ export default function ProfileScreen() {
         <Field label="Handicap-Index (−6 bis 54)" value={f.handicapIndex} onChangeText={set('handicapIndex')} keyboardType="decimal-pad" />
         <Field label="Heimclub" value={f.homeClub} onChangeText={set('homeClub')} />
         <Field label="Grösse (cm)" value={f.heightCm} onChangeText={set('heightCm')} keyboardType="number-pad" />
+        <Text style={{ fontSize: 12, color: colors.mute, marginBottom: 4 }}>Wertung (bestimmt Course Rating/Slope)</Text>
+        <Row style={{ gap: 8, marginBottom: 12 }}>
+          {(['men', 'ladies'] as Profile['gender'][]).map((g) => (
+            <Btn key={g} kind={(profile.gender ?? 'men') === g ? 'primary' : 'ghost'} title={g === 'men' ? 'Herren' : 'Damen'} onPress={() => setProfile({ gender: g })} />
+          ))}
+        </Row>
         <Text style={{ fontSize: 12, color: colors.mute, marginBottom: 4 }}>Spielhand</Text>
         <Row style={{ gap: 8, marginBottom: 12 }}>
           {(['right', 'left'] as Profile['handedness'][]).map((h) => (

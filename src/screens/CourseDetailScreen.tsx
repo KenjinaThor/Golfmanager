@@ -2,17 +2,19 @@ import React, { useState } from 'react';
 import { ScrollView, Text, View, Pressable } from 'react-native';
 import { Btn, Card, H, colors } from '../components/ui';
 import { getCourse } from '../data/courses';
-import { courseHandicap, coursePar } from '../lib/scoring';
+import { courseHandicap, coursePar, teeRating } from '../lib/scoring';
 import { useStore } from '../store/useStore';
 import { TeeId } from '../types';
 
 export default function CourseDetailScreen({ route, navigation }: any) {
   const course = getCourse(route.params.courseId)!;
   const hcp = useStore((s) => s.profile.handicapIndex);
+  const gender = useStore((s) => s.profile.gender ?? 'men');
   const startRound = useStore((s) => s.startRound);
   const [tee, setTee] = useState<TeeId>(course.tees[0].id);
   const teeInfo = course.tees.find((t) => t.id === tee)!;
   const par = coursePar(course);
+  const rating = teeRating(teeInfo, gender);
 
   return (
     <ScrollView contentContainerStyle={{ padding: 12 }}>
@@ -28,15 +30,15 @@ export default function CourseDetailScreen({ route, navigation }: any) {
           ))}
         </View>
         <Text>
-          {teeInfo.rating != null ? `CR ${teeInfo.rating} · Slope ${teeInfo.slope}` : 'CR/Slope unbekannt'} · Par {par}
+          {teeInfo.markers ? `${teeInfo.markers} · ` : ''}{rating ? `CR ${rating.rating} · Slope ${rating.slope}` : 'CR/Slope unbekannt'} · Par {par}
         </Text>
-        {teeInfo.rating == null && (
+        {!rating && (
           <Text style={{ color: colors.mute, fontSize: 12 }}>
             Ohne offizielles Rating/Slope wird die Platzvorgabe nur angenähert (≈ Handicap-Index).
           </Text>
         )}
         <Text style={{ fontWeight: '700', marginTop: 4 }}>
-          Deine Platzvorgabe: {courseHandicap(hcp, teeInfo, par)} (HCP-Index {hcp})
+          Deine Platzvorgabe: {courseHandicap(hcp, teeInfo, par, gender, course.holes.length)} (HCP-Index {hcp})
         </Text>
         <Btn
           title="Runde starten"

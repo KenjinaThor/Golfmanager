@@ -5,7 +5,7 @@ import { Round } from '../src/types';
 
 test('Platzvorgabe nach WHS', () => {
   // 18.4 × 130/113 + (71.2 − 72) = 20.4 → 20
-  assert.equal(courseHandicap(18.4, { id: 'yellow', name: 'Gelb', rating: 71.2, slope: 130 }, 72), 20);
+  assert.equal(courseHandicap(18.4, { id: 'yellow', name: 'Gelb', ratings: { men: { rating: 71.2, slope: 130 } } }, 72), 20);
 });
 
 test('Vorgabeschläge werden nach Stroke Index verteilt', () => {
@@ -37,5 +37,11 @@ test('Beste/schlechteste Runde pro Loch mit Datum', () => {
 });
 
 test('Platzvorgabe ohne Rating/Slope: Näherung über Handicap-Index', () => {
-  assert.equal(courseHandicap(18.4, { id: 'white', name: 'Weiss', rating: null, slope: null }, 70), 18);
+  assert.equal(courseHandicap(18.4, { id: 'back', name: 'Back', ratings: {} }, 70), 18);
+});
+
+test('Damen-Rating wird verwendet, 9 Löcher nutzen den halben Index', () => {
+  const tee = { id: 'back', name: 'Back', ratings: { men: { rating: 35.1, slope: 127 }, ladies: { rating: 38.0, slope: 137 } } };
+  assert.equal(courseHandicap(5.0, tee, 35, 'men', 9), 3); // Tabelle Blau Herren B28: 4.3–6.0 → 3
+  assert.equal(courseHandicap(10.0, tee, 35, 'ladies', 9), 9);
 });

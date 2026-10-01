@@ -8,26 +8,58 @@
    {
     "id": "white",
     "name": "Weiss",
-    "rating": 72.4,
-    "slope": 132
+    "ratings": {
+     "men": {
+      "rating": 72.4,
+      "slope": 132
+     },
+     "ladies": {
+      "rating": 72.4,
+      "slope": 132
+     }
+    }
    },
    {
     "id": "yellow",
     "name": "Gelb",
-    "rating": 70.8,
-    "slope": 128
+    "ratings": {
+     "men": {
+      "rating": 70.8,
+      "slope": 128
+     },
+     "ladies": {
+      "rating": 70.8,
+      "slope": 128
+     }
+    }
    },
    {
     "id": "blue",
     "name": "Blau",
-    "rating": 69,
-    "slope": 122
+    "ratings": {
+     "men": {
+      "rating": 69,
+      "slope": 122
+     },
+     "ladies": {
+      "rating": 69,
+      "slope": 122
+     }
+    }
    },
    {
     "id": "red",
     "name": "Rot",
-    "rating": 71.2,
-    "slope": 125
+    "ratings": {
+     "men": {
+      "rating": 71.2,
+      "slope": 125
+     },
+     "ladies": {
+      "rating": 71.2,
+      "slope": 125
+     }
+    }
    }
   ],
   "holes": [
@@ -240,26 +272,58 @@
    {
     "id": "white",
     "name": "Weiss",
-    "rating": 72.4,
-    "slope": 132
+    "ratings": {
+     "men": {
+      "rating": 72.4,
+      "slope": 132
+     },
+     "ladies": {
+      "rating": 72.4,
+      "slope": 132
+     }
+    }
    },
    {
     "id": "yellow",
     "name": "Gelb",
-    "rating": 70.8,
-    "slope": 128
+    "ratings": {
+     "men": {
+      "rating": 70.8,
+      "slope": 128
+     },
+     "ladies": {
+      "rating": 70.8,
+      "slope": 128
+     }
+    }
    },
    {
     "id": "blue",
     "name": "Blau",
-    "rating": 69,
-    "slope": 122
+    "ratings": {
+     "men": {
+      "rating": 69,
+      "slope": 122
+     },
+     "ladies": {
+      "rating": 69,
+      "slope": 122
+     }
+    }
    },
    {
     "id": "red",
     "name": "Rot",
-    "rating": 71.2,
-    "slope": 125
+    "ratings": {
+     "men": {
+      "rating": 71.2,
+      "slope": 125
+     },
+     "ladies": {
+      "rating": 71.2,
+      "slope": 125
+     }
+    }
    }
   ],
   "holes": [
@@ -472,26 +536,58 @@
    {
     "id": "white",
     "name": "Weiss",
-    "rating": 72.4,
-    "slope": 132
+    "ratings": {
+     "men": {
+      "rating": 72.4,
+      "slope": 132
+     },
+     "ladies": {
+      "rating": 72.4,
+      "slope": 132
+     }
+    }
    },
    {
     "id": "yellow",
     "name": "Gelb",
-    "rating": 70.8,
-    "slope": 128
+    "ratings": {
+     "men": {
+      "rating": 70.8,
+      "slope": 128
+     },
+     "ladies": {
+      "rating": 70.8,
+      "slope": 128
+     }
+    }
    },
    {
     "id": "blue",
     "name": "Blau",
-    "rating": 69,
-    "slope": 122
+    "ratings": {
+     "men": {
+      "rating": 69,
+      "slope": 122
+     },
+     "ladies": {
+      "rating": 69,
+      "slope": 122
+     }
+    }
    },
    {
     "id": "red",
     "name": "Rot",
-    "rating": 71.2,
-    "slope": 125
+    "ratings": {
+     "men": {
+      "rating": 71.2,
+      "slope": 125
+     },
+     "ladies": {
+      "rating": 71.2,
+      "slope": 125
+     }
+    }
    }
   ],
   "holes": [
@@ -704,26 +800,58 @@
    {
     "id": "white",
     "name": "Weiss",
-    "rating": 72.4,
-    "slope": 132
+    "ratings": {
+     "men": {
+      "rating": 72.4,
+      "slope": 132
+     },
+     "ladies": {
+      "rating": 72.4,
+      "slope": 132
+     }
+    }
    },
    {
     "id": "yellow",
     "name": "Gelb",
-    "rating": 70.8,
-    "slope": 128
+    "ratings": {
+     "men": {
+      "rating": 70.8,
+      "slope": 128
+     },
+     "ladies": {
+      "rating": 70.8,
+      "slope": 128
+     }
+    }
    },
    {
     "id": "blue",
     "name": "Blau",
-    "rating": 69,
-    "slope": 122
+    "ratings": {
+     "men": {
+      "rating": 69,
+      "slope": 122
+     },
+     "ladies": {
+      "rating": 69,
+      "slope": 122
+     }
+    }
    },
    {
     "id": "red",
     "name": "Rot",
-    "rating": 71.2,
-    "slope": 125
+    "ratings": {
+     "men": {
+      "rating": 71.2,
+      "slope": 125
+     },
+     "ladies": {
+      "rating": 71.2,
+      "slope": 125
+     }
+    }
    }
   ],
   "holes": [
@@ -936,26 +1064,58 @@
    {
     "id": "white",
     "name": "Weiss",
-    "rating": 72.4,
-    "slope": 132
+    "ratings": {
+     "men": {
+      "rating": 72.4,
+      "slope": 132
+     },
+     "ladies": {
+      "rating": 72.4,
+      "slope": 132
+     }
+    }
    },
    {
     "id": "yellow",
     "name": "Gelb",
-    "rating": 70.8,
-    "slope": 128
+    "ratings": {
+     "men": {
+      "rating": 70.8,
+      "slope": 128
+     },
+     "ladies": {
+      "rating": 70.8,
+      "slope": 128
+     }
+    }
    },
    {
     "id": "blue",
     "name": "Blau",
-    "rating": 69,
-    "slope": 122
+    "ratings": {
+     "men": {
+      "rating": 69,
+      "slope": 122
+     },
+     "ladies": {
+      "rating": 69,
+      "slope": 122
+     }
+    }
    },
    {
     "id": "red",
     "name": "Rot",
-    "rating": 71.2,
-    "slope": 125
+    "ratings": {
+     "men": {
+      "rating": 71.2,
+      "slope": 125
+     },
+     "ladies": {
+      "rating": 71.2,
+      "slope": 125
+     }
+    }
    }
   ],
   "holes": [
@@ -1168,26 +1328,58 @@
    {
     "id": "white",
     "name": "Weiss",
-    "rating": 72.4,
-    "slope": 132
+    "ratings": {
+     "men": {
+      "rating": 72.4,
+      "slope": 132
+     },
+     "ladies": {
+      "rating": 72.4,
+      "slope": 132
+     }
+    }
    },
    {
     "id": "yellow",
     "name": "Gelb",
-    "rating": 70.8,
-    "slope": 128
+    "ratings": {
+     "men": {
+      "rating": 70.8,
+      "slope": 128
+     },
+     "ladies": {
+      "rating": 70.8,
+      "slope": 128
+     }
+    }
    },
    {
     "id": "blue",
     "name": "Blau",
-    "rating": 69,
-    "slope": 122
+    "ratings": {
+     "men": {
+      "rating": 69,
+      "slope": 122
+     },
+     "ladies": {
+      "rating": 69,
+      "slope": 122
+     }
+    }
    },
    {
     "id": "red",
     "name": "Rot",
-    "rating": 71.2,
-    "slope": 125
+    "ratings": {
+     "men": {
+      "rating": 71.2,
+      "slope": 125
+     },
+     "ladies": {
+      "rating": 71.2,
+      "slope": 125
+     }
+    }
    }
   ],
   "holes": [
@@ -1400,26 +1592,58 @@
    {
     "id": "white",
     "name": "Weiss",
-    "rating": 72.4,
-    "slope": 132
+    "ratings": {
+     "men": {
+      "rating": 72.4,
+      "slope": 132
+     },
+     "ladies": {
+      "rating": 72.4,
+      "slope": 132
+     }
+    }
    },
    {
     "id": "yellow",
     "name": "Gelb",
-    "rating": 70.8,
-    "slope": 128
+    "ratings": {
+     "men": {
+      "rating": 70.8,
+      "slope": 128
+     },
+     "ladies": {
+      "rating": 70.8,
+      "slope": 128
+     }
+    }
    },
    {
     "id": "blue",
     "name": "Blau",
-    "rating": 69,
-    "slope": 122
+    "ratings": {
+     "men": {
+      "rating": 69,
+      "slope": 122
+     },
+     "ladies": {
+      "rating": 69,
+      "slope": 122
+     }
+    }
    },
    {
     "id": "red",
     "name": "Rot",
-    "rating": 71.2,
-    "slope": 125
+    "ratings": {
+     "men": {
+      "rating": 71.2,
+      "slope": 125
+     },
+     "ladies": {
+      "rating": 71.2,
+      "slope": 125
+     }
+    }
    }
   ],
   "holes": [
@@ -1632,26 +1856,58 @@
    {
     "id": "white",
     "name": "Weiss",
-    "rating": 72.4,
-    "slope": 132
+    "ratings": {
+     "men": {
+      "rating": 72.4,
+      "slope": 132
+     },
+     "ladies": {
+      "rating": 72.4,
+      "slope": 132
+     }
+    }
    },
    {
     "id": "yellow",
     "name": "Gelb",
-    "rating": 70.8,
-    "slope": 128
+    "ratings": {
+     "men": {
+      "rating": 70.8,
+      "slope": 128
+     },
+     "ladies": {
+      "rating": 70.8,
+      "slope": 128
+     }
+    }
    },
    {
     "id": "blue",
     "name": "Blau",
-    "rating": 69,
-    "slope": 122
+    "ratings": {
+     "men": {
+      "rating": 69,
+      "slope": 122
+     },
+     "ladies": {
+      "rating": 69,
+      "slope": 122
+     }
+    }
    },
    {
     "id": "red",
     "name": "Rot",
-    "rating": 71.2,
-    "slope": 125
+    "ratings": {
+     "men": {
+      "rating": 71.2,
+      "slope": 125
+     },
+     "ladies": {
+      "rating": 71.2,
+      "slope": 125
+     }
+    }
    }
   ],
   "holes": [
@@ -1864,26 +2120,58 @@
    {
     "id": "white",
     "name": "Weiss",
-    "rating": 72.4,
-    "slope": 132
+    "ratings": {
+     "men": {
+      "rating": 72.4,
+      "slope": 132
+     },
+     "ladies": {
+      "rating": 72.4,
+      "slope": 132
+     }
+    }
    },
    {
     "id": "yellow",
     "name": "Gelb",
-    "rating": 70.8,
-    "slope": 128
+    "ratings": {
+     "men": {
+      "rating": 70.8,
+      "slope": 128
+     },
+     "ladies": {
+      "rating": 70.8,
+      "slope": 128
+     }
+    }
    },
    {
     "id": "blue",
     "name": "Blau",
-    "rating": 69,
-    "slope": 122
+    "ratings": {
+     "men": {
+      "rating": 69,
+      "slope": 122
+     },
+     "ladies": {
+      "rating": 69,
+      "slope": 122
+     }
+    }
    },
    {
     "id": "red",
     "name": "Rot",
-    "rating": 71.2,
-    "slope": 125
+    "ratings": {
+     "men": {
+      "rating": 71.2,
+      "slope": 125
+     },
+     "ladies": {
+      "rating": 71.2,
+      "slope": 125
+     }
+    }
    }
   ],
   "holes": [
@@ -2096,26 +2384,58 @@
    {
     "id": "white",
     "name": "Weiss",
-    "rating": 72.4,
-    "slope": 132
+    "ratings": {
+     "men": {
+      "rating": 72.4,
+      "slope": 132
+     },
+     "ladies": {
+      "rating": 72.4,
+      "slope": 132
+     }
+    }
    },
    {
     "id": "yellow",
     "name": "Gelb",
-    "rating": 70.8,
-    "slope": 128
+    "ratings": {
+     "men": {
+      "rating": 70.8,
+      "slope": 128
+     },
+     "ladies": {
+      "rating": 70.8,
+      "slope": 128
+     }
+    }
    },
    {
     "id": "blue",
     "name": "Blau",
-    "rating": 69,
-    "slope": 122
+    "ratings": {
+     "men": {
+      "rating": 69,
+      "slope": 122
+     },
+     "ladies": {
+      "rating": 69,
+      "slope": 122
+     }
+    }
    },
    {
     "id": "red",
     "name": "Rot",
-    "rating": 71.2,
-    "slope": 125
+    "ratings": {
+     "men": {
+      "rating": 71.2,
+      "slope": 125
+     },
+     "ladies": {
+      "rating": 71.2,
+      "slope": 125
+     }
+    }
    }
   ],
   "holes": [
@@ -2320,465 +2640,677 @@
   ]
  },
  {
-  "id": "waldkirch-schwarz",
-  "name": "Golfpark Waldkirch – Schwarz (Grün/Rot)",
+  "id": "waldkirch-blau-9",
+  "name": "Golfpark Waldkirch – Blau (9 Loch)",
   "region": "St. Gallen",
   "verified": true,
   "tees": [
    {
-    "id": "white",
-    "name": "Weiss",
-    "rating": null,
-    "slope": null
+    "id": "back",
+    "name": "Back Tees",
+    "markers": "B28",
+    "ratings": {
+     "men": {
+      "rating": 35.1,
+      "slope": 127
+     },
+     "ladies": {
+      "rating": 38,
+      "slope": 137
+     }
+    }
    },
    {
-    "id": "yellow",
-    "name": "Gelb",
-    "rating": null,
-    "slope": null
+    "id": "backStandard",
+    "name": "Back Standard Tees",
+    "markers": "B27",
+    "ratings": {
+     "men": {
+      "rating": 34.3,
+      "slope": 123
+     },
+     "ladies": {
+      "rating": 37.1,
+      "slope": 133
+     }
+    }
    },
    {
-    "id": "blue",
-    "name": "Blau",
-    "rating": null,
-    "slope": null
+    "id": "standard",
+    "name": "Standard Tees",
+    "markers": "B25",
+    "ratings": {
+     "men": {
+      "rating": 33.3,
+      "slope": 121
+     },
+     "ladies": {
+      "rating": 36,
+      "slope": 128
+     }
+    }
    },
    {
-    "id": "red",
-    "name": "Rot",
-    "rating": null,
-    "slope": null
+    "id": "frontStandard",
+    "name": "Front Standard Tees",
+    "markers": "B24",
+    "ratings": {
+     "men": {
+      "rating": 32.7,
+      "slope": 118
+     },
+     "ladies": {
+      "rating": 35.1,
+      "slope": 127
+     }
+    }
    }
   ],
   "holes": [
    {
     "number": 1,
     "par": 4,
-    "hcpIndex": 7,
+    "hcpIndex": 3,
     "distances": {
-     "white": 358,
-     "yellow": 338,
-     "blue": 315,
-     "red": 296
+     "back": 335,
+     "backStandard": 315,
+     "standard": 295,
+     "frontStandard": 285
     }
    },
    {
     "number": 2,
-    "par": 4,
-    "hcpIndex": 9,
+    "par": 5,
+    "hcpIndex": 2,
     "distances": {
-     "white": 327,
-     "yellow": 327,
-     "blue": 307,
-     "red": 307
+     "back": 494,
+     "backStandard": 478,
+     "standard": 450,
+     "frontStandard": 429
     }
    },
    {
     "number": 3,
-    "par": 3,
-    "hcpIndex": 11,
+    "par": 4,
+    "hcpIndex": 5,
     "distances": {
-     "white": 182,
-     "yellow": 161,
-     "blue": 141,
-     "red": 131
+     "back": 321,
+     "backStandard": 311,
+     "standard": 293,
+     "frontStandard": 286
     }
    },
    {
     "number": 4,
-    "par": 5,
-    "hcpIndex": 3,
+    "par": 4,
+    "hcpIndex": 7,
     "distances": {
-     "white": 443,
-     "yellow": 424,
-     "blue": 372,
-     "red": 364
+     "back": 310,
+     "backStandard": 305,
+     "standard": 292,
+     "frontStandard": 287
     }
    },
    {
     "number": 5,
     "par": 3,
-    "hcpIndex": 15,
+    "hcpIndex": 8,
     "distances": {
-     "white": 173,
-     "yellow": 153,
-     "blue": 140,
-     "red": 127
+     "back": 182,
+     "backStandard": 162,
+     "standard": 142,
+     "frontStandard": 122
     }
    },
    {
     "number": 6,
     "par": 4,
-    "hcpIndex": 5,
+    "hcpIndex": 1,
     "distances": {
-     "white": 367,
-     "yellow": 351,
-     "blue": 321,
-     "red": 312
+     "back": 365,
+     "backStandard": 347,
+     "standard": 327,
+     "frontStandard": 307
     }
    },
    {
     "number": 7,
-    "par": 5,
-    "hcpIndex": 13,
+    "par": 3,
+    "hcpIndex": 4,
     "distances": {
-     "white": 462,
-     "yellow": 422,
-     "blue": 407,
-     "red": 383
+     "back": 180,
+     "backStandard": 152,
+     "standard": 137,
+     "frontStandard": 137
     }
    },
    {
     "number": 8,
-    "par": 4,
-    "hcpIndex": 1,
+    "par": 5,
+    "hcpIndex": 6,
     "distances": {
-     "white": 340,
-     "yellow": 330,
-     "blue": 308,
-     "red": 298
+     "back": 481,
+     "backStandard": 450,
+     "standard": 424,
+     "frontStandard": 384
     }
    },
    {
     "number": 9,
     "par": 3,
-    "hcpIndex": 17,
+    "hcpIndex": 9,
     "distances": {
-     "white": 140,
-     "yellow": 140,
-     "blue": 120,
-     "red": 120
-    }
-   },
-   {
-    "number": 10,
-    "par": 4,
-    "hcpIndex": 2,
-    "distances": {
-     "white": 343,
-     "yellow": 334,
-     "blue": 303,
-     "red": 282
-    }
-   },
-   {
-    "number": 11,
-    "par": 3,
-    "hcpIndex": 18,
-    "distances": {
-     "white": 126,
-     "yellow": 126,
-     "blue": 113,
-     "red": 113
-    }
-   },
-   {
-    "number": 12,
-    "par": 5,
-    "hcpIndex": 8,
-    "distances": {
-     "white": 461,
-     "yellow": 439,
-     "blue": 419,
-     "red": 385
-    }
-   },
-   {
-    "number": 13,
-    "par": 5,
-    "hcpIndex": 6,
-    "distances": {
-     "white": 451,
-     "yellow": 414,
-     "blue": 385,
-     "red": 365
-    }
-   },
-   {
-    "number": 14,
-    "par": 3,
-    "hcpIndex": 16,
-    "distances": {
-     "white": 192,
-     "yellow": 164,
-     "blue": 143,
-     "red": 131
-    }
-   },
-   {
-    "number": 15,
-    "par": 4,
-    "hcpIndex": 4,
-    "distances": {
-     "white": 372,
-     "yellow": 357,
-     "blue": 341,
-     "red": 323
-    }
-   },
-   {
-    "number": 16,
-    "par": 4,
-    "hcpIndex": 14,
-    "distances": {
-     "white": 350,
-     "yellow": 350,
-     "blue": 340,
-     "red": 340
-    }
-   },
-   {
-    "number": 17,
-    "par": 3,
-    "hcpIndex": 10,
-    "distances": {
-     "white": 169,
-     "yellow": 159,
-     "blue": 139,
-     "red": 134
-    }
-   },
-   {
-    "number": 18,
-    "par": 4,
-    "hcpIndex": 12,
-    "distances": {
-     "white": 348,
-     "yellow": 334,
-     "blue": 305,
-     "red": 295
+     "back": 139,
+     "backStandard": 139,
+     "standard": 120,
+     "frontStandard": 120
     }
    }
   ]
  },
  {
-  "id": "waldkirch-orange",
-  "name": "Golfpark Waldkirch – Orange (Blau/Gelb)",
+  "id": "waldkirch-gelb-9",
+  "name": "Golfpark Waldkirch – Gelb (9 Loch)",
   "region": "St. Gallen",
   "verified": true,
   "tees": [
    {
-    "id": "white",
-    "name": "Weiss",
-    "rating": null,
-    "slope": null
+    "id": "back",
+    "name": "Back Tees",
+    "markers": "G30",
+    "ratings": {
+     "men": {
+      "rating": 36,
+      "slope": 129
+     },
+     "ladies": {
+      "rating": 39.1,
+      "slope": 139
+     }
+    }
    },
    {
-    "id": "yellow",
-    "name": "Gelb",
-    "rating": null,
-    "slope": null
+    "id": "backStandard",
+    "name": "Back Standard Tees",
+    "markers": "G29",
+    "ratings": {
+     "men": {
+      "rating": 35.7,
+      "slope": 132
+     },
+     "ladies": {
+      "rating": 38.5,
+      "slope": 137
+     }
+    }
    },
    {
-    "id": "blue",
-    "name": "Blau",
-    "rating": null,
-    "slope": null
+    "id": "standard",
+    "name": "Standard Tees",
+    "markers": "G27",
+    "ratings": {
+     "men": {
+      "rating": 34.5,
+      "slope": 127
+     },
+     "ladies": {
+      "rating": 37.1,
+      "slope": 130
+     }
+    }
    },
    {
-    "id": "red",
-    "name": "Rot",
-    "rating": null,
-    "slope": null
+    "id": "frontStandard",
+    "name": "Front Standard Tees",
+    "markers": "G26",
+    "ratings": {
+     "men": {
+      "rating": 34,
+      "slope": 126
+     },
+     "ladies": {
+      "rating": 36.7,
+      "slope": 127
+     }
+    }
    }
   ],
   "holes": [
    {
     "number": 1,
     "par": 4,
-    "hcpIndex": 9,
+    "hcpIndex": 7,
     "distances": {
-     "white": 335,
-     "yellow": 315,
-     "blue": 295,
-     "red": 285
+     "back": 342,
+     "backStandard": 330,
+     "standard": 304,
+     "frontStandard": 292
     }
    },
    {
     "number": 2,
-    "par": 5,
-    "hcpIndex": 7,
+    "par": 4,
+    "hcpIndex": 2,
     "distances": {
-     "white": 494,
-     "yellow": 478,
-     "blue": 450,
-     "red": 429
+     "back": 393,
+     "backStandard": 381,
+     "standard": 348,
+     "frontStandard": 336
     }
    },
    {
     "number": 3,
-    "par": 5,
-    "hcpIndex": 15,
+    "par": 3,
+    "hcpIndex": 6,
     "distances": {
-     "white": 448,
-     "yellow": 431,
-     "blue": 405,
-     "red": 393
+     "back": 173,
+     "backStandard": 162,
+     "standard": 145,
+     "frontStandard": 135
+    }
+   },
+   {
+    "number": 4,
+    "par": 5,
+    "hcpIndex": 3,
+    "distances": {
+     "back": 513,
+     "backStandard": 501,
+     "standard": 458,
+     "frontStandard": 446
+    }
+   },
+   {
+    "number": 5,
+    "par": 3,
+    "hcpIndex": 9,
+    "distances": {
+     "back": 152,
+     "backStandard": 152,
+     "standard": 136,
+     "frontStandard": 136
+    }
+   },
+   {
+    "number": 6,
+    "par": 4,
+    "hcpIndex": 1,
+    "distances": {
+     "back": 358,
+     "backStandard": 338,
+     "standard": 321,
+     "frontStandard": 304
+    }
+   },
+   {
+    "number": 7,
+    "par": 4,
+    "hcpIndex": 5,
+    "distances": {
+     "back": 338,
+     "backStandard": 327,
+     "standard": 298,
+     "frontStandard": 286
+    }
+   },
+   {
+    "number": 8,
+    "par": 4,
+    "hcpIndex": 4,
+    "distances": {
+     "back": 311,
+     "backStandard": 302,
+     "standard": 282,
+     "frontStandard": 272
+    }
+   },
+   {
+    "number": 9,
+    "par": 5,
+    "hcpIndex": 8,
+    "distances": {
+     "back": 448,
+     "backStandard": 431,
+     "standard": 405,
+     "frontStandard": 393
+    }
+   }
+  ]
+ },
+ {
+  "id": "waldkirch-rot-9",
+  "name": "Golfpark Waldkirch – Rot (9 Loch)",
+  "region": "St. Gallen",
+  "verified": true,
+  "tees": [
+   {
+    "id": "back",
+    "name": "Back Tees",
+    "markers": "R28",
+    "ratings": {
+     "men": {
+      "rating": 35.2,
+      "slope": 131
+     },
+     "ladies": {
+      "rating": 38.2,
+      "slope": 140
+     }
+    }
+   },
+   {
+    "id": "backStandard",
+    "name": "Back Standard Tees",
+    "markers": "R27",
+    "ratings": {
+     "men": {
+      "rating": 34.3,
+      "slope": 131
+     },
+     "ladies": {
+      "rating": 37.3,
+      "slope": 137
+     }
+    }
+   },
+   {
+    "id": "standard",
+    "name": "Standard Tees",
+    "markers": "R25",
+    "ratings": {
+     "men": {
+      "rating": 33.4,
+      "slope": 128
+     },
+     "ladies": {
+      "rating": 36.2,
+      "slope": 132
+     }
+    }
+   },
+   {
+    "id": "frontStandard",
+    "name": "Front Standard Tees",
+    "markers": "R24",
+    "ratings": {
+     "men": {
+      "rating": 32.9,
+      "slope": 125
+     },
+     "ladies": {
+      "rating": 36.1,
+      "slope": 131
+     }
+    }
+   }
+  ],
+  "holes": [
+   {
+    "number": 1,
+    "par": 5,
+    "hcpIndex": 3,
+    "distances": {
+     "back": 451,
+     "backStandard": 414,
+     "standard": 385,
+     "frontStandard": 365
+    }
+   },
+   {
+    "number": 2,
+    "par": 3,
+    "hcpIndex": 8,
+    "distances": {
+     "back": 192,
+     "backStandard": 164,
+     "standard": 143,
+     "frontStandard": 131
+    }
+   },
+   {
+    "number": 3,
+    "par": 4,
+    "hcpIndex": 2,
+    "distances": {
+     "back": 372,
+     "backStandard": 357,
+     "standard": 341,
+     "frontStandard": 323
     }
    },
    {
     "number": 4,
     "par": 4,
-    "hcpIndex": 13,
+    "hcpIndex": 7,
     "distances": {
-     "white": 342,
-     "yellow": 330,
-     "blue": 304,
-     "red": 292
+     "back": 350,
+     "backStandard": 350,
+     "standard": 340,
+     "frontStandard": 340
     }
    },
    {
     "number": 5,
-    "par": 4,
-    "hcpIndex": 3,
+    "par": 3,
+    "hcpIndex": 5,
     "distances": {
-     "white": 393,
-     "yellow": 381,
-     "blue": 348,
-     "red": 336
+     "back": 169,
+     "backStandard": 159,
+     "standard": 139,
+     "frontStandard": 134
     }
    },
    {
     "number": 6,
-    "par": 3,
-    "hcpIndex": 11,
+    "par": 4,
+    "hcpIndex": 6,
     "distances": {
-     "white": 173,
-     "yellow": 162,
-     "blue": 145,
-     "red": 135
+     "back": 348,
+     "backStandard": 334,
+     "standard": 305,
+     "frontStandard": 295
     }
    },
    {
     "number": 7,
-    "par": 5,
-    "hcpIndex": 5,
+    "par": 4,
+    "hcpIndex": 1,
     "distances": {
-     "white": 513,
-     "yellow": 501,
-     "blue": 458,
-     "red": 446
+     "back": 343,
+     "backStandard": 334,
+     "standard": 303,
+     "frontStandard": 282
     }
    },
    {
     "number": 8,
     "par": 3,
-    "hcpIndex": 17,
+    "hcpIndex": 9,
     "distances": {
-     "white": 152,
-     "yellow": 152,
-     "blue": 136,
-     "red": 136
+     "back": 126,
+     "backStandard": 126,
+     "standard": 113,
+     "frontStandard": 113
     }
    },
    {
     "number": 9,
-    "par": 4,
-    "hcpIndex": 1,
+    "par": 5,
+    "hcpIndex": 4,
     "distances": {
-     "white": 358,
-     "yellow": 338,
-     "blue": 321,
-     "red": 304
+     "back": 461,
+     "backStandard": 439,
+     "standard": 419,
+     "frontStandard": 385
+    }
+   }
+  ]
+ },
+ {
+  "id": "waldkirch-gruen-9",
+  "name": "Golfpark Waldkirch – Grün (9 Loch)",
+  "region": "St. Gallen",
+  "verified": true,
+  "tees": [
+   {
+    "id": "back",
+    "name": "Back Tees",
+    "markers": "Gr28",
+    "ratings": {
+     "men": {
+      "rating": 35.3,
+      "slope": 132
+     },
+     "ladies": {
+      "rating": 38.5,
+      "slope": 137
+     }
     }
    },
    {
-    "number": 10,
-    "par": 4,
-    "hcpIndex": 6,
-    "distances": {
-     "white": 338,
-     "yellow": 327,
-     "blue": 298,
-     "red": 286
+    "id": "backStandard",
+    "name": "Back Standard Tees",
+    "markers": "Gr26",
+    "ratings": {
+     "men": {
+      "rating": 34.9,
+      "slope": 127
+     },
+     "ladies": {
+      "rating": 37.7,
+      "slope": 133
+     }
     }
    },
    {
-    "number": 11,
+    "id": "standard",
+    "name": "Standard Tees",
+    "markers": "Gr24",
+    "ratings": {
+     "men": {
+      "rating": 33.9,
+      "slope": 123
+     },
+     "ladies": {
+      "rating": 36.4,
+      "slope": 129
+     }
+    }
+   },
+   {
+    "id": "frontStandard",
+    "name": "Front Standard Tees",
+    "markers": "Gr23",
+    "ratings": {
+     "men": {
+      "rating": 33.4,
+      "slope": 122
+     },
+     "ladies": {
+      "rating": 35.2,
+      "slope": 121
+     }
+    }
+   }
+  ],
+  "holes": [
+   {
+    "number": 1,
     "par": 4,
     "hcpIndex": 4,
     "distances": {
-     "white": 311,
-     "yellow": 302,
-     "blue": 282,
-     "red": 272
+     "back": 358,
+     "backStandard": 338,
+     "standard": 315,
+     "frontStandard": 296
     }
    },
    {
-    "number": 12,
+    "number": 2,
     "par": 4,
-    "hcpIndex": 10,
+    "hcpIndex": 5,
     "distances": {
-     "white": 321,
-     "yellow": 311,
-     "blue": 293,
-     "red": 286
+     "back": 327,
+     "backStandard": 327,
+     "standard": 307,
+     "frontStandard": 307
     }
    },
    {
-    "number": 13,
-    "par": 4,
-    "hcpIndex": 14,
-    "distances": {
-     "white": 310,
-     "yellow": 305,
-     "blue": 292,
-     "red": 287
-    }
-   },
-   {
-    "number": 14,
+    "number": 3,
     "par": 3,
-    "hcpIndex": 16,
+    "hcpIndex": 6,
     "distances": {
-     "white": 182,
-     "yellow": 162,
-     "blue": 142,
-     "red": 122
+     "back": 182,
+     "backStandard": 161,
+     "standard": 141,
+     "frontStandard": 131
     }
    },
    {
-    "number": 15,
-    "par": 4,
+    "number": 4,
+    "par": 5,
     "hcpIndex": 2,
     "distances": {
-     "white": 365,
-     "yellow": 347,
-     "blue": 327,
-     "red": 307
+     "back": 443,
+     "backStandard": 424,
+     "standard": 372,
+     "frontStandard": 364
     }
    },
    {
-    "number": 16,
+    "number": 5,
     "par": 3,
     "hcpIndex": 8,
     "distances": {
-     "white": 180,
-     "yellow": 152,
-     "blue": 137,
-     "red": 137
+     "back": 173,
+     "backStandard": 153,
+     "standard": 140,
+     "frontStandard": 127
     }
    },
    {
-    "number": 17,
+    "number": 6,
+    "par": 4,
+    "hcpIndex": 3,
+    "distances": {
+     "back": 367,
+     "backStandard": 351,
+     "standard": 321,
+     "frontStandard": 312
+    }
+   },
+   {
+    "number": 7,
     "par": 5,
-    "hcpIndex": 12,
+    "hcpIndex": 7,
     "distances": {
-     "white": 481,
-     "yellow": 450,
-     "blue": 424,
-     "red": 384
+     "back": 462,
+     "backStandard": 422,
+     "standard": 407,
+     "frontStandard": 383
     }
    },
    {
-    "number": 18,
-    "par": 3,
-    "hcpIndex": 18,
+    "number": 8,
+    "par": 4,
+    "hcpIndex": 1,
     "distances": {
-     "white": 139,
-     "yellow": 139,
-     "blue": 120,
-     "red": 120
+     "back": 340,
+     "backStandard": 330,
+     "standard": 308,
+     "frontStandard": 298
+    }
+   },
+   {
+    "number": 9,
+    "par": 3,
+    "hcpIndex": 9,
+    "distances": {
+     "back": 140,
+     "backStandard": 140,
+     "standard": 120,
+     "frontStandard": 120
     }
    }
   ]
@@ -2790,28 +3322,64 @@
   "verified": true,
   "tees": [
    {
-    "id": "white",
-    "name": "Weiss",
-    "rating": null,
-    "slope": null
+    "id": "back",
+    "name": "Back Tees",
+    "markers": "B28-G30",
+    "ratings": {
+     "men": {
+      "rating": 71.1,
+      "slope": 128
+     },
+     "ladies": {
+      "rating": 77.1,
+      "slope": 138
+     }
+    }
    },
    {
-    "id": "yellow",
-    "name": "Gelb",
-    "rating": null,
-    "slope": null
+    "id": "backStandard",
+    "name": "Back Standard Tees",
+    "markers": "B27-G29",
+    "ratings": {
+     "men": {
+      "rating": 70,
+      "slope": 128
+     },
+     "ladies": {
+      "rating": 75.6,
+      "slope": 135
+     }
+    }
    },
    {
-    "id": "blue",
-    "name": "Blau",
-    "rating": null,
-    "slope": null
+    "id": "standard",
+    "name": "Standard Tees",
+    "markers": "B25-G27",
+    "ratings": {
+     "men": {
+      "rating": 67.8,
+      "slope": 124
+     },
+     "ladies": {
+      "rating": 73.1,
+      "slope": 129
+     }
+    }
    },
    {
-    "id": "red",
-    "name": "Rot",
-    "rating": null,
-    "slope": null
+    "id": "frontStandard",
+    "name": "Front Standard Tees",
+    "markers": "B24-G26",
+    "ratings": {
+     "men": {
+      "rating": 66.7,
+      "slope": 122
+     },
+     "ladies": {
+      "rating": 71.8,
+      "slope": 127
+     }
+    }
    }
   ],
   "holes": [
@@ -2820,10 +3388,10 @@
     "par": 4,
     "hcpIndex": 5,
     "distances": {
-     "white": 335,
-     "yellow": 315,
-     "blue": 295,
-     "red": 285
+     "back": 335,
+     "backStandard": 315,
+     "standard": 295,
+     "frontStandard": 285
     }
    },
    {
@@ -2831,10 +3399,10 @@
     "par": 5,
     "hcpIndex": 3,
     "distances": {
-     "white": 494,
-     "yellow": 478,
-     "blue": 450,
-     "red": 429
+     "back": 494,
+     "backStandard": 478,
+     "standard": 450,
+     "frontStandard": 429
     }
    },
    {
@@ -2842,10 +3410,10 @@
     "par": 4,
     "hcpIndex": 9,
     "distances": {
-     "white": 321,
-     "yellow": 311,
-     "blue": 293,
-     "red": 286
+     "back": 321,
+     "backStandard": 311,
+     "standard": 293,
+     "frontStandard": 286
     }
    },
    {
@@ -2853,10 +3421,10 @@
     "par": 4,
     "hcpIndex": 13,
     "distances": {
-     "white": 310,
-     "yellow": 305,
-     "blue": 292,
-     "red": 287
+     "back": 310,
+     "backStandard": 305,
+     "standard": 292,
+     "frontStandard": 287
     }
    },
    {
@@ -2864,10 +3432,10 @@
     "par": 3,
     "hcpIndex": 15,
     "distances": {
-     "white": 182,
-     "yellow": 162,
-     "blue": 142,
-     "red": 122
+     "back": 182,
+     "backStandard": 162,
+     "standard": 142,
+     "frontStandard": 122
     }
    },
    {
@@ -2875,10 +3443,10 @@
     "par": 4,
     "hcpIndex": 1,
     "distances": {
-     "white": 365,
-     "yellow": 347,
-     "blue": 327,
-     "red": 307
+     "back": 365,
+     "backStandard": 347,
+     "standard": 327,
+     "frontStandard": 307
     }
    },
    {
@@ -2886,10 +3454,10 @@
     "par": 3,
     "hcpIndex": 7,
     "distances": {
-     "white": 180,
-     "yellow": 152,
-     "blue": 137,
-     "red": 137
+     "back": 180,
+     "backStandard": 152,
+     "standard": 137,
+     "frontStandard": 137
     }
    },
    {
@@ -2897,10 +3465,10 @@
     "par": 5,
     "hcpIndex": 11,
     "distances": {
-     "white": 481,
-     "yellow": 450,
-     "blue": 424,
-     "red": 384
+     "back": 481,
+     "backStandard": 450,
+     "standard": 424,
+     "frontStandard": 384
     }
    },
    {
@@ -2908,10 +3476,10 @@
     "par": 3,
     "hcpIndex": 17,
     "distances": {
-     "white": 139,
-     "yellow": 139,
-     "blue": 120,
-     "red": 120
+     "back": 139,
+     "backStandard": 139,
+     "standard": 120,
+     "frontStandard": 120
     }
    },
    {
@@ -2919,10 +3487,10 @@
     "par": 4,
     "hcpIndex": 14,
     "distances": {
-     "white": 342,
-     "yellow": 330,
-     "blue": 304,
-     "red": 292
+     "back": 342,
+     "backStandard": 330,
+     "standard": 304,
+     "frontStandard": 292
     }
    },
    {
@@ -2930,10 +3498,10 @@
     "par": 4,
     "hcpIndex": 4,
     "distances": {
-     "white": 393,
-     "yellow": 381,
-     "blue": 348,
-     "red": 336
+     "back": 393,
+     "backStandard": 381,
+     "standard": 348,
+     "frontStandard": 336
     }
    },
    {
@@ -2941,10 +3509,10 @@
     "par": 3,
     "hcpIndex": 12,
     "distances": {
-     "white": 173,
-     "yellow": 162,
-     "blue": 145,
-     "red": 135
+     "back": 173,
+     "backStandard": 162,
+     "standard": 145,
+     "frontStandard": 135
     }
    },
    {
@@ -2952,10 +3520,10 @@
     "par": 5,
     "hcpIndex": 6,
     "distances": {
-     "white": 513,
-     "yellow": 501,
-     "blue": 458,
-     "red": 446
+     "back": 513,
+     "backStandard": 501,
+     "standard": 458,
+     "frontStandard": 446
     }
    },
    {
@@ -2963,10 +3531,10 @@
     "par": 3,
     "hcpIndex": 18,
     "distances": {
-     "white": 152,
-     "yellow": 152,
-     "blue": 136,
-     "red": 136
+     "back": 152,
+     "backStandard": 152,
+     "standard": 136,
+     "frontStandard": 136
     }
    },
    {
@@ -2974,10 +3542,10 @@
     "par": 4,
     "hcpIndex": 2,
     "distances": {
-     "white": 358,
-     "yellow": 338,
-     "blue": 321,
-     "red": 304
+     "back": 358,
+     "backStandard": 338,
+     "standard": 321,
+     "frontStandard": 304
     }
    },
    {
@@ -2985,10 +3553,10 @@
     "par": 4,
     "hcpIndex": 10,
     "distances": {
-     "white": 338,
-     "yellow": 327,
-     "blue": 298,
-     "red": 286
+     "back": 338,
+     "backStandard": 327,
+     "standard": 298,
+     "frontStandard": 286
     }
    },
    {
@@ -2996,10 +3564,10 @@
     "par": 4,
     "hcpIndex": 8,
     "distances": {
-     "white": 311,
-     "yellow": 302,
-     "blue": 282,
-     "red": 272
+     "back": 311,
+     "backStandard": 302,
+     "standard": 282,
+     "frontStandard": 272
     }
    },
    {
@@ -3007,242 +3575,10 @@
     "par": 5,
     "hcpIndex": 16,
     "distances": {
-     "white": 448,
-     "yellow": 431,
-     "blue": 405,
-     "red": 393
-    }
-   }
-  ]
- },
- {
-  "id": "waldkirch-blau-rot",
-  "name": "Golfpark Waldkirch – Blau/Rot",
-  "region": "St. Gallen",
-  "verified": true,
-  "tees": [
-   {
-    "id": "white",
-    "name": "Weiss",
-    "rating": null,
-    "slope": null
-   },
-   {
-    "id": "yellow",
-    "name": "Gelb",
-    "rating": null,
-    "slope": null
-   },
-   {
-    "id": "blue",
-    "name": "Blau",
-    "rating": null,
-    "slope": null
-   },
-   {
-    "id": "red",
-    "name": "Rot",
-    "rating": null,
-    "slope": null
-   }
-  ],
-  "holes": [
-   {
-    "number": 1,
-    "par": 4,
-    "hcpIndex": 5,
-    "distances": {
-     "white": 335,
-     "yellow": 315,
-     "blue": 295,
-     "red": 285
-    }
-   },
-   {
-    "number": 2,
-    "par": 5,
-    "hcpIndex": 3,
-    "distances": {
-     "white": 494,
-     "yellow": 478,
-     "blue": 450,
-     "red": 429
-    }
-   },
-   {
-    "number": 3,
-    "par": 4,
-    "hcpIndex": 9,
-    "distances": {
-     "white": 321,
-     "yellow": 311,
-     "blue": 293,
-     "red": 286
-    }
-   },
-   {
-    "number": 4,
-    "par": 4,
-    "hcpIndex": 13,
-    "distances": {
-     "white": 310,
-     "yellow": 305,
-     "blue": 292,
-     "red": 287
-    }
-   },
-   {
-    "number": 5,
-    "par": 3,
-    "hcpIndex": 15,
-    "distances": {
-     "white": 182,
-     "yellow": 162,
-     "blue": 142,
-     "red": 122
-    }
-   },
-   {
-    "number": 6,
-    "par": 4,
-    "hcpIndex": 1,
-    "distances": {
-     "white": 365,
-     "yellow": 347,
-     "blue": 327,
-     "red": 307
-    }
-   },
-   {
-    "number": 7,
-    "par": 3,
-    "hcpIndex": 7,
-    "distances": {
-     "white": 180,
-     "yellow": 152,
-     "blue": 137,
-     "red": 137
-    }
-   },
-   {
-    "number": 8,
-    "par": 5,
-    "hcpIndex": 11,
-    "distances": {
-     "white": 481,
-     "yellow": 450,
-     "blue": 424,
-     "red": 384
-    }
-   },
-   {
-    "number": 9,
-    "par": 3,
-    "hcpIndex": 17,
-    "distances": {
-     "white": 139,
-     "yellow": 139,
-     "blue": 120,
-     "red": 120
-    }
-   },
-   {
-    "number": 10,
-    "par": 5,
-    "hcpIndex": 6,
-    "distances": {
-     "white": 451,
-     "yellow": 414,
-     "blue": 385,
-     "red": 365
-    }
-   },
-   {
-    "number": 11,
-    "par": 3,
-    "hcpIndex": 16,
-    "distances": {
-     "white": 192,
-     "yellow": 164,
-     "blue": 143,
-     "red": 131
-    }
-   },
-   {
-    "number": 12,
-    "par": 4,
-    "hcpIndex": 4,
-    "distances": {
-     "white": 372,
-     "yellow": 357,
-     "blue": 341,
-     "red": 323
-    }
-   },
-   {
-    "number": 13,
-    "par": 4,
-    "hcpIndex": 14,
-    "distances": {
-     "white": 350,
-     "yellow": 350,
-     "blue": 340,
-     "red": 340
-    }
-   },
-   {
-    "number": 14,
-    "par": 3,
-    "hcpIndex": 10,
-    "distances": {
-     "white": 169,
-     "yellow": 159,
-     "blue": 139,
-     "red": 134
-    }
-   },
-   {
-    "number": 15,
-    "par": 4,
-    "hcpIndex": 12,
-    "distances": {
-     "white": 348,
-     "yellow": 334,
-     "blue": 305,
-     "red": 295
-    }
-   },
-   {
-    "number": 16,
-    "par": 4,
-    "hcpIndex": 2,
-    "distances": {
-     "white": 343,
-     "yellow": 334,
-     "blue": 303,
-     "red": 282
-    }
-   },
-   {
-    "number": 17,
-    "par": 3,
-    "hcpIndex": 18,
-    "distances": {
-     "white": 126,
-     "yellow": 126,
-     "blue": 113,
-     "red": 113
-    }
-   },
-   {
-    "number": 18,
-    "par": 5,
-    "hcpIndex": 8,
-    "distances": {
-     "white": 461,
-     "yellow": 439,
-     "blue": 419,
-     "red": 385
+     "back": 448,
+     "backStandard": 431,
+     "standard": 405,
+     "frontStandard": 393
     }
    }
   ]
@@ -3254,28 +3590,64 @@
   "verified": true,
   "tees": [
    {
-    "id": "white",
-    "name": "Weiss",
-    "rating": null,
-    "slope": null
+    "id": "back",
+    "name": "Back Tees",
+    "markers": "B28-Gr28",
+    "ratings": {
+     "men": {
+      "rating": 70.4,
+      "slope": 130
+     },
+     "ladies": {
+      "rating": 76.5,
+      "slope": 137
+     }
+    }
    },
    {
-    "id": "yellow",
-    "name": "Gelb",
-    "rating": null,
-    "slope": null
+    "id": "backStandard",
+    "name": "Back Standard Tees",
+    "markers": "B27-Gr26",
+    "ratings": {
+     "men": {
+      "rating": 69.2,
+      "slope": 125
+     },
+     "ladies": {
+      "rating": 74.8,
+      "slope": 133
+     }
+    }
    },
    {
-    "id": "blue",
-    "name": "Blau",
-    "rating": null,
-    "slope": null
+    "id": "standard",
+    "name": "Standard Tees",
+    "markers": "B25-Gr24",
+    "ratings": {
+     "men": {
+      "rating": 67.2,
+      "slope": 122
+     },
+     "ladies": {
+      "rating": 72.4,
+      "slope": 129
+     }
+    }
    },
    {
-    "id": "red",
-    "name": "Rot",
-    "rating": null,
-    "slope": null
+    "id": "frontStandard",
+    "name": "Front Standard Tees",
+    "markers": "B24-Gr23",
+    "ratings": {
+     "men": {
+      "rating": 66.1,
+      "slope": 120
+     },
+     "ladies": {
+      "rating": 70.3,
+      "slope": 124
+     }
+    }
    }
   ],
   "holes": [
@@ -3284,10 +3656,10 @@
     "par": 4,
     "hcpIndex": 5,
     "distances": {
-     "white": 335,
-     "yellow": 315,
-     "blue": 295,
-     "red": 285
+     "back": 335,
+     "backStandard": 315,
+     "standard": 295,
+     "frontStandard": 285
     }
    },
    {
@@ -3295,10 +3667,10 @@
     "par": 5,
     "hcpIndex": 3,
     "distances": {
-     "white": 494,
-     "yellow": 478,
-     "blue": 450,
-     "red": 429
+     "back": 494,
+     "backStandard": 478,
+     "standard": 450,
+     "frontStandard": 429
     }
    },
    {
@@ -3306,10 +3678,10 @@
     "par": 4,
     "hcpIndex": 9,
     "distances": {
-     "white": 321,
-     "yellow": 311,
-     "blue": 293,
-     "red": 286
+     "back": 321,
+     "backStandard": 311,
+     "standard": 293,
+     "frontStandard": 286
     }
    },
    {
@@ -3317,10 +3689,10 @@
     "par": 4,
     "hcpIndex": 13,
     "distances": {
-     "white": 310,
-     "yellow": 305,
-     "blue": 292,
-     "red": 287
+     "back": 310,
+     "backStandard": 305,
+     "standard": 292,
+     "frontStandard": 287
     }
    },
    {
@@ -3328,10 +3700,10 @@
     "par": 3,
     "hcpIndex": 15,
     "distances": {
-     "white": 182,
-     "yellow": 162,
-     "blue": 142,
-     "red": 122
+     "back": 182,
+     "backStandard": 162,
+     "standard": 142,
+     "frontStandard": 122
     }
    },
    {
@@ -3339,10 +3711,10 @@
     "par": 4,
     "hcpIndex": 1,
     "distances": {
-     "white": 365,
-     "yellow": 347,
-     "blue": 327,
-     "red": 307
+     "back": 365,
+     "backStandard": 347,
+     "standard": 327,
+     "frontStandard": 307
     }
    },
    {
@@ -3350,10 +3722,10 @@
     "par": 3,
     "hcpIndex": 7,
     "distances": {
-     "white": 180,
-     "yellow": 152,
-     "blue": 137,
-     "red": 137
+     "back": 180,
+     "backStandard": 152,
+     "standard": 137,
+     "frontStandard": 137
     }
    },
    {
@@ -3361,10 +3733,10 @@
     "par": 5,
     "hcpIndex": 11,
     "distances": {
-     "white": 481,
-     "yellow": 450,
-     "blue": 424,
-     "red": 384
+     "back": 481,
+     "backStandard": 450,
+     "standard": 424,
+     "frontStandard": 384
     }
    },
    {
@@ -3372,10 +3744,10 @@
     "par": 3,
     "hcpIndex": 17,
     "distances": {
-     "white": 139,
-     "yellow": 139,
-     "blue": 120,
-     "red": 120
+     "back": 139,
+     "backStandard": 139,
+     "standard": 120,
+     "frontStandard": 120
     }
    },
    {
@@ -3383,10 +3755,10 @@
     "par": 4,
     "hcpIndex": 8,
     "distances": {
-     "white": 358,
-     "yellow": 338,
-     "blue": 315,
-     "red": 296
+     "back": 358,
+     "backStandard": 338,
+     "standard": 315,
+     "frontStandard": 296
     }
    },
    {
@@ -3394,10 +3766,10 @@
     "par": 4,
     "hcpIndex": 10,
     "distances": {
-     "white": 327,
-     "yellow": 327,
-     "blue": 307,
-     "red": 307
+     "back": 327,
+     "backStandard": 327,
+     "standard": 307,
+     "frontStandard": 307
     }
    },
    {
@@ -3405,10 +3777,10 @@
     "par": 3,
     "hcpIndex": 12,
     "distances": {
-     "white": 182,
-     "yellow": 161,
-     "blue": 141,
-     "red": 131
+     "back": 182,
+     "backStandard": 161,
+     "standard": 141,
+     "frontStandard": 131
     }
    },
    {
@@ -3416,10 +3788,10 @@
     "par": 5,
     "hcpIndex": 4,
     "distances": {
-     "white": 443,
-     "yellow": 424,
-     "blue": 372,
-     "red": 364
+     "back": 443,
+     "backStandard": 424,
+     "standard": 372,
+     "frontStandard": 364
     }
    },
    {
@@ -3427,10 +3799,10 @@
     "par": 3,
     "hcpIndex": 16,
     "distances": {
-     "white": 173,
-     "yellow": 153,
-     "blue": 140,
-     "red": 127
+     "back": 173,
+     "backStandard": 153,
+     "standard": 140,
+     "frontStandard": 127
     }
    },
    {
@@ -3438,10 +3810,10 @@
     "par": 4,
     "hcpIndex": 6,
     "distances": {
-     "white": 367,
-     "yellow": 351,
-     "blue": 321,
-     "red": 312
+     "back": 367,
+     "backStandard": 351,
+     "standard": 321,
+     "frontStandard": 312
     }
    },
    {
@@ -3449,10 +3821,10 @@
     "par": 5,
     "hcpIndex": 14,
     "distances": {
-     "white": 462,
-     "yellow": 422,
-     "blue": 407,
-     "red": 383
+     "back": 462,
+     "backStandard": 422,
+     "standard": 407,
+     "frontStandard": 383
     }
    },
    {
@@ -3460,10 +3832,10 @@
     "par": 4,
     "hcpIndex": 2,
     "distances": {
-     "white": 340,
-     "yellow": 330,
-     "blue": 308,
-     "red": 298
+     "back": 340,
+     "backStandard": 330,
+     "standard": 308,
+     "frontStandard": 298
     }
    },
    {
@@ -3471,773 +3843,113 @@
     "par": 3,
     "hcpIndex": 18,
     "distances": {
-     "white": 140,
-     "yellow": 140,
-     "blue": 120,
-     "red": 120
+     "back": 140,
+     "backStandard": 140,
+     "standard": 120,
+     "frontStandard": 120
     }
    }
   ]
  },
  {
-  "id": "waldkirch-gelb-blau",
-  "name": "Golfpark Waldkirch – Gelb/Blau",
+  "id": "waldkirch-blau-rot",
+  "name": "Golfpark Waldkirch – Blau/Rot",
   "region": "St. Gallen",
   "verified": true,
   "tees": [
    {
-    "id": "white",
-    "name": "Weiss",
-    "rating": null,
-    "slope": null
+    "id": "back",
+    "name": "Back Tees",
+    "markers": "B28-R28",
+    "ratings": {
+     "men": {
+      "rating": 70.3,
+      "slope": 129
+     },
+     "ladies": {
+      "rating": 76.2,
+      "slope": 139
+     }
+    }
    },
    {
-    "id": "yellow",
-    "name": "Gelb",
-    "rating": null,
-    "slope": null
+    "id": "backStandard",
+    "name": "Back Standard Tees",
+    "markers": "B27-R27",
+    "ratings": {
+     "men": {
+      "rating": 68.6,
+      "slope": 127
+     },
+     "ladies": {
+      "rating": 74.4,
+      "slope": 135
+     }
+    }
    },
    {
-    "id": "blue",
-    "name": "Blau",
-    "rating": null,
-    "slope": null
+    "id": "standard",
+    "name": "Standard Tees",
+    "markers": "B25-R25",
+    "ratings": {
+     "men": {
+      "rating": 66.7,
+      "slope": 125
+     },
+     "ladies": {
+      "rating": 72.2,
+      "slope": 130
+     }
+    }
    },
    {
-    "id": "red",
-    "name": "Rot",
-    "rating": null,
-    "slope": null
+    "id": "frontStandard",
+    "name": "Front Standard Tees",
+    "markers": "B24-R24",
+    "ratings": {
+     "men": {
+      "rating": 65.6,
+      "slope": 122
+     },
+     "ladies": {
+      "rating": 71.2,
+      "slope": 129
+     }
+    }
    }
   ],
   "holes": [
    {
     "number": 1,
     "par": 4,
-    "hcpIndex": 13,
+    "hcpIndex": 5,
     "distances": {
-     "white": 342,
-     "yellow": 330,
-     "blue": 304,
-     "red": 292
+     "back": 335,
+     "backStandard": 315,
+     "standard": 295,
+     "frontStandard": 285
     }
    },
    {
     "number": 2,
-    "par": 4,
+    "par": 5,
     "hcpIndex": 3,
     "distances": {
-     "white": 393,
-     "yellow": 381,
-     "blue": 348,
-     "red": 336
+     "back": 494,
+     "backStandard": 478,
+     "standard": 450,
+     "frontStandard": 429
     }
    },
    {
     "number": 3,
-    "par": 3,
-    "hcpIndex": 11,
-    "distances": {
-     "white": 173,
-     "yellow": 162,
-     "blue": 145,
-     "red": 135
-    }
-   },
-   {
-    "number": 4,
-    "par": 5,
-    "hcpIndex": 5,
-    "distances": {
-     "white": 513,
-     "yellow": 501,
-     "blue": 458,
-     "red": 446
-    }
-   },
-   {
-    "number": 5,
-    "par": 3,
-    "hcpIndex": 17,
-    "distances": {
-     "white": 152,
-     "yellow": 152,
-     "blue": 136,
-     "red": 136
-    }
-   },
-   {
-    "number": 6,
-    "par": 4,
-    "hcpIndex": 1,
-    "distances": {
-     "white": 358,
-     "yellow": 338,
-     "blue": 321,
-     "red": 304
-    }
-   },
-   {
-    "number": 7,
     "par": 4,
     "hcpIndex": 9,
     "distances": {
-     "white": 338,
-     "yellow": 327,
-     "blue": 298,
-     "red": 286
-    }
-   },
-   {
-    "number": 8,
-    "par": 4,
-    "hcpIndex": 7,
-    "distances": {
-     "white": 311,
-     "yellow": 302,
-     "blue": 282,
-     "red": 272
-    }
-   },
-   {
-    "number": 9,
-    "par": 5,
-    "hcpIndex": 15,
-    "distances": {
-     "white": 448,
-     "yellow": 431,
-     "blue": 405,
-     "red": 393
-    }
-   },
-   {
-    "number": 10,
-    "par": 4,
-    "hcpIndex": 6,
-    "distances": {
-     "white": 335,
-     "yellow": 315,
-     "blue": 295,
-     "red": 285
-    }
-   },
-   {
-    "number": 11,
-    "par": 5,
-    "hcpIndex": 4,
-    "distances": {
-     "white": 494,
-     "yellow": 478,
-     "blue": 450,
-     "red": 429
-    }
-   },
-   {
-    "number": 12,
-    "par": 4,
-    "hcpIndex": 10,
-    "distances": {
-     "white": 321,
-     "yellow": 311,
-     "blue": 293,
-     "red": 286
-    }
-   },
-   {
-    "number": 13,
-    "par": 4,
-    "hcpIndex": 14,
-    "distances": {
-     "white": 310,
-     "yellow": 305,
-     "blue": 292,
-     "red": 287
-    }
-   },
-   {
-    "number": 14,
-    "par": 3,
-    "hcpIndex": 16,
-    "distances": {
-     "white": 182,
-     "yellow": 162,
-     "blue": 142,
-     "red": 122
-    }
-   },
-   {
-    "number": 15,
-    "par": 4,
-    "hcpIndex": 2,
-    "distances": {
-     "white": 365,
-     "yellow": 347,
-     "blue": 327,
-     "red": 307
-    }
-   },
-   {
-    "number": 16,
-    "par": 3,
-    "hcpIndex": 8,
-    "distances": {
-     "white": 180,
-     "yellow": 152,
-     "blue": 137,
-     "red": 137
-    }
-   },
-   {
-    "number": 17,
-    "par": 5,
-    "hcpIndex": 12,
-    "distances": {
-     "white": 481,
-     "yellow": 450,
-     "blue": 424,
-     "red": 384
-    }
-   },
-   {
-    "number": 18,
-    "par": 3,
-    "hcpIndex": 18,
-    "distances": {
-     "white": 139,
-     "yellow": 139,
-     "blue": 120,
-     "red": 120
-    }
-   }
-  ]
- },
- {
-  "id": "waldkirch-gelb-rot",
-  "name": "Golfpark Waldkirch – Gelb/Rot",
-  "region": "St. Gallen",
-  "verified": true,
-  "tees": [
-   {
-    "id": "white",
-    "name": "Weiss",
-    "rating": null,
-    "slope": null
-   },
-   {
-    "id": "yellow",
-    "name": "Gelb",
-    "rating": null,
-    "slope": null
-   },
-   {
-    "id": "blue",
-    "name": "Blau",
-    "rating": null,
-    "slope": null
-   },
-   {
-    "id": "red",
-    "name": "Rot",
-    "rating": null,
-    "slope": null
-   }
-  ],
-  "holes": [
-   {
-    "number": 1,
-    "par": 4,
-    "hcpIndex": 13,
-    "distances": {
-     "white": 342,
-     "yellow": 330,
-     "blue": 304,
-     "red": 292
-    }
-   },
-   {
-    "number": 2,
-    "par": 4,
-    "hcpIndex": 3,
-    "distances": {
-     "white": 393,
-     "yellow": 381,
-     "blue": 348,
-     "red": 336
-    }
-   },
-   {
-    "number": 3,
-    "par": 3,
-    "hcpIndex": 11,
-    "distances": {
-     "white": 173,
-     "yellow": 162,
-     "blue": 145,
-     "red": 135
-    }
-   },
-   {
-    "number": 4,
-    "par": 5,
-    "hcpIndex": 5,
-    "distances": {
-     "white": 513,
-     "yellow": 501,
-     "blue": 458,
-     "red": 446
-    }
-   },
-   {
-    "number": 5,
-    "par": 3,
-    "hcpIndex": 17,
-    "distances": {
-     "white": 152,
-     "yellow": 152,
-     "blue": 136,
-     "red": 136
-    }
-   },
-   {
-    "number": 6,
-    "par": 4,
-    "hcpIndex": 1,
-    "distances": {
-     "white": 358,
-     "yellow": 338,
-     "blue": 321,
-     "red": 304
-    }
-   },
-   {
-    "number": 7,
-    "par": 4,
-    "hcpIndex": 9,
-    "distances": {
-     "white": 338,
-     "yellow": 327,
-     "blue": 298,
-     "red": 286
-    }
-   },
-   {
-    "number": 8,
-    "par": 4,
-    "hcpIndex": 7,
-    "distances": {
-     "white": 311,
-     "yellow": 302,
-     "blue": 282,
-     "red": 272
-    }
-   },
-   {
-    "number": 9,
-    "par": 5,
-    "hcpIndex": 15,
-    "distances": {
-     "white": 448,
-     "yellow": 431,
-     "blue": 405,
-     "red": 393
-    }
-   },
-   {
-    "number": 10,
-    "par": 5,
-    "hcpIndex": 6,
-    "distances": {
-     "white": 451,
-     "yellow": 414,
-     "blue": 385,
-     "red": 365
-    }
-   },
-   {
-    "number": 11,
-    "par": 3,
-    "hcpIndex": 16,
-    "distances": {
-     "white": 192,
-     "yellow": 164,
-     "blue": 143,
-     "red": 131
-    }
-   },
-   {
-    "number": 12,
-    "par": 4,
-    "hcpIndex": 4,
-    "distances": {
-     "white": 372,
-     "yellow": 357,
-     "blue": 341,
-     "red": 323
-    }
-   },
-   {
-    "number": 13,
-    "par": 4,
-    "hcpIndex": 14,
-    "distances": {
-     "white": 350,
-     "yellow": 350,
-     "blue": 340,
-     "red": 340
-    }
-   },
-   {
-    "number": 14,
-    "par": 3,
-    "hcpIndex": 10,
-    "distances": {
-     "white": 169,
-     "yellow": 159,
-     "blue": 139,
-     "red": 134
-    }
-   },
-   {
-    "number": 15,
-    "par": 4,
-    "hcpIndex": 12,
-    "distances": {
-     "white": 348,
-     "yellow": 334,
-     "blue": 305,
-     "red": 295
-    }
-   },
-   {
-    "number": 16,
-    "par": 4,
-    "hcpIndex": 2,
-    "distances": {
-     "white": 343,
-     "yellow": 334,
-     "blue": 303,
-     "red": 282
-    }
-   },
-   {
-    "number": 17,
-    "par": 3,
-    "hcpIndex": 18,
-    "distances": {
-     "white": 126,
-     "yellow": 126,
-     "blue": 113,
-     "red": 113
-    }
-   },
-   {
-    "number": 18,
-    "par": 5,
-    "hcpIndex": 8,
-    "distances": {
-     "white": 461,
-     "yellow": 439,
-     "blue": 419,
-     "red": 385
-    }
-   }
-  ]
- },
- {
-  "id": "waldkirch-gelb-gruen",
-  "name": "Golfpark Waldkirch – Gelb/Grün",
-  "region": "St. Gallen",
-  "verified": true,
-  "tees": [
-   {
-    "id": "white",
-    "name": "Weiss",
-    "rating": null,
-    "slope": null
-   },
-   {
-    "id": "yellow",
-    "name": "Gelb",
-    "rating": null,
-    "slope": null
-   },
-   {
-    "id": "blue",
-    "name": "Blau",
-    "rating": null,
-    "slope": null
-   },
-   {
-    "id": "red",
-    "name": "Rot",
-    "rating": null,
-    "slope": null
-   }
-  ],
-  "holes": [
-   {
-    "number": 1,
-    "par": 4,
-    "hcpIndex": 13,
-    "distances": {
-     "white": 342,
-     "yellow": 330,
-     "blue": 304,
-     "red": 292
-    }
-   },
-   {
-    "number": 2,
-    "par": 4,
-    "hcpIndex": 3,
-    "distances": {
-     "white": 393,
-     "yellow": 381,
-     "blue": 348,
-     "red": 336
-    }
-   },
-   {
-    "number": 3,
-    "par": 3,
-    "hcpIndex": 11,
-    "distances": {
-     "white": 173,
-     "yellow": 162,
-     "blue": 145,
-     "red": 135
-    }
-   },
-   {
-    "number": 4,
-    "par": 5,
-    "hcpIndex": 5,
-    "distances": {
-     "white": 513,
-     "yellow": 501,
-     "blue": 458,
-     "red": 446
-    }
-   },
-   {
-    "number": 5,
-    "par": 3,
-    "hcpIndex": 17,
-    "distances": {
-     "white": 152,
-     "yellow": 152,
-     "blue": 136,
-     "red": 136
-    }
-   },
-   {
-    "number": 6,
-    "par": 4,
-    "hcpIndex": 1,
-    "distances": {
-     "white": 358,
-     "yellow": 338,
-     "blue": 321,
-     "red": 304
-    }
-   },
-   {
-    "number": 7,
-    "par": 4,
-    "hcpIndex": 9,
-    "distances": {
-     "white": 338,
-     "yellow": 327,
-     "blue": 298,
-     "red": 286
-    }
-   },
-   {
-    "number": 8,
-    "par": 4,
-    "hcpIndex": 7,
-    "distances": {
-     "white": 311,
-     "yellow": 302,
-     "blue": 282,
-     "red": 272
-    }
-   },
-   {
-    "number": 9,
-    "par": 5,
-    "hcpIndex": 15,
-    "distances": {
-     "white": 448,
-     "yellow": 431,
-     "blue": 405,
-     "red": 393
-    }
-   },
-   {
-    "number": 10,
-    "par": 4,
-    "hcpIndex": 8,
-    "distances": {
-     "white": 358,
-     "yellow": 338,
-     "blue": 315,
-     "red": 296
-    }
-   },
-   {
-    "number": 11,
-    "par": 4,
-    "hcpIndex": 10,
-    "distances": {
-     "white": 327,
-     "yellow": 327,
-     "blue": 307,
-     "red": 307
-    }
-   },
-   {
-    "number": 12,
-    "par": 3,
-    "hcpIndex": 12,
-    "distances": {
-     "white": 182,
-     "yellow": 161,
-     "blue": 141,
-     "red": 131
-    }
-   },
-   {
-    "number": 13,
-    "par": 5,
-    "hcpIndex": 4,
-    "distances": {
-     "white": 443,
-     "yellow": 424,
-     "blue": 372,
-     "red": 364
-    }
-   },
-   {
-    "number": 14,
-    "par": 3,
-    "hcpIndex": 16,
-    "distances": {
-     "white": 173,
-     "yellow": 153,
-     "blue": 140,
-     "red": 127
-    }
-   },
-   {
-    "number": 15,
-    "par": 4,
-    "hcpIndex": 6,
-    "distances": {
-     "white": 367,
-     "yellow": 351,
-     "blue": 321,
-     "red": 312
-    }
-   },
-   {
-    "number": 16,
-    "par": 5,
-    "hcpIndex": 14,
-    "distances": {
-     "white": 462,
-     "yellow": 422,
-     "blue": 407,
-     "red": 383
-    }
-   },
-   {
-    "number": 17,
-    "par": 4,
-    "hcpIndex": 2,
-    "distances": {
-     "white": 340,
-     "yellow": 330,
-     "blue": 308,
-     "red": 298
-    }
-   },
-   {
-    "number": 18,
-    "par": 3,
-    "hcpIndex": 18,
-    "distances": {
-     "white": 140,
-     "yellow": 140,
-     "blue": 120,
-     "red": 120
-    }
-   }
-  ]
- },
- {
-  "id": "waldkirch-rot-blau",
-  "name": "Golfpark Waldkirch – Rot/Blau",
-  "region": "St. Gallen",
-  "verified": true,
-  "tees": [
-   {
-    "id": "white",
-    "name": "Weiss",
-    "rating": null,
-    "slope": null
-   },
-   {
-    "id": "yellow",
-    "name": "Gelb",
-    "rating": null,
-    "slope": null
-   },
-   {
-    "id": "blue",
-    "name": "Blau",
-    "rating": null,
-    "slope": null
-   },
-   {
-    "id": "red",
-    "name": "Rot",
-    "rating": null,
-    "slope": null
-   }
-  ],
-  "holes": [
-   {
-    "number": 1,
-    "par": 5,
-    "hcpIndex": 5,
-    "distances": {
-     "white": 451,
-     "yellow": 414,
-     "blue": 385,
-     "red": 365
-    }
-   },
-   {
-    "number": 2,
-    "par": 3,
-    "hcpIndex": 15,
-    "distances": {
-     "white": 192,
-     "yellow": 164,
-     "blue": 143,
-     "red": 131
-    }
-   },
-   {
-    "number": 3,
-    "par": 4,
-    "hcpIndex": 3,
-    "distances": {
-     "white": 372,
-     "yellow": 357,
-     "blue": 341,
-     "red": 323
+     "back": 321,
+     "backStandard": 311,
+     "standard": 293,
+     "frontStandard": 286
     }
    },
    {
@@ -4245,706 +3957,10 @@
     "par": 4,
     "hcpIndex": 13,
     "distances": {
-     "white": 350,
-     "yellow": 350,
-     "blue": 340,
-     "red": 340
-    }
-   },
-   {
-    "number": 5,
-    "par": 3,
-    "hcpIndex": 9,
-    "distances": {
-     "white": 169,
-     "yellow": 159,
-     "blue": 139,
-     "red": 134
-    }
-   },
-   {
-    "number": 6,
-    "par": 4,
-    "hcpIndex": 11,
-    "distances": {
-     "white": 348,
-     "yellow": 334,
-     "blue": 305,
-     "red": 295
-    }
-   },
-   {
-    "number": 7,
-    "par": 4,
-    "hcpIndex": 1,
-    "distances": {
-     "white": 343,
-     "yellow": 334,
-     "blue": 303,
-     "red": 282
-    }
-   },
-   {
-    "number": 8,
-    "par": 3,
-    "hcpIndex": 17,
-    "distances": {
-     "white": 126,
-     "yellow": 126,
-     "blue": 113,
-     "red": 113
-    }
-   },
-   {
-    "number": 9,
-    "par": 5,
-    "hcpIndex": 7,
-    "distances": {
-     "white": 461,
-     "yellow": 439,
-     "blue": 419,
-     "red": 385
-    }
-   },
-   {
-    "number": 10,
-    "par": 4,
-    "hcpIndex": 6,
-    "distances": {
-     "white": 335,
-     "yellow": 315,
-     "blue": 295,
-     "red": 285
-    }
-   },
-   {
-    "number": 11,
-    "par": 5,
-    "hcpIndex": 4,
-    "distances": {
-     "white": 494,
-     "yellow": 478,
-     "blue": 450,
-     "red": 429
-    }
-   },
-   {
-    "number": 12,
-    "par": 4,
-    "hcpIndex": 10,
-    "distances": {
-     "white": 321,
-     "yellow": 311,
-     "blue": 293,
-     "red": 286
-    }
-   },
-   {
-    "number": 13,
-    "par": 4,
-    "hcpIndex": 14,
-    "distances": {
-     "white": 310,
-     "yellow": 305,
-     "blue": 292,
-     "red": 287
-    }
-   },
-   {
-    "number": 14,
-    "par": 3,
-    "hcpIndex": 16,
-    "distances": {
-     "white": 182,
-     "yellow": 162,
-     "blue": 142,
-     "red": 122
-    }
-   },
-   {
-    "number": 15,
-    "par": 4,
-    "hcpIndex": 2,
-    "distances": {
-     "white": 365,
-     "yellow": 347,
-     "blue": 327,
-     "red": 307
-    }
-   },
-   {
-    "number": 16,
-    "par": 3,
-    "hcpIndex": 8,
-    "distances": {
-     "white": 180,
-     "yellow": 152,
-     "blue": 137,
-     "red": 137
-    }
-   },
-   {
-    "number": 17,
-    "par": 5,
-    "hcpIndex": 12,
-    "distances": {
-     "white": 481,
-     "yellow": 450,
-     "blue": 424,
-     "red": 384
-    }
-   },
-   {
-    "number": 18,
-    "par": 3,
-    "hcpIndex": 18,
-    "distances": {
-     "white": 139,
-     "yellow": 139,
-     "blue": 120,
-     "red": 120
-    }
-   }
-  ]
- },
- {
-  "id": "waldkirch-rot-gelb",
-  "name": "Golfpark Waldkirch – Rot/Gelb",
-  "region": "St. Gallen",
-  "verified": true,
-  "tees": [
-   {
-    "id": "white",
-    "name": "Weiss",
-    "rating": null,
-    "slope": null
-   },
-   {
-    "id": "yellow",
-    "name": "Gelb",
-    "rating": null,
-    "slope": null
-   },
-   {
-    "id": "blue",
-    "name": "Blau",
-    "rating": null,
-    "slope": null
-   },
-   {
-    "id": "red",
-    "name": "Rot",
-    "rating": null,
-    "slope": null
-   }
-  ],
-  "holes": [
-   {
-    "number": 1,
-    "par": 5,
-    "hcpIndex": 5,
-    "distances": {
-     "white": 451,
-     "yellow": 414,
-     "blue": 385,
-     "red": 365
-    }
-   },
-   {
-    "number": 2,
-    "par": 3,
-    "hcpIndex": 15,
-    "distances": {
-     "white": 192,
-     "yellow": 164,
-     "blue": 143,
-     "red": 131
-    }
-   },
-   {
-    "number": 3,
-    "par": 4,
-    "hcpIndex": 3,
-    "distances": {
-     "white": 372,
-     "yellow": 357,
-     "blue": 341,
-     "red": 323
-    }
-   },
-   {
-    "number": 4,
-    "par": 4,
-    "hcpIndex": 13,
-    "distances": {
-     "white": 350,
-     "yellow": 350,
-     "blue": 340,
-     "red": 340
-    }
-   },
-   {
-    "number": 5,
-    "par": 3,
-    "hcpIndex": 9,
-    "distances": {
-     "white": 169,
-     "yellow": 159,
-     "blue": 139,
-     "red": 134
-    }
-   },
-   {
-    "number": 6,
-    "par": 4,
-    "hcpIndex": 11,
-    "distances": {
-     "white": 348,
-     "yellow": 334,
-     "blue": 305,
-     "red": 295
-    }
-   },
-   {
-    "number": 7,
-    "par": 4,
-    "hcpIndex": 1,
-    "distances": {
-     "white": 343,
-     "yellow": 334,
-     "blue": 303,
-     "red": 282
-    }
-   },
-   {
-    "number": 8,
-    "par": 3,
-    "hcpIndex": 17,
-    "distances": {
-     "white": 126,
-     "yellow": 126,
-     "blue": 113,
-     "red": 113
-    }
-   },
-   {
-    "number": 9,
-    "par": 5,
-    "hcpIndex": 7,
-    "distances": {
-     "white": 461,
-     "yellow": 439,
-     "blue": 419,
-     "red": 385
-    }
-   },
-   {
-    "number": 10,
-    "par": 4,
-    "hcpIndex": 14,
-    "distances": {
-     "white": 342,
-     "yellow": 330,
-     "blue": 304,
-     "red": 292
-    }
-   },
-   {
-    "number": 11,
-    "par": 4,
-    "hcpIndex": 4,
-    "distances": {
-     "white": 393,
-     "yellow": 381,
-     "blue": 348,
-     "red": 336
-    }
-   },
-   {
-    "number": 12,
-    "par": 3,
-    "hcpIndex": 12,
-    "distances": {
-     "white": 173,
-     "yellow": 162,
-     "blue": 145,
-     "red": 135
-    }
-   },
-   {
-    "number": 13,
-    "par": 5,
-    "hcpIndex": 6,
-    "distances": {
-     "white": 513,
-     "yellow": 501,
-     "blue": 458,
-     "red": 446
-    }
-   },
-   {
-    "number": 14,
-    "par": 3,
-    "hcpIndex": 18,
-    "distances": {
-     "white": 152,
-     "yellow": 152,
-     "blue": 136,
-     "red": 136
-    }
-   },
-   {
-    "number": 15,
-    "par": 4,
-    "hcpIndex": 2,
-    "distances": {
-     "white": 358,
-     "yellow": 338,
-     "blue": 321,
-     "red": 304
-    }
-   },
-   {
-    "number": 16,
-    "par": 4,
-    "hcpIndex": 10,
-    "distances": {
-     "white": 338,
-     "yellow": 327,
-     "blue": 298,
-     "red": 286
-    }
-   },
-   {
-    "number": 17,
-    "par": 4,
-    "hcpIndex": 8,
-    "distances": {
-     "white": 311,
-     "yellow": 302,
-     "blue": 282,
-     "red": 272
-    }
-   },
-   {
-    "number": 18,
-    "par": 5,
-    "hcpIndex": 16,
-    "distances": {
-     "white": 448,
-     "yellow": 431,
-     "blue": 405,
-     "red": 393
-    }
-   }
-  ]
- },
- {
-  "id": "waldkirch-rot-gruen",
-  "name": "Golfpark Waldkirch – Rot/Grün",
-  "region": "St. Gallen",
-  "verified": true,
-  "tees": [
-   {
-    "id": "white",
-    "name": "Weiss",
-    "rating": null,
-    "slope": null
-   },
-   {
-    "id": "yellow",
-    "name": "Gelb",
-    "rating": null,
-    "slope": null
-   },
-   {
-    "id": "blue",
-    "name": "Blau",
-    "rating": null,
-    "slope": null
-   },
-   {
-    "id": "red",
-    "name": "Rot",
-    "rating": null,
-    "slope": null
-   }
-  ],
-  "holes": [
-   {
-    "number": 1,
-    "par": 5,
-    "hcpIndex": 5,
-    "distances": {
-     "white": 451,
-     "yellow": 414,
-     "blue": 385,
-     "red": 365
-    }
-   },
-   {
-    "number": 2,
-    "par": 3,
-    "hcpIndex": 15,
-    "distances": {
-     "white": 192,
-     "yellow": 164,
-     "blue": 143,
-     "red": 131
-    }
-   },
-   {
-    "number": 3,
-    "par": 4,
-    "hcpIndex": 3,
-    "distances": {
-     "white": 372,
-     "yellow": 357,
-     "blue": 341,
-     "red": 323
-    }
-   },
-   {
-    "number": 4,
-    "par": 4,
-    "hcpIndex": 13,
-    "distances": {
-     "white": 350,
-     "yellow": 350,
-     "blue": 340,
-     "red": 340
-    }
-   },
-   {
-    "number": 5,
-    "par": 3,
-    "hcpIndex": 9,
-    "distances": {
-     "white": 169,
-     "yellow": 159,
-     "blue": 139,
-     "red": 134
-    }
-   },
-   {
-    "number": 6,
-    "par": 4,
-    "hcpIndex": 11,
-    "distances": {
-     "white": 348,
-     "yellow": 334,
-     "blue": 305,
-     "red": 295
-    }
-   },
-   {
-    "number": 7,
-    "par": 4,
-    "hcpIndex": 1,
-    "distances": {
-     "white": 343,
-     "yellow": 334,
-     "blue": 303,
-     "red": 282
-    }
-   },
-   {
-    "number": 8,
-    "par": 3,
-    "hcpIndex": 17,
-    "distances": {
-     "white": 126,
-     "yellow": 126,
-     "blue": 113,
-     "red": 113
-    }
-   },
-   {
-    "number": 9,
-    "par": 5,
-    "hcpIndex": 7,
-    "distances": {
-     "white": 461,
-     "yellow": 439,
-     "blue": 419,
-     "red": 385
-    }
-   },
-   {
-    "number": 10,
-    "par": 4,
-    "hcpIndex": 8,
-    "distances": {
-     "white": 358,
-     "yellow": 338,
-     "blue": 315,
-     "red": 296
-    }
-   },
-   {
-    "number": 11,
-    "par": 4,
-    "hcpIndex": 10,
-    "distances": {
-     "white": 327,
-     "yellow": 327,
-     "blue": 307,
-     "red": 307
-    }
-   },
-   {
-    "number": 12,
-    "par": 3,
-    "hcpIndex": 12,
-    "distances": {
-     "white": 182,
-     "yellow": 161,
-     "blue": 141,
-     "red": 131
-    }
-   },
-   {
-    "number": 13,
-    "par": 5,
-    "hcpIndex": 4,
-    "distances": {
-     "white": 443,
-     "yellow": 424,
-     "blue": 372,
-     "red": 364
-    }
-   },
-   {
-    "number": 14,
-    "par": 3,
-    "hcpIndex": 16,
-    "distances": {
-     "white": 173,
-     "yellow": 153,
-     "blue": 140,
-     "red": 127
-    }
-   },
-   {
-    "number": 15,
-    "par": 4,
-    "hcpIndex": 6,
-    "distances": {
-     "white": 367,
-     "yellow": 351,
-     "blue": 321,
-     "red": 312
-    }
-   },
-   {
-    "number": 16,
-    "par": 5,
-    "hcpIndex": 14,
-    "distances": {
-     "white": 462,
-     "yellow": 422,
-     "blue": 407,
-     "red": 383
-    }
-   },
-   {
-    "number": 17,
-    "par": 4,
-    "hcpIndex": 2,
-    "distances": {
-     "white": 340,
-     "yellow": 330,
-     "blue": 308,
-     "red": 298
-    }
-   },
-   {
-    "number": 18,
-    "par": 3,
-    "hcpIndex": 18,
-    "distances": {
-     "white": 140,
-     "yellow": 140,
-     "blue": 120,
-     "red": 120
-    }
-   }
-  ]
- },
- {
-  "id": "waldkirch-gruen-blau",
-  "name": "Golfpark Waldkirch – Grün/Blau",
-  "region": "St. Gallen",
-  "verified": true,
-  "tees": [
-   {
-    "id": "white",
-    "name": "Weiss",
-    "rating": null,
-    "slope": null
-   },
-   {
-    "id": "yellow",
-    "name": "Gelb",
-    "rating": null,
-    "slope": null
-   },
-   {
-    "id": "blue",
-    "name": "Blau",
-    "rating": null,
-    "slope": null
-   },
-   {
-    "id": "red",
-    "name": "Rot",
-    "rating": null,
-    "slope": null
-   }
-  ],
-  "holes": [
-   {
-    "number": 1,
-    "par": 4,
-    "hcpIndex": 7,
-    "distances": {
-     "white": 358,
-     "yellow": 338,
-     "blue": 315,
-     "red": 296
-    }
-   },
-   {
-    "number": 2,
-    "par": 4,
-    "hcpIndex": 9,
-    "distances": {
-     "white": 327,
-     "yellow": 327,
-     "blue": 307,
-     "red": 307
-    }
-   },
-   {
-    "number": 3,
-    "par": 3,
-    "hcpIndex": 11,
-    "distances": {
-     "white": 182,
-     "yellow": 161,
-     "blue": 141,
-     "red": 131
-    }
-   },
-   {
-    "number": 4,
-    "par": 5,
-    "hcpIndex": 3,
-    "distances": {
-     "white": 443,
-     "yellow": 424,
-     "blue": 372,
-     "red": 364
+     "back": 310,
+     "backStandard": 305,
+     "standard": 292,
+     "frontStandard": 287
     }
    },
    {
@@ -4952,43 +3968,43 @@
     "par": 3,
     "hcpIndex": 15,
     "distances": {
-     "white": 173,
-     "yellow": 153,
-     "blue": 140,
-     "red": 127
+     "back": 182,
+     "backStandard": 162,
+     "standard": 142,
+     "frontStandard": 122
     }
    },
    {
     "number": 6,
     "par": 4,
-    "hcpIndex": 5,
+    "hcpIndex": 1,
     "distances": {
-     "white": 367,
-     "yellow": 351,
-     "blue": 321,
-     "red": 312
+     "back": 365,
+     "backStandard": 347,
+     "standard": 327,
+     "frontStandard": 307
     }
    },
    {
     "number": 7,
-    "par": 5,
-    "hcpIndex": 13,
+    "par": 3,
+    "hcpIndex": 7,
     "distances": {
-     "white": 462,
-     "yellow": 422,
-     "blue": 407,
-     "red": 383
+     "back": 180,
+     "backStandard": 152,
+     "standard": 137,
+     "frontStandard": 137
     }
    },
    {
     "number": 8,
-    "par": 4,
-    "hcpIndex": 1,
+    "par": 5,
+    "hcpIndex": 11,
     "distances": {
-     "white": 340,
-     "yellow": 330,
-     "blue": 308,
-     "red": 298
+     "back": 481,
+     "backStandard": 450,
+     "standard": 424,
+     "frontStandard": 384
     }
    },
    {
@@ -4996,43 +4012,43 @@
     "par": 3,
     "hcpIndex": 17,
     "distances": {
-     "white": 140,
-     "yellow": 140,
-     "blue": 120,
-     "red": 120
+     "back": 139,
+     "backStandard": 139,
+     "standard": 120,
+     "frontStandard": 120
     }
    },
    {
     "number": 10,
-    "par": 4,
+    "par": 5,
     "hcpIndex": 6,
     "distances": {
-     "white": 335,
-     "yellow": 315,
-     "blue": 295,
-     "red": 285
+     "back": 451,
+     "backStandard": 414,
+     "standard": 385,
+     "frontStandard": 365
     }
    },
    {
     "number": 11,
-    "par": 5,
-    "hcpIndex": 4,
+    "par": 3,
+    "hcpIndex": 16,
     "distances": {
-     "white": 494,
-     "yellow": 478,
-     "blue": 450,
-     "red": 429
+     "back": 192,
+     "backStandard": 164,
+     "standard": 143,
+     "frontStandard": 131
     }
    },
    {
     "number": 12,
     "par": 4,
-    "hcpIndex": 10,
+    "hcpIndex": 4,
     "distances": {
-     "white": 321,
-     "yellow": 311,
-     "blue": 293,
-     "red": 286
+     "back": 372,
+     "backStandard": 357,
+     "standard": 341,
+     "frontStandard": 323
     }
    },
    {
@@ -5040,65 +4056,65 @@
     "par": 4,
     "hcpIndex": 14,
     "distances": {
-     "white": 310,
-     "yellow": 305,
-     "blue": 292,
-     "red": 287
+     "back": 350,
+     "backStandard": 350,
+     "standard": 340,
+     "frontStandard": 340
     }
    },
    {
     "number": 14,
     "par": 3,
-    "hcpIndex": 16,
+    "hcpIndex": 10,
     "distances": {
-     "white": 182,
-     "yellow": 162,
-     "blue": 142,
-     "red": 122
+     "back": 169,
+     "backStandard": 159,
+     "standard": 139,
+     "frontStandard": 134
     }
    },
    {
     "number": 15,
     "par": 4,
-    "hcpIndex": 2,
+    "hcpIndex": 12,
     "distances": {
-     "white": 365,
-     "yellow": 347,
-     "blue": 327,
-     "red": 307
+     "back": 348,
+     "backStandard": 334,
+     "standard": 305,
+     "frontStandard": 295
     }
    },
    {
     "number": 16,
-    "par": 3,
-    "hcpIndex": 8,
+    "par": 4,
+    "hcpIndex": 2,
     "distances": {
-     "white": 180,
-     "yellow": 152,
-     "blue": 137,
-     "red": 137
+     "back": 343,
+     "backStandard": 334,
+     "standard": 303,
+     "frontStandard": 282
     }
    },
    {
     "number": 17,
-    "par": 5,
-    "hcpIndex": 12,
+    "par": 3,
+    "hcpIndex": 18,
     "distances": {
-     "white": 481,
-     "yellow": 450,
-     "blue": 424,
-     "red": 384
+     "back": 126,
+     "backStandard": 126,
+     "standard": 113,
+     "frontStandard": 113
     }
    },
    {
     "number": 18,
-    "par": 3,
-    "hcpIndex": 18,
+    "par": 5,
+    "hcpIndex": 8,
     "distances": {
-     "white": 139,
-     "yellow": 139,
-     "blue": 120,
-     "red": 120
+     "back": 461,
+     "backStandard": 439,
+     "standard": 419,
+     "frontStandard": 385
     }
    }
   ]
@@ -5110,28 +4126,64 @@
   "verified": true,
   "tees": [
    {
-    "id": "white",
-    "name": "Weiss",
-    "rating": null,
-    "slope": null
+    "id": "back",
+    "name": "Back Tees",
+    "markers": "Gr28-G30",
+    "ratings": {
+     "men": {
+      "rating": 71.3,
+      "slope": 131
+     },
+     "ladies": {
+      "rating": 77.6,
+      "slope": 138
+     }
+    }
    },
    {
-    "id": "yellow",
-    "name": "Gelb",
-    "rating": null,
-    "slope": null
+    "id": "backStandard",
+    "name": "Back Standard Tees",
+    "markers": "GR26-G29",
+    "ratings": {
+     "men": {
+      "rating": 70.6,
+      "slope": 130
+     },
+     "ladies": {
+      "rating": 76.2,
+      "slope": 135
+     }
+    }
    },
    {
-    "id": "blue",
-    "name": "Blau",
-    "rating": null,
-    "slope": null
+    "id": "standard",
+    "name": "Standard Tees",
+    "markers": "Gr24-G27",
+    "ratings": {
+     "men": {
+      "rating": 68.4,
+      "slope": 125
+     },
+     "ladies": {
+      "rating": 73.5,
+      "slope": 130
+     }
+    }
    },
    {
-    "id": "red",
-    "name": "Rot",
-    "rating": null,
-    "slope": null
+    "id": "frontStandard",
+    "name": "Front Standard Tees",
+    "markers": "Gr23-G26",
+    "ratings": {
+     "men": {
+      "rating": 67.4,
+      "slope": 124
+     },
+     "ladies": {
+      "rating": 71.9,
+      "slope": 124
+     }
+    }
    }
   ],
   "holes": [
@@ -5140,10 +4192,10 @@
     "par": 4,
     "hcpIndex": 7,
     "distances": {
-     "white": 358,
-     "yellow": 338,
-     "blue": 315,
-     "red": 296
+     "back": 358,
+     "backStandard": 338,
+     "standard": 315,
+     "frontStandard": 296
     }
    },
    {
@@ -5151,10 +4203,10 @@
     "par": 4,
     "hcpIndex": 9,
     "distances": {
-     "white": 327,
-     "yellow": 327,
-     "blue": 307,
-     "red": 307
+     "back": 327,
+     "backStandard": 327,
+     "standard": 307,
+     "frontStandard": 307
     }
    },
    {
@@ -5162,10 +4214,10 @@
     "par": 3,
     "hcpIndex": 11,
     "distances": {
-     "white": 182,
-     "yellow": 161,
-     "blue": 141,
-     "red": 131
+     "back": 182,
+     "backStandard": 161,
+     "standard": 141,
+     "frontStandard": 131
     }
    },
    {
@@ -5173,10 +4225,10 @@
     "par": 5,
     "hcpIndex": 3,
     "distances": {
-     "white": 443,
-     "yellow": 424,
-     "blue": 372,
-     "red": 364
+     "back": 443,
+     "backStandard": 424,
+     "standard": 372,
+     "frontStandard": 364
     }
    },
    {
@@ -5184,10 +4236,10 @@
     "par": 3,
     "hcpIndex": 15,
     "distances": {
-     "white": 173,
-     "yellow": 153,
-     "blue": 140,
-     "red": 127
+     "back": 173,
+     "backStandard": 153,
+     "standard": 140,
+     "frontStandard": 127
     }
    },
    {
@@ -5195,10 +4247,10 @@
     "par": 4,
     "hcpIndex": 5,
     "distances": {
-     "white": 367,
-     "yellow": 351,
-     "blue": 321,
-     "red": 312
+     "back": 367,
+     "backStandard": 351,
+     "standard": 321,
+     "frontStandard": 312
     }
    },
    {
@@ -5206,10 +4258,10 @@
     "par": 5,
     "hcpIndex": 13,
     "distances": {
-     "white": 462,
-     "yellow": 422,
-     "blue": 407,
-     "red": 383
+     "back": 462,
+     "backStandard": 422,
+     "standard": 407,
+     "frontStandard": 383
     }
    },
    {
@@ -5217,10 +4269,10 @@
     "par": 4,
     "hcpIndex": 1,
     "distances": {
-     "white": 340,
-     "yellow": 330,
-     "blue": 308,
-     "red": 298
+     "back": 340,
+     "backStandard": 330,
+     "standard": 308,
+     "frontStandard": 298
     }
    },
    {
@@ -5228,10 +4280,10 @@
     "par": 3,
     "hcpIndex": 17,
     "distances": {
-     "white": 140,
-     "yellow": 140,
-     "blue": 120,
-     "red": 120
+     "back": 140,
+     "backStandard": 140,
+     "standard": 120,
+     "frontStandard": 120
     }
    },
    {
@@ -5239,10 +4291,10 @@
     "par": 4,
     "hcpIndex": 14,
     "distances": {
-     "white": 342,
-     "yellow": 330,
-     "blue": 304,
-     "red": 292
+     "back": 342,
+     "backStandard": 330,
+     "standard": 304,
+     "frontStandard": 292
     }
    },
    {
@@ -5250,10 +4302,10 @@
     "par": 4,
     "hcpIndex": 4,
     "distances": {
-     "white": 393,
-     "yellow": 381,
-     "blue": 348,
-     "red": 336
+     "back": 393,
+     "backStandard": 381,
+     "standard": 348,
+     "frontStandard": 336
     }
    },
    {
@@ -5261,10 +4313,10 @@
     "par": 3,
     "hcpIndex": 12,
     "distances": {
-     "white": 173,
-     "yellow": 162,
-     "blue": 145,
-     "red": 135
+     "back": 173,
+     "backStandard": 162,
+     "standard": 145,
+     "frontStandard": 135
     }
    },
    {
@@ -5272,10 +4324,10 @@
     "par": 5,
     "hcpIndex": 6,
     "distances": {
-     "white": 513,
-     "yellow": 501,
-     "blue": 458,
-     "red": 446
+     "back": 513,
+     "backStandard": 501,
+     "standard": 458,
+     "frontStandard": 446
     }
    },
    {
@@ -5283,10 +4335,10 @@
     "par": 3,
     "hcpIndex": 18,
     "distances": {
-     "white": 152,
-     "yellow": 152,
-     "blue": 136,
-     "red": 136
+     "back": 152,
+     "backStandard": 152,
+     "standard": 136,
+     "frontStandard": 136
     }
    },
    {
@@ -5294,10 +4346,10 @@
     "par": 4,
     "hcpIndex": 2,
     "distances": {
-     "white": 358,
-     "yellow": 338,
-     "blue": 321,
-     "red": 304
+     "back": 358,
+     "backStandard": 338,
+     "standard": 321,
+     "frontStandard": 304
     }
    },
    {
@@ -5305,10 +4357,10 @@
     "par": 4,
     "hcpIndex": 10,
     "distances": {
-     "white": 338,
-     "yellow": 327,
-     "blue": 298,
-     "red": 286
+     "back": 338,
+     "backStandard": 327,
+     "standard": 298,
+     "frontStandard": 286
     }
    },
    {
@@ -5316,10 +4368,10 @@
     "par": 4,
     "hcpIndex": 8,
     "distances": {
-     "white": 311,
-     "yellow": 302,
-     "blue": 282,
-     "red": 272
+     "back": 311,
+     "backStandard": 302,
+     "standard": 282,
+     "frontStandard": 272
     }
    },
    {
@@ -5327,43 +4379,615 @@
     "par": 5,
     "hcpIndex": 16,
     "distances": {
-     "white": 448,
-     "yellow": 431,
-     "blue": 405,
-     "red": 393
+     "back": 448,
+     "backStandard": 431,
+     "standard": 405,
+     "frontStandard": 393
     }
    }
   ]
  },
  {
-  "id": "waldkirch-gruen-rot",
-  "name": "Golfpark Waldkirch – Grün/Rot",
+  "id": "waldkirch-rot-gelb",
+  "name": "Golfpark Waldkirch – Rot/Gelb",
   "region": "St. Gallen",
   "verified": true,
   "tees": [
    {
-    "id": "white",
-    "name": "Weiss",
-    "rating": null,
-    "slope": null
+    "id": "back",
+    "name": "Back Tees",
+    "markers": "R28-G30",
+    "ratings": {
+     "men": {
+      "rating": 71.2,
+      "slope": 130
+     },
+     "ladies": {
+      "rating": 77.3,
+      "slope": 140
+     }
+    }
    },
    {
-    "id": "yellow",
-    "name": "Gelb",
-    "rating": null,
-    "slope": null
+    "id": "backStandard",
+    "name": "Back Standard Tees",
+    "markers": "R27-G29",
+    "ratings": {
+     "men": {
+      "rating": 70,
+      "slope": 132
+     },
+     "ladies": {
+      "rating": 75.8,
+      "slope": 137
+     }
+    }
    },
    {
-    "id": "blue",
-    "name": "Blau",
-    "rating": null,
-    "slope": null
+    "id": "standard",
+    "name": "Standard Tees",
+    "markers": "R25-G27",
+    "ratings": {
+     "men": {
+      "rating": 67.9,
+      "slope": 128
+     },
+     "ladies": {
+      "rating": 73.3,
+      "slope": 131
+     }
+    }
    },
    {
-    "id": "red",
-    "name": "Rot",
-    "rating": null,
-    "slope": null
+    "id": "frontStandard",
+    "name": "Front Standard Tees",
+    "markers": "R24-G26",
+    "ratings": {
+     "men": {
+      "rating": 66.9,
+      "slope": 126
+     },
+     "ladies": {
+      "rating": 72.8,
+      "slope": 129
+     }
+    }
+   }
+  ],
+  "holes": [
+   {
+    "number": 1,
+    "par": 5,
+    "hcpIndex": 5,
+    "distances": {
+     "back": 451,
+     "backStandard": 414,
+     "standard": 385,
+     "frontStandard": 365
+    }
+   },
+   {
+    "number": 2,
+    "par": 3,
+    "hcpIndex": 15,
+    "distances": {
+     "back": 192,
+     "backStandard": 164,
+     "standard": 143,
+     "frontStandard": 131
+    }
+   },
+   {
+    "number": 3,
+    "par": 4,
+    "hcpIndex": 3,
+    "distances": {
+     "back": 372,
+     "backStandard": 357,
+     "standard": 341,
+     "frontStandard": 323
+    }
+   },
+   {
+    "number": 4,
+    "par": 4,
+    "hcpIndex": 13,
+    "distances": {
+     "back": 350,
+     "backStandard": 350,
+     "standard": 340,
+     "frontStandard": 340
+    }
+   },
+   {
+    "number": 5,
+    "par": 3,
+    "hcpIndex": 9,
+    "distances": {
+     "back": 169,
+     "backStandard": 159,
+     "standard": 139,
+     "frontStandard": 134
+    }
+   },
+   {
+    "number": 6,
+    "par": 4,
+    "hcpIndex": 11,
+    "distances": {
+     "back": 348,
+     "backStandard": 334,
+     "standard": 305,
+     "frontStandard": 295
+    }
+   },
+   {
+    "number": 7,
+    "par": 4,
+    "hcpIndex": 1,
+    "distances": {
+     "back": 343,
+     "backStandard": 334,
+     "standard": 303,
+     "frontStandard": 282
+    }
+   },
+   {
+    "number": 8,
+    "par": 3,
+    "hcpIndex": 17,
+    "distances": {
+     "back": 126,
+     "backStandard": 126,
+     "standard": 113,
+     "frontStandard": 113
+    }
+   },
+   {
+    "number": 9,
+    "par": 5,
+    "hcpIndex": 7,
+    "distances": {
+     "back": 461,
+     "backStandard": 439,
+     "standard": 419,
+     "frontStandard": 385
+    }
+   },
+   {
+    "number": 10,
+    "par": 4,
+    "hcpIndex": 14,
+    "distances": {
+     "back": 342,
+     "backStandard": 330,
+     "standard": 304,
+     "frontStandard": 292
+    }
+   },
+   {
+    "number": 11,
+    "par": 4,
+    "hcpIndex": 4,
+    "distances": {
+     "back": 393,
+     "backStandard": 381,
+     "standard": 348,
+     "frontStandard": 336
+    }
+   },
+   {
+    "number": 12,
+    "par": 3,
+    "hcpIndex": 12,
+    "distances": {
+     "back": 173,
+     "backStandard": 162,
+     "standard": 145,
+     "frontStandard": 135
+    }
+   },
+   {
+    "number": 13,
+    "par": 5,
+    "hcpIndex": 6,
+    "distances": {
+     "back": 513,
+     "backStandard": 501,
+     "standard": 458,
+     "frontStandard": 446
+    }
+   },
+   {
+    "number": 14,
+    "par": 3,
+    "hcpIndex": 18,
+    "distances": {
+     "back": 152,
+     "backStandard": 152,
+     "standard": 136,
+     "frontStandard": 136
+    }
+   },
+   {
+    "number": 15,
+    "par": 4,
+    "hcpIndex": 2,
+    "distances": {
+     "back": 358,
+     "backStandard": 338,
+     "standard": 321,
+     "frontStandard": 304
+    }
+   },
+   {
+    "number": 16,
+    "par": 4,
+    "hcpIndex": 10,
+    "distances": {
+     "back": 338,
+     "backStandard": 327,
+     "standard": 298,
+     "frontStandard": 286
+    }
+   },
+   {
+    "number": 17,
+    "par": 4,
+    "hcpIndex": 8,
+    "distances": {
+     "back": 311,
+     "backStandard": 302,
+     "standard": 282,
+     "frontStandard": 272
+    }
+   },
+   {
+    "number": 18,
+    "par": 5,
+    "hcpIndex": 16,
+    "distances": {
+     "back": 448,
+     "backStandard": 431,
+     "standard": 405,
+     "frontStandard": 393
+    }
+   }
+  ]
+ },
+ {
+  "id": "waldkirch-rot-gruen",
+  "name": "Golfpark Waldkirch – Rot/Grün",
+  "region": "St. Gallen",
+  "verified": true,
+  "tees": [
+   {
+    "id": "back",
+    "name": "Back Tees",
+    "markers": "R28-Gr28",
+    "ratings": {
+     "men": {
+      "rating": 70.5,
+      "slope": 132
+     },
+     "ladies": {
+      "rating": 76.7,
+      "slope": 139
+     }
+    }
+   },
+   {
+    "id": "backStandard",
+    "name": "Back Standard Tees",
+    "markers": "R27-Gr28",
+    "ratings": {
+     "men": {
+      "rating": 69.2,
+      "slope": 129
+     },
+     "ladies": {
+      "rating": 75,
+      "slope": 135
+     }
+    }
+   },
+   {
+    "id": "standard",
+    "name": "Standard Tees",
+    "markers": "R25-Gr24",
+    "ratings": {
+     "men": {
+      "rating": 67.3,
+      "slope": 126
+     },
+     "ladies": {
+      "rating": 72.6,
+      "slope": 131
+     }
+    }
+   },
+   {
+    "id": "frontStandard",
+    "name": "Front Standard Tees",
+    "markers": "R24-Gr23",
+    "ratings": {
+     "men": {
+      "rating": 66.3,
+      "slope": 124
+     },
+     "ladies": {
+      "rating": 71.3,
+      "slope": 126
+     }
+    }
+   }
+  ],
+  "holes": [
+   {
+    "number": 1,
+    "par": 5,
+    "hcpIndex": 5,
+    "distances": {
+     "back": 451,
+     "backStandard": 414,
+     "standard": 385,
+     "frontStandard": 365
+    }
+   },
+   {
+    "number": 2,
+    "par": 3,
+    "hcpIndex": 15,
+    "distances": {
+     "back": 192,
+     "backStandard": 164,
+     "standard": 143,
+     "frontStandard": 131
+    }
+   },
+   {
+    "number": 3,
+    "par": 4,
+    "hcpIndex": 3,
+    "distances": {
+     "back": 372,
+     "backStandard": 357,
+     "standard": 341,
+     "frontStandard": 323
+    }
+   },
+   {
+    "number": 4,
+    "par": 4,
+    "hcpIndex": 13,
+    "distances": {
+     "back": 350,
+     "backStandard": 350,
+     "standard": 340,
+     "frontStandard": 340
+    }
+   },
+   {
+    "number": 5,
+    "par": 3,
+    "hcpIndex": 9,
+    "distances": {
+     "back": 169,
+     "backStandard": 159,
+     "standard": 139,
+     "frontStandard": 134
+    }
+   },
+   {
+    "number": 6,
+    "par": 4,
+    "hcpIndex": 11,
+    "distances": {
+     "back": 348,
+     "backStandard": 334,
+     "standard": 305,
+     "frontStandard": 295
+    }
+   },
+   {
+    "number": 7,
+    "par": 4,
+    "hcpIndex": 1,
+    "distances": {
+     "back": 343,
+     "backStandard": 334,
+     "standard": 303,
+     "frontStandard": 282
+    }
+   },
+   {
+    "number": 8,
+    "par": 3,
+    "hcpIndex": 17,
+    "distances": {
+     "back": 126,
+     "backStandard": 126,
+     "standard": 113,
+     "frontStandard": 113
+    }
+   },
+   {
+    "number": 9,
+    "par": 5,
+    "hcpIndex": 7,
+    "distances": {
+     "back": 461,
+     "backStandard": 439,
+     "standard": 419,
+     "frontStandard": 385
+    }
+   },
+   {
+    "number": 10,
+    "par": 4,
+    "hcpIndex": 8,
+    "distances": {
+     "back": 358,
+     "backStandard": 358,
+     "standard": 315,
+     "frontStandard": 296
+    }
+   },
+   {
+    "number": 11,
+    "par": 4,
+    "hcpIndex": 10,
+    "distances": {
+     "back": 327,
+     "backStandard": 327,
+     "standard": 307,
+     "frontStandard": 307
+    }
+   },
+   {
+    "number": 12,
+    "par": 3,
+    "hcpIndex": 12,
+    "distances": {
+     "back": 182,
+     "backStandard": 182,
+     "standard": 141,
+     "frontStandard": 131
+    }
+   },
+   {
+    "number": 13,
+    "par": 5,
+    "hcpIndex": 4,
+    "distances": {
+     "back": 443,
+     "backStandard": 443,
+     "standard": 372,
+     "frontStandard": 364
+    }
+   },
+   {
+    "number": 14,
+    "par": 3,
+    "hcpIndex": 16,
+    "distances": {
+     "back": 173,
+     "backStandard": 173,
+     "standard": 140,
+     "frontStandard": 127
+    }
+   },
+   {
+    "number": 15,
+    "par": 4,
+    "hcpIndex": 6,
+    "distances": {
+     "back": 367,
+     "backStandard": 367,
+     "standard": 321,
+     "frontStandard": 312
+    }
+   },
+   {
+    "number": 16,
+    "par": 5,
+    "hcpIndex": 14,
+    "distances": {
+     "back": 462,
+     "backStandard": 462,
+     "standard": 407,
+     "frontStandard": 383
+    }
+   },
+   {
+    "number": 17,
+    "par": 4,
+    "hcpIndex": 2,
+    "distances": {
+     "back": 340,
+     "backStandard": 340,
+     "standard": 308,
+     "frontStandard": 298
+    }
+   },
+   {
+    "number": 18,
+    "par": 3,
+    "hcpIndex": 18,
+    "distances": {
+     "back": 140,
+     "backStandard": 140,
+     "standard": 120,
+     "frontStandard": 120
+    }
+   }
+  ]
+ },
+ {
+  "id": "waldkirch-schwarz",
+  "name": "Golfpark Waldkirch – Schwarz (Grün/Rot)",
+  "region": "St. Gallen",
+  "verified": true,
+  "tees": [
+   {
+    "id": "back",
+    "name": "Back Tees",
+    "markers": "56",
+    "ratings": {
+     "men": {
+      "rating": 70.4,
+      "slope": 135
+     },
+     "ladies": {
+      "rating": 76.5,
+      "slope": 136
+     }
+    }
+   },
+   {
+    "id": "backStandard",
+    "name": "Back Standard Tees",
+    "markers": "53",
+    "ratings": {
+     "men": {
+      "rating": 69.5,
+      "slope": 131
+     },
+     "ladies": {
+      "rating": 74.9,
+      "slope": 133
+     }
+    }
+   },
+   {
+    "id": "standard",
+    "name": "Standard Tees",
+    "markers": "49",
+    "ratings": {
+     "men": {
+      "rating": 67.5,
+      "slope": 127
+     },
+     "ladies": {
+      "rating": 72.5,
+      "slope": 130
+     }
+    }
+   },
+   {
+    "id": "frontStandard",
+    "name": "Front Standard Tees",
+    "markers": "47",
+    "ratings": {
+     "men": {
+      "rating": 66.5,
+      "slope": 129
+     },
+     "ladies": {
+      "rating": 70.7,
+      "slope": 127
+     }
+    }
    }
   ],
   "holes": [
@@ -5372,10 +4996,10 @@
     "par": 4,
     "hcpIndex": 7,
     "distances": {
-     "white": 358,
-     "yellow": 338,
-     "blue": 315,
-     "red": 296
+     "back": 358,
+     "backStandard": 338,
+     "standard": 315,
+     "frontStandard": 296
     }
    },
    {
@@ -5383,10 +5007,10 @@
     "par": 4,
     "hcpIndex": 9,
     "distances": {
-     "white": 327,
-     "yellow": 327,
-     "blue": 307,
-     "red": 307
+     "back": 327,
+     "backStandard": 327,
+     "standard": 307,
+     "frontStandard": 307
     }
    },
    {
@@ -5394,10 +5018,10 @@
     "par": 3,
     "hcpIndex": 11,
     "distances": {
-     "white": 182,
-     "yellow": 161,
-     "blue": 141,
-     "red": 131
+     "back": 182,
+     "backStandard": 161,
+     "standard": 141,
+     "frontStandard": 131
     }
    },
    {
@@ -5405,10 +5029,10 @@
     "par": 5,
     "hcpIndex": 3,
     "distances": {
-     "white": 443,
-     "yellow": 424,
-     "blue": 372,
-     "red": 364
+     "back": 443,
+     "backStandard": 424,
+     "standard": 372,
+     "frontStandard": 364
     }
    },
    {
@@ -5416,10 +5040,10 @@
     "par": 3,
     "hcpIndex": 15,
     "distances": {
-     "white": 173,
-     "yellow": 153,
-     "blue": 140,
-     "red": 127
+     "back": 173,
+     "backStandard": 153,
+     "standard": 140,
+     "frontStandard": 127
     }
    },
    {
@@ -5427,10 +5051,10 @@
     "par": 4,
     "hcpIndex": 5,
     "distances": {
-     "white": 367,
-     "yellow": 351,
-     "blue": 321,
-     "red": 312
+     "back": 367,
+     "backStandard": 351,
+     "standard": 321,
+     "frontStandard": 312
     }
    },
    {
@@ -5438,10 +5062,10 @@
     "par": 5,
     "hcpIndex": 13,
     "distances": {
-     "white": 462,
-     "yellow": 422,
-     "blue": 407,
-     "red": 383
+     "back": 462,
+     "backStandard": 422,
+     "standard": 407,
+     "frontStandard": 383
     }
    },
    {
@@ -5449,10 +5073,10 @@
     "par": 4,
     "hcpIndex": 1,
     "distances": {
-     "white": 340,
-     "yellow": 330,
-     "blue": 308,
-     "red": 298
+     "back": 340,
+     "backStandard": 330,
+     "standard": 308,
+     "frontStandard": 298
     }
    },
    {
@@ -5460,43 +5084,311 @@
     "par": 3,
     "hcpIndex": 17,
     "distances": {
-     "white": 140,
-     "yellow": 140,
-     "blue": 120,
-     "red": 120
+     "back": 140,
+     "backStandard": 140,
+     "standard": 120,
+     "frontStandard": 120
     }
    },
    {
     "number": 10,
-    "par": 5,
-    "hcpIndex": 6,
+    "par": 4,
+    "hcpIndex": 2,
     "distances": {
-     "white": 451,
-     "yellow": 414,
-     "blue": 385,
-     "red": 365
+     "back": 343,
+     "backStandard": 334,
+     "standard": 303,
+     "frontStandard": 282
     }
    },
    {
     "number": 11,
     "par": 3,
+    "hcpIndex": 18,
+    "distances": {
+     "back": 126,
+     "backStandard": 126,
+     "standard": 113,
+     "frontStandard": 113
+    }
+   },
+   {
+    "number": 12,
+    "par": 5,
+    "hcpIndex": 8,
+    "distances": {
+     "back": 461,
+     "backStandard": 439,
+     "standard": 419,
+     "frontStandard": 385
+    }
+   },
+   {
+    "number": 13,
+    "par": 5,
+    "hcpIndex": 6,
+    "distances": {
+     "back": 451,
+     "backStandard": 414,
+     "standard": 385,
+     "frontStandard": 365
+    }
+   },
+   {
+    "number": 14,
+    "par": 3,
     "hcpIndex": 16,
     "distances": {
-     "white": 192,
-     "yellow": 164,
-     "blue": 143,
-     "red": 131
+     "back": 192,
+     "backStandard": 164,
+     "standard": 143,
+     "frontStandard": 131
+    }
+   },
+   {
+    "number": 15,
+    "par": 4,
+    "hcpIndex": 4,
+    "distances": {
+     "back": 372,
+     "backStandard": 357,
+     "standard": 341,
+     "frontStandard": 323
+    }
+   },
+   {
+    "number": 16,
+    "par": 4,
+    "hcpIndex": 14,
+    "distances": {
+     "back": 350,
+     "backStandard": 350,
+     "standard": 340,
+     "frontStandard": 340
+    }
+   },
+   {
+    "number": 17,
+    "par": 3,
+    "hcpIndex": 10,
+    "distances": {
+     "back": 169,
+     "backStandard": 159,
+     "standard": 139,
+     "frontStandard": 134
+    }
+   },
+   {
+    "number": 18,
+    "par": 4,
+    "hcpIndex": 12,
+    "distances": {
+     "back": 348,
+     "backStandard": 334,
+     "standard": 305,
+     "frontStandard": 295
+    }
+   }
+  ]
+ },
+ {
+  "id": "waldkirch-orange",
+  "name": "Golfpark Waldkirch – Orange (Blau/Gelb)",
+  "region": "St. Gallen",
+  "verified": true,
+  "tees": [
+   {
+    "id": "back",
+    "name": "Back Tees",
+    "markers": "58",
+    "ratings": {
+     "men": {
+      "rating": 71.1,
+      "slope": 128
+     },
+     "ladies": {
+      "rating": 77.1,
+      "slope": 138
+     }
+    }
+   },
+   {
+    "id": "backStandard",
+    "name": "Back Standard Tees",
+    "markers": "56",
+    "ratings": {
+     "men": {
+      "rating": 70,
+      "slope": 128
+     },
+     "ladies": {
+      "rating": 75.6,
+      "slope": 134
+     }
+    }
+   },
+   {
+    "id": "standard",
+    "name": "Standard Tees",
+    "markers": "52",
+    "ratings": {
+     "men": {
+      "rating": 67.8,
+      "slope": 125
+     },
+     "ladies": {
+      "rating": 73.1,
+      "slope": 129
+     }
+    }
+   },
+   {
+    "id": "frontStandard",
+    "name": "Front Standard Tees",
+    "markers": "50",
+    "ratings": {
+     "men": {
+      "rating": 66.7,
+      "slope": 123
+     },
+     "ladies": {
+      "rating": 71.8,
+      "slope": 127
+     }
+    }
+   }
+  ],
+  "holes": [
+   {
+    "number": 1,
+    "par": 4,
+    "hcpIndex": 9,
+    "distances": {
+     "back": 335,
+     "backStandard": 315,
+     "standard": 295,
+     "frontStandard": 285
+    }
+   },
+   {
+    "number": 2,
+    "par": 5,
+    "hcpIndex": 7,
+    "distances": {
+     "back": 494,
+     "backStandard": 478,
+     "standard": 450,
+     "frontStandard": 429
+    }
+   },
+   {
+    "number": 3,
+    "par": 5,
+    "hcpIndex": 15,
+    "distances": {
+     "back": 448,
+     "backStandard": 431,
+     "standard": 405,
+     "frontStandard": 393
+    }
+   },
+   {
+    "number": 4,
+    "par": 4,
+    "hcpIndex": 13,
+    "distances": {
+     "back": 342,
+     "backStandard": 330,
+     "standard": 304,
+     "frontStandard": 292
+    }
+   },
+   {
+    "number": 5,
+    "par": 4,
+    "hcpIndex": 3,
+    "distances": {
+     "back": 393,
+     "backStandard": 381,
+     "standard": 348,
+     "frontStandard": 336
+    }
+   },
+   {
+    "number": 6,
+    "par": 3,
+    "hcpIndex": 11,
+    "distances": {
+     "back": 173,
+     "backStandard": 162,
+     "standard": 145,
+     "frontStandard": 135
+    }
+   },
+   {
+    "number": 7,
+    "par": 5,
+    "hcpIndex": 5,
+    "distances": {
+     "back": 513,
+     "backStandard": 501,
+     "standard": 458,
+     "frontStandard": 446
+    }
+   },
+   {
+    "number": 8,
+    "par": 3,
+    "hcpIndex": 17,
+    "distances": {
+     "back": 152,
+     "backStandard": 152,
+     "standard": 136,
+     "frontStandard": 136
+    }
+   },
+   {
+    "number": 9,
+    "par": 4,
+    "hcpIndex": 1,
+    "distances": {
+     "back": 358,
+     "backStandard": 338,
+     "standard": 321,
+     "frontStandard": 304
+    }
+   },
+   {
+    "number": 10,
+    "par": 4,
+    "hcpIndex": 6,
+    "distances": {
+     "back": 338,
+     "backStandard": 327,
+     "standard": 298,
+     "frontStandard": 286
+    }
+   },
+   {
+    "number": 11,
+    "par": 4,
+    "hcpIndex": 4,
+    "distances": {
+     "back": 311,
+     "backStandard": 302,
+     "standard": 282,
+     "frontStandard": 272
     }
    },
    {
     "number": 12,
     "par": 4,
-    "hcpIndex": 4,
+    "hcpIndex": 10,
     "distances": {
-     "white": 372,
-     "yellow": 357,
-     "blue": 341,
-     "red": 323
+     "back": 321,
+     "backStandard": 311,
+     "standard": 293,
+     "frontStandard": 286
     }
    },
    {
@@ -5504,65 +5396,65 @@
     "par": 4,
     "hcpIndex": 14,
     "distances": {
-     "white": 350,
-     "yellow": 350,
-     "blue": 340,
-     "red": 340
+     "back": 310,
+     "backStandard": 305,
+     "standard": 292,
+     "frontStandard": 287
     }
    },
    {
     "number": 14,
     "par": 3,
-    "hcpIndex": 10,
+    "hcpIndex": 16,
     "distances": {
-     "white": 169,
-     "yellow": 159,
-     "blue": 139,
-     "red": 134
+     "back": 182,
+     "backStandard": 162,
+     "standard": 142,
+     "frontStandard": 122
     }
    },
    {
     "number": 15,
     "par": 4,
-    "hcpIndex": 12,
+    "hcpIndex": 2,
     "distances": {
-     "white": 348,
-     "yellow": 334,
-     "blue": 305,
-     "red": 295
+     "back": 365,
+     "backStandard": 347,
+     "standard": 327,
+     "frontStandard": 307
     }
    },
    {
     "number": 16,
-    "par": 4,
-    "hcpIndex": 2,
+    "par": 3,
+    "hcpIndex": 8,
     "distances": {
-     "white": 343,
-     "yellow": 334,
-     "blue": 303,
-     "red": 282
+     "back": 180,
+     "backStandard": 152,
+     "standard": 137,
+     "frontStandard": 137
     }
    },
    {
     "number": 17,
-    "par": 3,
-    "hcpIndex": 18,
+    "par": 5,
+    "hcpIndex": 12,
     "distances": {
-     "white": 126,
-     "yellow": 126,
-     "blue": 113,
-     "red": 113
+     "back": 481,
+     "backStandard": 450,
+     "standard": 424,
+     "frontStandard": 384
     }
    },
    {
     "number": 18,
-    "par": 5,
-    "hcpIndex": 8,
+    "par": 3,
+    "hcpIndex": 18,
     "distances": {
-     "white": 461,
-     "yellow": 439,
-     "blue": 419,
-     "red": 385
+     "back": 139,
+     "backStandard": 139,
+     "standard": 120,
+     "frontStandard": 120
     }
    }
   ]
