@@ -5,7 +5,7 @@ import { Btn, Card, Field, H, Row, colors, confirmDialog, notify } from '../comp
 import { supabase, supabaseConfigError, supabaseHost } from '../lib/supabase';
 import { checkCredentials, friendlyAuthError } from '../lib/supabaseConfig';
 import { useStore } from '../store/useStore';
-import { syncAll } from '../lib/sync';
+import { runSync } from '../lib/runSync';
 import { refreshIncoming, useFriends } from '../lib/friends';
 
 interface Pub { id: string; username: string; name: string; handicap_index: number | null }
@@ -78,7 +78,7 @@ export default function FriendsScreen({ navigation }: any) {
             const c = credentials(true);
             if (!c) return;
             const { error } = await supabase!.auth.signInWithPassword({ email: c.email, password: c.password });
-            if (error) notify('Fehler', friendlyAuthError(error.message, supabaseHost)); else void syncAll(useStore.getState().profile, useStore.getState().rounds);
+            if (error) notify('Fehler', friendlyAuthError(error.message, supabaseHost)); else void runSync();
           }} />
           <Btn kind="ghost" title="Konto erstellen" onPress={async () => {
             const c = credentials(false);
@@ -86,7 +86,7 @@ export default function FriendsScreen({ navigation }: any) {
             const { data, error } = await supabase!.auth.signUp({ email: c.email, password: c.password });
             if (error) notify('Fehler', friendlyAuthError(error.message, supabaseHost));
             else if (!data.session) notify('Fast geschafft', 'Bitte bestätige deine E-Mail-Adresse und melde dich dann an.');
-            else void syncAll(useStore.getState().profile, useStore.getState().rounds);
+            else void runSync();
           }} />
         </Card>
       </ScrollView>

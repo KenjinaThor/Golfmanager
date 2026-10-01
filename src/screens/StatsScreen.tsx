@@ -1,7 +1,8 @@
 import React, { useMemo, useState } from 'react';
 import { Pressable, ScrollView, Text, View } from 'react-native';
 import { HoleStatsTable, RoundTable } from '../components/Tables';
-import { Card, H, colors, confirmDialog, fmtDate } from '../components/ui';
+import { Btn, Card, H, colors, confirmDialog, fmtDate, notify } from '../components/ui';
+import { exportStatsXlsx } from '../lib/exportStats';
 import { courses, getCourse } from '../data/courses';
 import { holeStats, roundLabels, roundTotals } from '../lib/scoring';
 import { useStore } from '../store/useStore';
@@ -9,6 +10,8 @@ import { useStore } from '../store/useStore';
 export default function StatsScreen({ navigation }: any) {
   const rounds = useStore((s) => s.rounds);
   const deleteRound = useStore((s) => s.deleteRound);
+  const profile = useStore((s) => s.profile);
+  const [exporting, setExporting] = useState(false);
   const labels = useMemo(() => roundLabels(rounds), [rounds]);
   const played = useMemo(() => [...new Set(rounds.map((r) => r.courseId))], [rounds]);
   const [courseId, setCourseId] = useState<string | undefined>(undefined);
@@ -30,6 +33,22 @@ export default function StatsScreen({ navigation }: any) {
         <H>Übersicht</H>
         <Text>Runden: {rounds.length} · Verlorene Bälle total: {lost}</Text>
         <Text>Beste Brutto-Runde (komplett): {bestGross ?? '-'} · Bester Stableford: {bestSbf ?? '-'}</Text>
+        <Btn
+          kind="ghost"
+          title={exporting ? 'Exportiert …' : 'Als Excel exportieren (.xlsx)'}
+          disabled={exporting}
+          onPress={async () => {
+            setExporting(true);
+            try {
+              await exportStatsXlsx(rounds, profile);
+            } catch (e) {
+              notify('Export fehlgeschlagen', e instanceof Error ? e.message : String(e));
+            } finally {
+              setExporting(false);
+            }
+          }}
+        />
+        <Text style={{ color: colors.mute, fontSize: 11 }}>Blätter: Runden, Löcher (eine Zeile pro Loch), Pro Loch, Info.</Text>
       </Card>
 
       <Card>

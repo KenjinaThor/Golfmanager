@@ -8,6 +8,7 @@ Golf-App für Android & iOS (Expo / React Native, TypeScript) mit optionaler Ver
 - **Runde spielen**: Schläge pro Loch erfassen; Platzvorgabe (WHS), Vorgabeschläge, Netto und Stableford werden automatisch berechnet.
 - **Lost Balls**: pro Loch erfassbar, zieht direkt vom Ballvorrat im Profil ab (−1 gibt zurück).
 - **Historie & Statistik**: alle Runden lokal gespeichert; pro Loch beste/schlechteste Runde mit Datum, Ø, Total.
+- **Excel-Export**: Statistik → «Als Excel exportieren (.xlsx)». Blätter: *Runden* (eine Zeile pro Runde), *Löcher* (eine Zeile pro Loch und Runde, für Pivot-Tabellen), *Pro Loch* (Bestwerte), *Info*. Im Browser als Download, am Handy über das Teilen-Menü.
 - **Freunde**: Login, Benutzer suchen, Anfragen, Profil und Runden bestätigter Freunde einsehen.
 
 ## Start
@@ -41,7 +42,8 @@ Ohne Supabase läuft alles lokal; der Tab «Freunde» zeigt dann nur einen Hinwe
 Im Profil sind alle Felder gekennzeichnet: **öffentlich** (Name, Benutzername, Handicap: für alle angemeldeten Nutzer bei der Suche sichtbar) oder **Freunde** (alles andere inkl. Ballvorrat und Runden). Unter «Was wird übertragen?» steht der Stand der letzten Übertragung samt Fehlermeldung und ein Knopf «Jetzt übertragen».
 Freundschaften: Anfragen annehmen oder ablehnen (abgelehnte verschwinden), gesendete zurückziehen, Freunde entfernen (die Verbindung wird für beide gelöscht). Neue Anfragen zeigt ein Zeichen am Reiter «Freunde» (Abfrage alle 45 Sekunden und beim Öffnen).
 Datenschutz: Name, Benutzername und Handicap sind für angemeldete Nutzer suchbar; Runden und Profil-Details (Grösse, Schläger, Bälle …) sehen nur bestätigte Freunde. Die Regeln werden mit `backend/test/run.sh` gegen ein lokales PostgreSQL getestet (Fremde, Selbstbestätigung, umgebogene Anfragen, nicht angemeldet).
-Synchronisiert werden Profil und abgeschlossene Runden vom Gerät in die Cloud; die Wiederherstellung auf einem neuen Gerät fehlt noch.
+**Auf allen Geräten dieselben Daten:** Mit demselben Konto anmelden. Beim Anmelden, beim App-Start und über «Jetzt übertragen» im Profil gleicht die App in beide Richtungen ab: Profil und abgeschlossene Runden werden geladen bzw. hochgeladen, der neuere Profilstand gewinnt, eine auf einem Gerät gelöschte Runde verschwindet auch auf den anderen. Eine laufende (nicht beendete) Runde bleibt nur auf dem Gerät. Wer das Gerät wechselt, sollte vorher die Runde beenden.
+**Kleiner Kreis (z. B. 4 Kollegen):** Sobald alle ein Konto haben, in Supabase unter Authentication → Sign In / Providers «Allow new users to sign up» ausschalten, dann kann sich niemand Fremdes registrieren. Die Web-App selbst ist unter ihrer Adresse für jeden erreichbar (nur ohne Anmeldung ist nichts Persönliches zu sehen).
 
 ## Platzdaten
 `src/data/courses.json` wird aus `data/courses.csv` (eine Zeile pro Loch) und `data/tees.csv` erzeugt: `npm run import-courses`.
@@ -53,4 +55,3 @@ Weitere Plätze: Zeilen in `data/courses.csv` + `data/tees.csv` (Format siehe ob
 ## Bekannte Lücken / nächste Schritte
 - Lost Ball erhöht die Schlagzahl nicht automatisch (Strafschlag manuell eingeben).
 - Handicap-Index wird nicht automatisch aus Runden fortgeschrieben.
-- Rundensync ist einseitig (Gerät → Cloud); Wiederherstellung auf neuem Gerät fehlt noch.

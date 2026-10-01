@@ -52,6 +52,8 @@ export interface Profile {
   ballCount: number;
   driverDistance: number | null; // Meter
   bio: string;
+  /** Zeitpunkt der letzten Änderung (ms); der neuere Stand gewinnt beim Abgleich zwischen Geräten */
+  updatedAt?: number;
 }
 
 export interface HoleScore {
