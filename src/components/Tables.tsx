@@ -39,15 +39,16 @@ export function RoundTable({ round }: { round: Round }) {
 }
 
 /** Pro Loch: beste und schlechteste Runde mit Datum. */
-export function HoleStatsTable({ stats, par }: { stats: HoleStat[]; par: number[] }) {
+export function HoleStatsTable({ stats, par, labels = {} }: { stats: HoleStat[]; par: number[]; labels?: Record<string, string> }) {
+  const when = (e: { date: string; roundId: string }) => `${fmtDate(e.date)}${labels[e.roundId] ? ` (${labels[e.roundId]})` : ''}`;
   return (
     <View>
       <View style={t.row}><C w={28} bold>#</C><C w={34} bold>Par</C><C bold>Beste</C><C bold>Schlechteste</C><C w={40} bold>Ø</C></View>
       {stats.map((s) => (
         <View key={s.number} style={t.row}>
           <C w={28}>{s.number}</C><C w={34}>{par[s.number - 1]}</C>
-          <C color="#1f7a3a">{s.best ? `${s.best.strokes} · ${fmtDate(s.best.date)}` : '-'}</C>
-          <C color={colors.bad}>{s.worst ? `${s.worst.strokes} · ${fmtDate(s.worst.date)}` : '-'}</C>
+          <C color="#1f7a3a">{s.best ? `${s.best.strokes} · ${when(s.best)}` : '-'}</C>
+          <C color={colors.bad}>{s.worst ? `${s.worst.strokes} · ${when(s.worst)}` : '-'}</C>
           <C w={40}>{s.average ? s.average.toFixed(1) : '-'}</C>
         </View>
       ))}

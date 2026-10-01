@@ -99,3 +99,23 @@ export function holeStats(rounds: Round[], courseId: string, holeCount = 18): Ho
 
 export const emptyScores = (holes: Hole[]): HoleScore[] =>
   holes.map((h) => ({ number: h.number, strokes: null, lostBalls: 0 }));
+
+const dayKey = (iso: string) => {
+  const d = new Date(iso);
+  return `${d.getFullYear()}-${d.getMonth() + 1}-${d.getDate()}`;
+};
+
+/**
+ * «1. Runde», «2. Runde» … für Tage mit mehreren Runden (nach Startzeit, über alle Plätze).
+ * Tage mit nur einer Runde bekommen keine Nummer.
+ */
+export function roundLabels(rounds: Round[]): Record<string, string> {
+  const byDay = new Map<string, Round[]>();
+  for (const r of rounds) byDay.set(dayKey(r.date), [...(byDay.get(dayKey(r.date)) ?? []), r]);
+  const out: Record<string, string> = {};
+  for (const list of byDay.values()) {
+    if (list.length < 2) continue;
+    [...list].sort((a, b) => a.date.localeCompare(b.date)).forEach((r, i) => (out[r.id] = `${i + 1}. Runde`));
+  }
+  return out;
+}

@@ -2,12 +2,12 @@ import React, { useState } from 'react';
 import { ScrollView, Text, View } from 'react-native';
 import { Btn, Card, colors, confirmDialog, Row } from '../components/ui';
 import { getCourse } from '../data/courses';
-import { roundTotals, strokesReceived, stableford } from '../lib/scoring';
+import { roundLabels, roundTotals, strokesReceived, stableford } from '../lib/scoring';
 import { useStore } from '../store/useStore';
 
 /** Live-Eingabe: ein Loch pro Seite, Schläge, verlorene Bälle, automatische Netto-/Stableford-Berechnung. */
 export default function ScorecardScreen({ navigation }: any) {
-  const { active, profile, setStrokes, addLostBall, finishRound, discardRound } = useStore();
+  const { active, rounds, profile, setStrokes, addLostBall, finishRound, discardRound } = useStore();
   const [i, setI] = useState(0);
   if (!active) return <View style={{ padding: 20 }}><Text>Keine laufende Runde.</Text></View>;
   const course = getCourse(active.courseId)!;
@@ -16,6 +16,7 @@ export default function ScorecardScreen({ navigation }: any) {
   const rec = strokesReceived(active.courseHandicap, hole.hcpIndex, course.holes.length);
   const tot = roundTotals(active, course.holes);
   const dist = hole.distances[active.teeId];
+  const label = roundLabels([...rounds, active])[active.id];
 
   const finish = () => {
     finishRound();
@@ -25,7 +26,7 @@ export default function ScorecardScreen({ navigation }: any) {
   return (
     <ScrollView contentContainerStyle={{ padding: 12 }}>
       <Card>
-        <Text style={{ color: colors.mute }}>{active.courseName} · Platzvorgabe {active.courseHandicap}</Text>
+        <Text style={{ color: colors.mute }}>{label ? `${label} · ` : ''}{active.courseName} · Platzvorgabe {active.courseHandicap}</Text>
         <Text style={{ fontSize: 28, fontWeight: '800' }}>Loch {hole.number}</Text>
         <Text style={{ fontSize: 16 }}>Par {hole.par} · {dist ?? '-'} m · HCP {hole.hcpIndex}</Text>
         <Text style={{ color: colors.green, fontWeight: '600' }}>Vorgabeschläge auf diesem Loch: {rec}</Text>

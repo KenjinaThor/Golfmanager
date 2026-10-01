@@ -2821,7 +2821,7 @@
  },
  {
   "id": "waldkirch-kurzplatz",
-  "name": "Golfpark Waldkirch – Kurzplatz (3 Loch A–C, 2× gespielt)",
+  "name": "Golfpark Waldkirch – Kurzplatz (3 Loch)",
   "region": "St. Gallen",
   "verified": true,
   "noHandicap": true,
@@ -2860,33 +2860,6 @@
    },
    {
     "number": 3,
-    "par": 3,
-    "hcpIndex": 1,
-    "distances": {
-     "m04": 152,
-     "m03": 142
-    }
-   },
-   {
-    "number": 4,
-    "par": 3,
-    "hcpIndex": 3,
-    "distances": {
-     "m04": 75,
-     "m03": 65
-    }
-   },
-   {
-    "number": 5,
-    "par": 3,
-    "hcpIndex": 2,
-    "distances": {
-     "m04": 152,
-     "m03": 142
-    }
-   },
-   {
-    "number": 6,
     "par": 3,
     "hcpIndex": 1,
     "distances": {

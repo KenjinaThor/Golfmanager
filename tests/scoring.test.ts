@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { courseHandicap, strokesReceived, stableford, holeStats } from '../src/lib/scoring';
+import { courseHandicap, strokesReceived, stableford, holeStats, roundLabels } from '../src/lib/scoring';
 import { Round } from '../src/types';
 
 test('Platzvorgabe nach WHS', () => {
@@ -44,4 +44,17 @@ test('Damen-Rating wird verwendet, 9 Löcher nutzen den halben Index', () => {
   const tee = { id: 'back', name: 'Back', ratings: { men: { rating: 35.1, slope: 127 }, ladies: { rating: 38.0, slope: 137 } } };
   assert.equal(courseHandicap(5.0, tee, 35, 'men', 9), 3); // Tabelle Blau Herren B28: 4.3–6.0 → 3
   assert.equal(courseHandicap(10.0, tee, 35, 'ladies', 9), 9);
+});
+
+test('Mehrere Runden am selben Tag werden als 1. Runde, 2. Runde … beschriftet', () => {
+  const mk = (id: string, date: string): Round => ({
+    id, courseId: 'c', courseName: 'C', teeId: 'back', date, handicapIndex: 10, courseHandicap: 10, completed: true, holes: [],
+  });
+  const labels = roundLabels([
+    mk('b', '2026-06-01T14:00:00'), mk('x', '2026-06-02T12:00:00'), mk('a', '2026-06-01T09:00:00'), mk('c', '2026-06-01T17:30:00'),
+  ]);
+  assert.equal(labels.a, '1. Runde');
+  assert.equal(labels.b, '2. Runde');
+  assert.equal(labels.c, '3. Runde');
+  assert.equal(labels.x, undefined); // einzige Runde dieses Tages
 });

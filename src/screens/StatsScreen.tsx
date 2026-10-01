@@ -3,12 +3,13 @@ import { Pressable, ScrollView, Text, View } from 'react-native';
 import { HoleStatsTable, RoundTable } from '../components/Tables';
 import { Card, H, colors, confirmDialog, fmtDate } from '../components/ui';
 import { courses, getCourse } from '../data/courses';
-import { holeStats, roundTotals } from '../lib/scoring';
+import { holeStats, roundLabels, roundTotals } from '../lib/scoring';
 import { useStore } from '../store/useStore';
 
 export default function StatsScreen({ navigation }: any) {
   const rounds = useStore((s) => s.rounds);
   const deleteRound = useStore((s) => s.deleteRound);
+  const labels = useMemo(() => roundLabels(rounds), [rounds]);
   const played = useMemo(() => [...new Set(rounds.map((r) => r.courseId))], [rounds]);
   const [courseId, setCourseId] = useState<string | undefined>(undefined);
   const sel = courseId ?? played[0];
@@ -40,7 +41,7 @@ export default function StatsScreen({ navigation }: any) {
             </Pressable>
           ))}
         </ScrollView>
-        {course && sel && <HoleStatsTable stats={holeStats(rounds, sel, course.holes.length)} par={course.holes.map((h) => h.par)} />}
+        {course && sel && <HoleStatsTable stats={holeStats(rounds, sel, course.holes.length)} par={course.holes.map((h) => h.par)} labels={labels} />}
       </Card>
 
       <Card>
@@ -48,7 +49,7 @@ export default function StatsScreen({ navigation }: any) {
         {withTotals.map(({ r, t }) => (
           <Pressable key={r.id} onPress={() => navigation.navigate('RoundDetail', { roundId: r.id })} onLongPress={() => confirmDialog('Runde löschen?', r.courseName, 'Löschen', () => deleteRound(r.id), true)}
             style={{ paddingVertical: 8, borderTopWidth: 0.5, borderColor: colors.line }}>
-            <Text style={{ fontWeight: '600' }}>{r.courseName}</Text>
+            <Text style={{ fontWeight: '600' }}>{r.courseName}{labels[r.id] ? ` · ${labels[r.id]}` : ''}</Text>
             <Text style={{ color: colors.mute }}>{fmtDate(r.date)} · Brutto {t.gross} · Netto {t.net} · Stbf {t.stableford}</Text>
           </Pressable>
         ))}
@@ -59,12 +60,14 @@ export default function StatsScreen({ navigation }: any) {
 }
 
 export function RoundDetailScreen({ route }: any) {
-  const round = useStore((s) => s.rounds.find((r) => r.id === route.params.roundId));
+  const rounds = useStore((s) => s.rounds);
+  const round = rounds.find((r) => r.id === route.params.roundId);
+  const label = round ? roundLabels(rounds)[round.id] : undefined;
   if (!round) return null;
   return (
     <ScrollView contentContainerStyle={{ padding: 12 }}>
       <Card>
-        <H>{round.courseName}</H>
+        <H>{round.courseName}{label ? ` · ${label}` : ''}</H>
         <Text style={{ color: colors.mute, marginBottom: 8 }}>{fmtDate(round.date)} · Platzvorgabe {round.courseHandicap} (HCP {round.handicapIndex})</Text>
         <RoundTable round={round} />
       </Card>

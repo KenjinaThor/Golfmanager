@@ -35,7 +35,7 @@ for (const [id, card] of Object.entries(CARDS)) {
 }
 
 test('alle Waldkirch-Plätze haben Stroke Index 1..n genau einmal', () => {
-  for (const c of courses.filter((x) => x.id.startsWith('waldkirch') && !x.noHandicap)) {
+  for (const c of courses.filter((x) => x.id.startsWith('waldkirch'))) {
     assert.deepEqual(c.holes.map((h) => h.hcpIndex).sort((a, b) => a - b), Array.from({ length: c.holes.length }, (_, i) => i + 1), c.id);
   }
 });
@@ -73,12 +73,13 @@ test('Waldkirch: 9-Loch-Plätze haben Stroke Index 1–9', () => {
   assert.deepEqual(c.holes.map((h) => h.hcpIndex), [3, 2, 5, 7, 8, 1, 4, 6, 9]); // wie im Heft
 });
 
-test('Waldkirch Kurzplatz: 6 Löcher, Par 18, Distanz-Totale wie auf der Karte, keine Platzvorgabe', () => {
+test('Waldkirch Kurzplatz: 3 Löcher, Par 9, Distanz-Totale wie auf der Karte, keine Platzvorgabe', () => {
   const c = get('waldkirch-kurzplatz');
-  assert.equal(c.holes.length, 6);
-  assert.equal(c.holes.reduce((s, h) => s + h.par, 0), 18);
-  assert.equal(c.holes.reduce((s, h) => s + h.distances.m04, 0), 758);
-  assert.equal(c.holes.reduce((s, h) => s + h.distances.m03, 0), 698);
+  assert.equal(c.holes.length, 3);
+  assert.equal(c.holes.reduce((s, h) => s + h.par, 0), 9);
+  assert.equal(c.holes.reduce((s, h) => s + h.distances.m04, 0), 379);
+  assert.equal(c.holes.reduce((s, h) => s + h.distances.m03, 0), 349);
+  assert.deepEqual(c.holes.map((h) => h.hcpIndex), [3, 2, 1]);
   assert.equal(c.noHandicap, true);
 });
 
