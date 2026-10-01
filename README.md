@@ -29,6 +29,7 @@ Die App läuft auch im Browser und lässt sich auf dem Handy zum Startbildschirm
 - Installieren: iPhone Safari → Teilen → «Zum Home-Bildschirm»; Android Chrome → Menü → «App installieren».
 
 ## Vernetzung (Supabase) einrichten
+> **Aktualisierung:** Wer `backend/schema.sql` früher schon eingespielt hat, führt die neue Fassung einfach nochmal aus (sie ist wiederholbar und löscht nichts). Neu ist die Spalte `public_data` in `profiles`. Ohne sie meldet die App beim Übertragen «Die Datenbank ist noch nicht aktualisiert».
 Ohne Supabase läuft alles lokal; der Tab «Freunde» zeigt dann nur einen Hinweis. So schaltest du die Vernetzung frei:
 
 1. **Projekt anlegen**: auf supabase.com ein kostenloses Projekt erstellen (Region z. B. Frankfurt).
@@ -39,7 +40,9 @@ Ohne Supabase läuft alles lokal; der Tab «Freunde» zeigt dann nur einen Hinwe
    **Handy-App/Expo Go**: dieselben zwei Werte in `.env` eintragen (siehe `.env.example`).
 6. In der App: Profil → Benutzername setzen (a–z, 0–9, _; min. 3 Zeichen) → Tab «Freunde» → Konto erstellen, E-Mail bestätigen, anmelden.
 
-Im Profil sind alle Felder gekennzeichnet: **öffentlich** (Name, Benutzername, Handicap: für alle angemeldeten Nutzer bei der Suche sichtbar) oder **Freunde** (alles andere inkl. Ballvorrat und Runden). Unter «Was wird übertragen?» steht der Stand der letzten Übertragung samt Fehlermeldung und ein Knopf «Jetzt übertragen».
+Im Profil wählst du bei **jedem Feld selbst**, wer es sieht: **Nur für mich** (bleibt auf dem Gerät, wird nicht übertragen), **Für Freunde** (nur bestätigte Freunde) oder **Öffentlich** (alle angemeldeten Spieler, z. B. bei der Suche). Voreinstellung: Name und Handicap öffentlich, alles andere für Freunde. Der Benutzername ist immer öffentlich, sonst wäre man nicht auffindbar. Abgeschlossene Runden sehen nur Freunde.
+**Alter:** Eingegeben wird das Geburtsdatum, angezeigt und übertragen wird nur das Alter (Zahl). Das Geburtsdatum bleibt auf dem Gerät und wird in keinem Fall übertragen (auch nicht für «Öffentlich»); ein Test stellt das sicher.
+Technik: Öffentliches liegt in `profiles` (Name, Handicap, `public_data`), Freundes-Angaben in `profile_details`; Felder auf «Nur für mich» fehlen dort ganz. Unter «Wer sieht was?» steht der Stand der letzten Übertragung samt Fehlermeldung und ein Knopf «Jetzt übertragen».
 Freundschaften: Anfragen annehmen oder ablehnen (abgelehnte verschwinden), gesendete zurückziehen, Freunde entfernen (die Verbindung wird für beide gelöscht). Neue Anfragen zeigt ein Zeichen am Reiter «Freunde» (Abfrage alle 45 Sekunden und beim Öffnen).
 Datenschutz: Name, Benutzername und Handicap sind für angemeldete Nutzer suchbar; Runden und Profil-Details (Grösse, Schläger, Bälle …) sehen nur bestätigte Freunde. Die Regeln werden mit `backend/test/run.sh` gegen ein lokales PostgreSQL getestet (Fremde, Selbstbestätigung, umgebogene Anfragen, nicht angemeldet).
 **Auf allen Geräten dieselben Daten:** Mit demselben Konto anmelden. Beim Anmelden, beim App-Start und über «Jetzt übertragen» im Profil gleicht die App in beide Richtungen ab: Profil und abgeschlossene Runden werden geladen bzw. hochgeladen, der neuere Profilstand gewinnt, eine auf einem Gerät gelöschte Runde verschwindet auch auf den anderen. Eine laufende (nicht beendete) Runde bleibt nur auf dem Gerät. Wer das Gerät wechselt, sollte vorher die Runde beenden.

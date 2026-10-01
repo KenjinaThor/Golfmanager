@@ -20,20 +20,21 @@ begin
   insert into auth.users values (a), (b), (c), (s);
 
   perform as_user(a);
-  insert into profiles values (a, 'alice', 'Alice', 10.0);
+  insert into profiles values (a, 'alice', 'Alice', 10.0, '{"age": 36}');
   insert into profile_details values (a, '{"club":"X"}');
   insert into rounds values ('r-a', a, 'c', '2026-01-01', '{}');
   perform as_user(b);
-  insert into profiles values (b, 'bob', 'Bob', 20.0);
+  insert into profiles values (b, 'bob', 'Bob', 20.0, '{}');
   insert into rounds values ('r-b', b, 'c', '2026-01-02', '{}');
   perform as_user(c);
-  insert into profiles values (c, 'carl', 'Carl', 30.0);
+  insert into profiles values (c, 'carl', 'Carl', 30.0, '{}');
   perform as_user(s);
-  insert into profiles values (s, 'carl2', 'Carl2', 30.0);
+  insert into profiles values (s, 'carl2', 'Carl2', 30.0, '{}');
 
   -- 1. Suche: alle Eingeloggten sehen Username/Name/Handicap, aber keine Runden/Details von Fremden
   perform as_user(b);
   select count(*) into n from profiles where username in ('alice','bob','carl','carl2'); assert n = 4, 'Profilsuche';
+  select count(*) into n from profiles where id = a and public_data = '{"age": 36}'; assert n = 1, 'Öffentliche Angaben (public_data) nicht lesbar';
   select count(*) into n from rounds where user_id = a; assert n = 0, 'Fremde Runden sichtbar';
   select count(*) into n from profile_details where id = a; assert n = 0, 'Fremde Details sichtbar';
 

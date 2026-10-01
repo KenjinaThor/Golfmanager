@@ -3,6 +3,7 @@ import { Profile, Round } from '../types';
 import { supabase } from './supabase';
 import { profileRows, roundRow } from './syncRows';
 import { mergeProfile, mergeRounds } from './syncMerge';
+import { friendlySyncError } from './supabaseConfig';
 
 export interface SyncInfo {
   state: 'idle' | 'ok' | 'error';
@@ -39,7 +40,7 @@ export async function pushProfile(p: Profile): Promise<boolean> {
   const b = a.error ? null : await supabase.from('profile_details').upsert(rows.details);
   const err = a.error ?? b?.error;
   if (err) {
-    setInfo({ state: 'error', message: `Profil konnte nicht übertragen werden: ${err.message}`, busy: false });
+    setInfo({ state: 'error', message: `Profil konnte nicht übertragen werden: ${friendlySyncError(err.message)}`, busy: false });
     return false;
   }
   setInfo({ state: 'ok', message: 'Profil übertragen.', at: Date.now(), busy: false });
@@ -121,7 +122,7 @@ export async function syncAll(i: SyncInput): Promise<SyncResult | null> {
   }
   if (mp.push && !(await pushProfile(mp.profile))) return null;
 
-  const parts = [mp.profile === cloudProfile && cloudProfile ? 'Profil aus der Cloud geladen' : 'Profil abgeglichen'];
+  const parts = [mp.fromCloud ? 'Profil aus der Cloud geladen' : 'Profil abgeglichen'];
   if (mr.add.length) parts.push(`${mr.add.length} Runde${mr.add.length === 1 ? '' : 'n'} geladen`);
   if (mr.upload.length) parts.push(`${mr.upload.length} hochgeladen`);
   if (mr.removeIds.length) parts.push(`${mr.removeIds.length} entfernt (anderswo gelöscht)`);

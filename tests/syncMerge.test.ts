@@ -12,22 +12,22 @@ const prof = (o: object) => ({ ...defaultProfile, ...o });
 test('neues Gerät (leeres Profil) übernimmt das Profil aus der Cloud', () => {
   const cloud = prof({ name: 'Anna', username: 'anna', ballCount: 7, updatedAt: 50 });
   const r = mergeProfile(defaultProfile, cloud);
-  assert.equal(r.profile, cloud);
+  assert.deepEqual({ ...r.profile, birthDate: undefined }, { ...cloud, birthDate: undefined });
   assert.equal(r.push, false);
 });
 
 test('auch ein älteres Cloud-Profil ohne Zeitstempel wird auf einem leeren Gerät übernommen', () => {
   const cloud = prof({ name: 'Anna', username: 'anna', ballCount: 7 });
-  assert.equal(mergeProfile(defaultProfile, cloud).profile, cloud);
+  assert.equal(mergeProfile(defaultProfile, cloud).profile.name, 'Anna');
 });
 
 test('der neuere Stand gewinnt, der ältere wird überschrieben', () => {
   const local = prof({ name: 'A', username: 'a', updatedAt: 100 });
   const cloudOld = prof({ name: 'B', username: 'a', updatedAt: 50 });
   const cloudNew = prof({ name: 'C', username: 'a', updatedAt: 150 });
-  assert.deepEqual(mergeProfile(local, cloudOld), { profile: local, push: true });
-  assert.deepEqual(mergeProfile(local, cloudNew), { profile: cloudNew, push: false });
-  assert.deepEqual(mergeProfile(local, { ...local }), { profile: local, push: false });
+  assert.deepEqual(mergeProfile(local, cloudOld), { profile: local, push: true, fromCloud: false });
+  assert.deepEqual(mergeProfile(local, cloudNew), { profile: { ...cloudNew, birthDate: null }, push: false, fromCloud: true });
+  assert.deepEqual(mergeProfile(local, { ...local }), { profile: local, push: false, fromCloud: false });
 });
 
 test('ohne Cloud-Profil wird das lokale hochgeladen, aber nur mit Benutzernamen', () => {
@@ -65,4 +65,14 @@ test('Runden: nie synchronisierte lokale Runde wird nicht fälschlich als gelös
   const m = mergeRounds([round('neu')], [], [], []);
   assert.deepEqual(m.removeIds, []);
   assert.deepEqual(m.upload.map((r) => r.id), ['neu']);
+});
+
+test('Abgleich: Privates und das Geburtsdatum bleiben lokal, wenn die Cloud neuer ist', () => {
+  const local = prof({ name: 'A', username: 'a', updatedAt: 100, birthDate: '1990-05-17', clubBrand: 'GeheimMarke' });
+  const cloud = { ...prof({ name: 'B', username: 'a', updatedAt: 200 }) } as Record<string, unknown>;
+  delete cloud.clubBrand; // «Nur für mich»: nicht in der Cloud
+  const r = mergeProfile(local, cloud as never);
+  assert.equal(r.profile.name, 'B');
+  assert.equal(r.profile.clubBrand, 'GeheimMarke');
+  assert.equal(r.profile.birthDate, '1990-05-17');
 });

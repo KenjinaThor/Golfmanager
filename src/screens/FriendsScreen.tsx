@@ -8,7 +8,7 @@ import { useStore } from '../store/useStore';
 import { runSync } from '../lib/runSync';
 import { refreshIncoming, useFriends } from '../lib/friends';
 
-interface Pub { id: string; username: string; name: string; handicap_index: number | null }
+interface Pub { id: string; username: string; name: string; handicap_index: number | null; public_data?: Record<string, unknown> }
 interface Fs { requester: string; addressee: string; status: 'pending' | 'accepted' }
 
 export default function FriendsScreen({ navigation }: any) {
@@ -19,6 +19,8 @@ export default function FriendsScreen({ navigation }: any) {
   const [found, setFound] = useState<Pub[]>([]);
   const [fs, setFs] = useState<Fs[]>([]);
   const [people, setPeople] = useState<Record<string, Pub>>({});
+  /** Angaben, die bestätigte Freunde für Freunde freigegeben haben (Name/Handicap, falls nicht öffentlich) */
+  const [details, setDetails] = useState<Record<string, { name?: string; handicapIndex?: number }>>({});
   const profile = useStore((s) => s.profile);
   const emailRef = useRef<ComponentRef<typeof TextInput>>(null);
   const pwRef = useRef<ComponentRef<typeof TextInput>>(null);
@@ -41,6 +43,11 @@ export default function FriendsScreen({ navigation }: any) {
       const { data: ps } = await supabase.from('profiles').select('*').in('id', ids);
       setPeople(Object.fromEntries(((ps ?? []) as Pub[]).map((p) => [p.id, p])));
     }
+    const friendIds = list.filter((f) => f.status === 'accepted').map((f) => (f.requester === me ? f.addressee : f.requester));
+    if (friendIds.length) {
+      const { data: ds } = await supabase.from('profile_details').select('id, data').in('id', friendIds);
+      setDetails(Object.fromEntries((Array.isArray(ds) ? ds : []).map((d) => [d.id as string, d.data as { name?: string; handicapIndex?: number }])));
+    } else setDetails({});
   }, [me]);
   useFocusEffect(useCallback(() => { void load(); }, [load]));
 
@@ -114,13 +121,18 @@ export default function FriendsScreen({ navigation }: any) {
     refresh();
   };
   const other = (f: Fs) => people[f.requester === me ? f.addressee : f.requester];
-  /** «Name» und «@benutzername»; fehlt der Name, wird das sichtbar gesagt. */
-  const who = (p?: Pub) => (
-    <>
-      <Text style={{ fontWeight: '700', color: colors.text }}>{p?.name || (p ? 'Kein Name hinterlegt' : '…')}</Text>
-      <Text style={{ color: colors.mute, fontSize: 12 }}>{p ? `@${p.username}` : ''}{p?.handicap_index != null ? ` · HCP ${p.handicap_index}` : ''}</Text>
-    </>
-  );
+  /** «Name» und «@benutzername»; hat der Spieler den Namen nicht freigegeben, wird das gesagt. */
+  const who = (p?: Pub) => {
+    const d = p ? details[p.id] : undefined;
+    const name = p?.name || d?.name;
+    const hcp = p?.handicap_index ?? d?.handicapIndex;
+    return (
+      <>
+        <Text style={{ fontWeight: '700', color: name ? colors.text : colors.mute }}>{name || (p ? 'Name nicht freigegeben' : '…')}</Text>
+        <Text style={{ color: colors.mute, fontSize: 12 }}>{p ? `@${p.username}` : ''}{hcp != null ? ` · HCP ${hcp}` : ''}</Text>
+      </>
+    );
+  };
 
   const incoming = fs.filter((f) => f.status === 'pending' && f.addressee === me);
   const outgoing = fs.filter((f) => f.status === 'pending' && f.requester === me);
