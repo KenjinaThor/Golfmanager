@@ -35,3 +35,7 @@ test('Beste/schlechteste Runde pro Loch mit Datum', () => {
   assert.equal(st.lostBalls, 2);
   assert.equal(st.average, 5.5);
 });
+
+test('Platzvorgabe ohne Rating/Slope: Näherung über Handicap-Index', () => {
+  assert.equal(courseHandicap(18.4, { id: 'white', name: 'Weiss', rating: null, slope: null }, 70), 18);
+});

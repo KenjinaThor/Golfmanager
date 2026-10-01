@@ -27,7 +27,9 @@ Datenschutz per Row-Level-Security: Runden und Profil-Details sind nur für best
 ## Platzdaten
 `src/data/courses.json` wird aus `data/courses.csv` (eine Zeile pro Loch) und `data/tees.csv` erzeugt: `npm run import-courses`.
 
-**Wichtig:** Die mitgelieferten 10 Plätze haben echte Namen, aber **Platzhalter-Werte** (Par/Distanzen/Rating/Slope, `verified=false`, in der App als ⚠ markiert).
+**Echte Daten:** Golfpark Waldkirch (4 Neunlochplätze, 12 geordnete 18-Loch-Kombinationen) stammt aus der offiziellen Scorekarte 2026 (`data/scorecards/`). Course Rating/Slope fehlen dort; die App nähert die Platzvorgabe dann über den Handicap-Index an und weist darauf hin.
+
+**Wichtig:** Die übrigen 10 Plätze haben echte Namen, aber **Platzhalter-Werte** (Par/Distanzen/Rating/Slope, `verified=false`, in der App als ⚠ markiert).
 Die offiziellen Scorekarten aller ~100 Schweizer Plätze liegen bei den Clubs bzw. Swiss Golf; sie müssen in die CSVs übernommen werden (`verified=true`).
 
 ## Bekannte Lücken / nächste Schritte

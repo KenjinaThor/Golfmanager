@@ -3,8 +3,8 @@ export type TeeId = 'white' | 'yellow' | 'blue' | 'red';
 export interface Tee {
   id: TeeId;
   name: string;
-  rating: number; // Course Rating
-  slope: number; // Slope Rating
+  rating: number | null; // Course Rating (null = nicht bekannt)
+  slope: number | null; // Slope Rating (null = nicht bekannt)
 }
 
 export interface Hole {

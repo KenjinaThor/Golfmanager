@@ -27,7 +27,14 @@ export default function CourseDetailScreen({ route, navigation }: any) {
             </Pressable>
           ))}
         </View>
-        <Text>CR {teeInfo.rating} · Slope {teeInfo.slope} · Par {par}</Text>
+        <Text>
+          {teeInfo.rating != null ? `CR ${teeInfo.rating} · Slope ${teeInfo.slope}` : 'CR/Slope unbekannt'} · Par {par}
+        </Text>
+        {teeInfo.rating == null && (
+          <Text style={{ color: colors.mute, fontSize: 12 }}>
+            Ohne offizielles Rating/Slope wird die Platzvorgabe nur angenähert (≈ Handicap-Index).
+          </Text>
+        )}
         <Text style={{ fontWeight: '700', marginTop: 4 }}>
           Deine Platzvorgabe: {courseHandicap(hcp, teeInfo, par)} (HCP-Index {hcp})
         </Text>

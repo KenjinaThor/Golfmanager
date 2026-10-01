@@ -4,6 +4,8 @@ export const coursePar = (c: Pick<Course, 'holes'>) => c.holes.reduce((s, h) => 
 
 /** WHS: Platzvorgabe = HCP-Index × Slope/113 + (Course Rating − Par) */
 export function courseHandicap(handicapIndex: number, tee: Tee, par: number): number {
+  // Ohne offizielles Rating/Slope: Näherung Platzvorgabe ≈ Handicap-Index
+  if (tee.rating == null || tee.slope == null) return Math.round(handicapIndex);
   return Math.round(handicapIndex * (tee.slope / 113) + (tee.rating - par));
 }
 
