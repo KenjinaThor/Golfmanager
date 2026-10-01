@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { friendlyAuthError, resolveSupabaseConfig } from '../src/lib/supabaseConfig';
+import { checkCredentials, friendlyAuthError, resolveSupabaseConfig } from '../src/lib/supabaseConfig';
 
 test('nicht konfiguriert → null (App läuft lokal)', () => {
   assert.equal(resolveSupabaseConfig('', ''), null);
@@ -30,4 +30,13 @@ test('Netzwerkfehler werden verständlich erklärt, andere Fehler übersetzt', (
   assert.equal(friendlyAuthError('User already registered'), 'Diese E-Mail ist schon registriert. Bitte anmelden.');
   assert.equal(friendlyAuthError('Invalid login credentials'), 'E-Mail oder Passwort stimmt nicht.');
   assert.equal(friendlyAuthError('Etwas Unbekanntes'), 'Etwas Unbekanntes');
+});
+
+test('Eingaben werden vor dem Senden geprüft', () => {
+  assert.equal(checkCredentials('a@b.ch', 'geheim1', false), null);
+  assert.equal(checkCredentials('a@b.ch', '123', true), null); // Anmelden: Länge egal
+  assert.ok(checkCredentials('a@b.ch', '123', false)?.includes('6 Zeichen'));
+  assert.ok(checkCredentials('', '', true)?.includes('E-Mail und Passwort'));
+  assert.ok(checkCredentials('keine-mail', 'geheim1', false)?.includes('nicht gültig'));
+  assert.ok(friendlyAuthError('Anonymous sign-ins are disabled').includes('nicht angekommen'));
 });

@@ -15,10 +15,10 @@ export const Btn = ({ title, onPress, kind = 'primary', disabled }: { title: str
   </Pressable>
 );
 
-export const Field = ({ label, ...p }: { label: string } & TextInputProps) => (
+export const Field = ({ label, inputRef, ...p }: { label: string; inputRef?: React.Ref<TextInput> } & TextInputProps) => (
   <View style={{ marginBottom: 12 }}>
     <Text style={s.label}>{label}</Text>
-    <TextInput {...p} style={s.input} placeholderTextColor="#9ca3af" />
+    <TextInput {...p} ref={inputRef} style={s.input} placeholderTextColor="#9ca3af" />
   </View>
 );
 

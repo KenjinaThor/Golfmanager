@@ -1,9 +1,9 @@
-import React, { useCallback, useEffect, useState } from 'react';
-import { Pressable, ScrollView, Text, View } from 'react-native';
+import React, { useCallback, useEffect, useRef, useState, type ComponentRef } from 'react';
+import { Pressable, ScrollView, Text, TextInput, View } from 'react-native';
 import { useFocusEffect } from '@react-navigation/native';
 import { Btn, Card, Field, H, Row, colors, notify } from '../components/ui';
 import { supabase, supabaseConfigError, supabaseHost } from '../lib/supabase';
-import { friendlyAuthError } from '../lib/supabaseConfig';
+import { checkCredentials, friendlyAuthError } from '../lib/supabaseConfig';
 import { useStore } from '../store/useStore';
 import { pushProfile } from '../lib/sync';
 
@@ -19,6 +19,8 @@ export default function FriendsScreen({ navigation }: any) {
   const [fs, setFs] = useState<Fs[]>([]);
   const [people, setPeople] = useState<Record<string, Pub>>({});
   const profile = useStore((s) => s.profile);
+  const emailRef = useRef<ComponentRef<typeof TextInput>>(null);
+  const pwRef = useRef<ComponentRef<typeof TextInput>>(null);
 
   useEffect(() => {
     if (!supabase) return;
@@ -40,6 +42,19 @@ export default function FriendsScreen({ navigation }: any) {
   }, [me]);
   useFocusEffect(useCallback(() => { void load(); }, [load]));
 
+  /** E-Mail/Passwort lesen (im Web zusätzlich direkt aus dem Feld, falls Autofill die Eingabe nicht gemeldet hat) und prüfen. */
+  const credentials = (login: boolean) => {
+    const domValue = (r: React.RefObject<ComponentRef<typeof TextInput> | null>) => (r.current as unknown as { value?: string } | null)?.value;
+    const e = (email || domValue(emailRef) || '').trim();
+    const p = pw || domValue(pwRef) || '';
+    const problem = checkCredentials(e, p, login);
+    if (problem) {
+      notify('Bitte prüfen', problem);
+      return null;
+    }
+    return { email: e, password: p };
+  };
+
   if (!supabase)
     return (
       <View style={{ padding: 20 }}>
@@ -54,15 +69,19 @@ export default function FriendsScreen({ navigation }: any) {
       <ScrollView contentContainerStyle={{ padding: 12 }} keyboardShouldPersistTaps="handled">
         <Card>
           <H>Anmelden</H>
-          <Field label="E-Mail" value={email} onChangeText={setEmail} autoCapitalize="none" keyboardType="email-address" />
-          <Field label="Passwort (min. 6 Zeichen)" value={pw} onChangeText={setPw} secureTextEntry />
+          <Field label="E-Mail" inputRef={emailRef} value={email} onChangeText={setEmail} autoCapitalize="none" autoComplete="email" keyboardType="email-address" />
+          <Field label="Passwort (min. 6 Zeichen)" inputRef={pwRef} value={pw} onChangeText={setPw} secureTextEntry autoComplete="current-password" />
           <Text style={{ color: colors.mute, fontSize: 12, marginBottom: 8 }}>Server: {supabaseHost}</Text>
           <Btn title="Anmelden" onPress={async () => {
-            const { error } = await supabase!.auth.signInWithPassword({ email, password: pw });
+            const c = credentials(true);
+            if (!c) return;
+            const { error } = await supabase!.auth.signInWithPassword({ email: c.email, password: c.password });
             if (error) notify('Fehler', friendlyAuthError(error.message, supabaseHost)); else void pushProfile(profile);
           }} />
           <Btn kind="ghost" title="Konto erstellen" onPress={async () => {
-            const { data, error } = await supabase!.auth.signUp({ email, password: pw });
+            const c = credentials(false);
+            if (!c) return;
+            const { data, error } = await supabase!.auth.signUp({ email: c.email, password: c.password });
             if (error) notify('Fehler', friendlyAuthError(error.message, supabaseHost));
             else if (!data.session) notify('Fast geschafft', 'Bitte bestätige deine E-Mail-Adresse und melde dich dann an.');
             else void pushProfile(profile);
