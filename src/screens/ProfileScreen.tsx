@@ -1,11 +1,11 @@
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { useFocusEffect } from '@react-navigation/native';
 import { ScrollView, Text, TextInputProps, View } from 'react-native';
-import { Btn, Card, Field, H, Row, Tag, VisibilityPicker, colors, notify } from '../components/ui';
+import { Btn, Card, Field, H, Row, Tag, VisibilityPicker, colors, confirmDialog, notify } from '../components/ui';
 import { ageFromBirthDate, effectiveAge, parseBirthDate, visibilityOf } from '../lib/privacy';
 import { runSync } from '../lib/runSync';
 import { supabase } from '../lib/supabase';
-import { useSyncInfo } from '../lib/sync';
+import { deleteAccount, useSyncInfo } from '../lib/sync';
 import { useStore } from '../store/useStore';
 import { Profile, SharedField, Visibility } from '../types';
 
@@ -19,6 +19,13 @@ function Shared({ k, label, profile, onVis, ...p }: { k: SharedField; label: str
 }
 
 export default function ProfileScreen() {
+  const [signedIn, setSignedIn] = useState(false);
+  useEffect(() => {
+    if (!supabase) return;
+    void supabase.auth.getSession().then(({ data }) => setSignedIn(!!data.session));
+    const { data } = supabase.auth.onAuthStateChange((_e, session) => setSignedIn(!!session));
+    return () => data.subscription.unsubscribe();
+  }, []);
   const profile = useStore((s) => s.profile);
   const setProfile = useStore((s) => s.setProfile);
   const info = useSyncInfo();
@@ -143,6 +150,28 @@ export default function ProfileScreen() {
       </Card>
       <Btn title="Speichern" onPress={save} />
       <Text style={{ color: colors.mute, marginTop: 8 }}>Beim Speichern und beim Ändern der Sichtbarkeit wird das Profil sofort übertragen, sofern du angemeldet bist.</Text>
+      {signedIn && (
+        <Card>
+          <H>Konto</H>
+          <Text style={{ color: colors.mute, fontSize: 12, marginBottom: 8 }}>
+            Löscht dein Login, dein Profil, alle Runden in der Cloud und alle Freundschaften endgültig. Die Daten auf diesem Gerät bleiben erhalten.
+          </Text>
+          <Btn kind="ghost" title="Konto löschen" onPress={() => confirmDialog(
+            'Konto löschen?',
+            'Dein Login, dein Profil, alle Runden in der Cloud und alle Freundschaften werden endgültig gelöscht. Die Daten auf diesem Gerät bleiben erhalten. Das kann nicht rückgängig gemacht werden.',
+            'Weiter',
+            () => confirmDialog('Wirklich löschen?', 'Letzte Bestätigung: Das Konto wird jetzt unwiderruflich gelöscht.', 'Konto endgültig löschen', async () => {
+              const err = await deleteAccount();
+              if (err) notify('Konto nicht gelöscht', err);
+              else {
+                useStore.getState().forgetCloud();
+                notify('Konto gelöscht', 'Dein Konto und deine Cloud-Daten wurden gelöscht.');
+              }
+            }, true),
+            true,
+          )} />
+        </Card>
+      )}
     </ScrollView>
   );
 }
