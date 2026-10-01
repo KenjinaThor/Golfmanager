@@ -118,3 +118,15 @@ create policy "anfrage annehmen" on friendships for update to authenticated
 drop policy if exists "freundschaft beenden" on friendships;
 create policy "freundschaft beenden" on friendships for delete to authenticated
   using (requester = auth.uid() or addressee = auth.uid());
+
+-- Konto löschen: entfernt den eigenen Login; Profil, Details, privater Speicher, Runden und Freundschaften
+-- verschwinden über «on delete cascade». Nur das eigene Konto (auth.uid()) kann gelöscht werden.
+create or replace function delete_my_account() returns void
+language plpgsql security definer set search_path = public, auth as $$
+begin
+  if auth.uid() is null then raise exception 'Nicht angemeldet'; end if;
+  delete from auth.users where id = auth.uid();
+end;
+$$;
+revoke all on function delete_my_account() from public, anon;
+grant execute on function delete_my_account() to authenticated;
