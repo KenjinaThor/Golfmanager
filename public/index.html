@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover" />
+    <title>%WEB_TITLE%</title>
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="icon" type="image/png" href="icons/icon-192.png" />
+    <link rel="apple-touch-icon" href="icons/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="Golfmanager" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <style id="expo-reset">
+      html, body { height: 100%; }
+      body { overflow: hidden; background: #f7f8f7; }
+      #root { display: flex; height: 100%; flex: 1; }
+      /* Auf grossen Bildschirmen als schmale Spalte wie auf dem Handy */
+      @media (min-width: 640px) {
+        body { background: #dfe5e0; }
+        #root { max-width: 480px; margin: 0 auto; background: #f7f8f7; box-shadow: 0 0 40px rgba(0, 0, 0, 0.15); }
+      }
+    </style>
+  </head>
+  <body>
+    <noscript>Golfmanager braucht JavaScript.</noscript>
+    <div id="root"></div>
+    <script>
+      // Offline-Betrieb: Service Worker nur über https (oder localhost) registrieren
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function () {
+          navigator.serviceWorker.register('sw.js', { scope: './' }).catch(function () {});
+        });
+      }
+    </script>
+  </body>
+</html>

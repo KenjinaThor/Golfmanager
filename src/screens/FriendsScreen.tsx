@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useState } from 'react';
-import { Alert, Pressable, ScrollView, Text, View } from 'react-native';
+import { Pressable, ScrollView, Text, View } from 'react-native';
 import { useFocusEffect } from '@react-navigation/native';
-import { Btn, Card, Field, H, Row, colors } from '../components/ui';
+import { Btn, Card, Field, H, Row, colors, notify } from '../components/ui';
 import { supabase } from '../lib/supabase';
 import { useStore } from '../store/useStore';
 import { pushProfile } from '../lib/sync';
@@ -56,12 +56,12 @@ export default function FriendsScreen({ navigation }: any) {
           <Field label="Passwort (min. 6 Zeichen)" value={pw} onChangeText={setPw} secureTextEntry />
           <Btn title="Anmelden" onPress={async () => {
             const { error } = await supabase!.auth.signInWithPassword({ email, password: pw });
-            if (error) Alert.alert('Fehler', error.message); else void pushProfile(profile);
+            if (error) notify('Fehler', error.message); else void pushProfile(profile);
           }} />
           <Btn kind="ghost" title="Konto erstellen" onPress={async () => {
             const { data, error } = await supabase!.auth.signUp({ email, password: pw });
-            if (error) Alert.alert('Fehler', error.message);
-            else if (!data.session) Alert.alert('Fast geschafft', 'Bitte bestätige deine E-Mail-Adresse und melde dich dann an.');
+            if (error) notify('Fehler', error.message);
+            else if (!data.session) notify('Fast geschafft', 'Bitte bestätige deine E-Mail-Adresse und melde dich dann an.');
             else void pushProfile(profile);
           }} />
         </Card>
@@ -74,7 +74,7 @@ export default function FriendsScreen({ navigation }: any) {
   };
   const request = async (id: string) => {
     const { error } = await supabase!.from('friendships').insert({ requester: me, addressee: id });
-    Alert.alert(error ? 'Fehler' : 'Anfrage gesendet', error?.message ?? '');
+    notify(error ? 'Fehler' : 'Anfrage gesendet', error?.message ?? '');
     void load();
   };
   const other = (f: Fs) => people[f.requester === me ? f.addressee : f.requester];
