@@ -1,0 +1,97 @@
+route,gender,tee_name,markers,course_rating,par,slope
+Rot-Grün,men,Back Tees,R28-Gr28,70.5,70,132
+Rot-Grün,men,Back Standard Tees,R27-Gr28,69.2,70,129
+Rot-Grün,men,Standard Tees,R25-Gr24,67.3,70,126
+Rot-Grün,men,Front Standard Tees,R24-Gr23,66.3,70,124
+Rot-Grün,ladies,Back Tees,R28-Gr28,76.7,70,139
+Rot-Grün,ladies,Back Standard Tees,R27-Gr28,75.0,70,135
+Rot-Grün,ladies,Standard Tees,R25-Gr24,72.6,70,131
+Rot-Grün,ladies,Front Standard Tees,R24-Gr23,71.3,70,126
+Rot,men,Back Tees,R28,35.2,35,131
+Rot,men,Back Standard Tees,R27,34.3,35,131
+Rot,men,Standard Tees,R25,33.4,35,128
+Rot,men,Front Standard Tees,R24,32.9,35,125
+Rot,ladies,Back Tees,R28,38.2,35,140
+Rot,ladies,Back Standard Tees,R27,37.3,35,137
+Rot,ladies,Standard Tees,R25,36.2,35,132
+Rot,ladies,Front Standard Tees,R24,36.1,35,131
+Grün,men,Back Tees,Gr28,35.3,35,132
+Grün,men,Back Standard Tees,Gr26,34.9,35,127
+Grün,men,Standard Tees,Gr24,33.9,35,123
+Grün,men,Front Standard Tees,Gr23,33.4,35,122
+Grün,ladies,Back Tees,Gr28,38.5,35,137
+Grün,ladies,Back Standard Tees,Gr26,37.7,35,133
+Grün,ladies,Standard Tees,Gr24,36.4,35,129
+Grün,ladies,Front Standard Tees,Gr23,35.2,35,121
+Grün-Gelb,men,Back Tees,Gr28-G30,71.3,71,131
+Grün-Gelb,men,Back Standard Tees,GR26-G29,70.6,71,130
+Grün-Gelb,men,Standard Tees,Gr24-G27,68.4,71,125
+Grün-Gelb,men,Front Standard Tees,Gr23-G26,67.4,71,124
+Grün-Gelb,ladies,Back Tees,Gr28-G30,77.6,71,138
+Grün-Gelb,ladies,Back Standard Tees,GR26-G29,76.2,71,135
+Grün-Gelb,ladies,Standard Tees,Gr24-G27,73.5,71,130
+Grün-Gelb,ladies,Front Standard Tees,Gr23-G26,71.9,71,124
+Blau,men,Back Tees,B28,35.1,35,127
+Blau,men,Back Standard Tees,B27,34.3,35,123
+Blau,men,Standard Tees,B25,33.3,35,121
+Blau,men,Front Standard Tees,B24,32.7,35,118
+Blau,ladies,Back Tees,B28,38.0,35,137
+Blau,ladies,Back Standard Tees,B27,37.1,35,133
+Blau,ladies,Standard Tees,B25,36.0,35,128
+Blau,ladies,Front Standard Tees,B24,35.1,35,127
+Rot-Gelb,men,Back Tees,R28-G30,71.2,71,130
+Rot-Gelb,men,Back Standard Tees,R27-G29,70.0,71,132
+Rot-Gelb,men,Standard Tees,R25-G27,67.9,71,128
+Rot-Gelb,men,Front Standard Tees,R24-G26,66.9,71,126
+Rot-Gelb,ladies,Back Tees,R28-G30,77.3,71,140
+Rot-Gelb,ladies,Back Standard Tees,R27-G29,75.8,71,137
+Rot-Gelb,ladies,Standard Tees,R25-G27,73.3,71,131
+Rot-Gelb,ladies,Front Standard Tees,R24-G26,72.8,71,129
+Schwarz,men,Back Tees,56,70.4,70,135
+Schwarz,men,Back Standard Tees,53,69.5,70,131
+Schwarz,men,Standard Tees,49,67.5,70,127
+Schwarz,men,Front Standard Tees,47,66.5,70,129
+Schwarz,ladies,Back Tees,56,76.5,70,136
+Schwarz,ladies,Back Standard Tees,53,74.9,70,133
+Schwarz,ladies,Standard Tees,49,72.5,70,130
+Schwarz,ladies,Front Standard Tees,47,70.7,70,127
+Blau-Gelb,men,Back Tees,B28-G30,71.1,71,128
+Blau-Gelb,men,Back Standard Tees,B27-G29,70.0,71,128
+Blau-Gelb,men,Standard Tees,B25-G27,67.8,71,124
+Blau-Gelb,men,Front Standard Tees,B24-G26,66.7,71,122
+Blau-Gelb,ladies,Back Tees,B28-G30,77.1,71,138
+Blau-Gelb,ladies,Back Standard Tees,B27-G29,75.6,71,135
+Blau-Gelb,ladies,Standard Tees,B25-G27,73.1,71,129
+Blau-Gelb,ladies,Front Standard Tees,B24-G26,71.8,71,127
+Blau-Rot,men,Back Tees,B28-R28,70.3,70,129
+Blau-Rot,men,Back Standard Tees,B27-R27,68.6,70,127
+Blau-Rot,men,Standard Tees,B25-R25,66.7,70,125
+Blau-Rot,men,Front Standard Tees,B24-R24,65.6,70,122
+Blau-Rot,ladies,Back Tees,B28-R28,76.2,70,139
+Blau-Rot,ladies,Back Standard Tees,B27-R27,74.4,70,135
+Blau-Rot,ladies,Standard Tees,B25-R25,72.2,70,130
+Blau-Rot,ladies,Front Standard Tees,B24-R24,71.2,70,129
+Orange,men,Back Tees,58,71.1,71,128
+Orange,men,Back Standard Tees,56,70.0,71,128
+Orange,men,Standard Tees,52,67.8,71,125
+Orange,men,Front Standard Tees,50,66.7,71,123
+Orange,ladies,Back Tees,58,77.1,71,138
+Orange,ladies,Back Standard Tees,56,75.6,71,134
+Orange,ladies,Standard Tees,52,73.1,71,129
+Orange,ladies,Front Standard Tees,50,71.8,71,127
+Blau-Grün,men,Back Tees,B28-Gr28,70.4,70,130
+Blau-Grün,men,Back Standard Tees,B27-Gr26,69.2,70,125
+Blau-Grün,men,Standard Tees,B25-Gr24,67.2,70,122
+Blau-Grün,men,Front Standard Tees,B24-Gr23,66.1,70,120
+Blau-Grün,ladies,Back Tees,B28-Gr28,76.5,70,137
+Blau-Grün,ladies,Back Standard Tees,B27-Gr26,74.8,70,133
+Blau-Grün,ladies,Standard Tees,B25-Gr24,72.4,70,129
+Blau-Grün,ladies,Front Standard Tees,B24-Gr23,70.3,70,124
+Gelb,men,Back Tees,G30,36.0,36,129
+Gelb,men,Back Standard Tees,G29,35.7,36,132
+Gelb,men,Standard Tees,G27,34.5,36,127
+Gelb,men,Front Standard Tees,G26,34.0,36,126
+Gelb,ladies,Back Tees,G30,39.1,36,139
+Gelb,ladies,Back Standard Tees,G29,38.5,36,137
+Gelb,ladies,Standard Tees,G27,37.1,36,130
+Gelb,ladies,Front Standard Tees,G26,36.7,36,127
