@@ -2,7 +2,8 @@ import React, { useCallback, useEffect, useState } from 'react';
 import { Pressable, ScrollView, Text, View } from 'react-native';
 import { useFocusEffect } from '@react-navigation/native';
 import { Btn, Card, Field, H, Row, colors, notify } from '../components/ui';
-import { supabase, supabaseConfigError } from '../lib/supabase';
+import { supabase, supabaseConfigError, supabaseHost } from '../lib/supabase';
+import { friendlyAuthError } from '../lib/supabaseConfig';
 import { useStore } from '../store/useStore';
 import { pushProfile } from '../lib/sync';
 
@@ -55,13 +56,14 @@ export default function FriendsScreen({ navigation }: any) {
           <H>Anmelden</H>
           <Field label="E-Mail" value={email} onChangeText={setEmail} autoCapitalize="none" keyboardType="email-address" />
           <Field label="Passwort (min. 6 Zeichen)" value={pw} onChangeText={setPw} secureTextEntry />
+          <Text style={{ color: colors.mute, fontSize: 12, marginBottom: 8 }}>Server: {supabaseHost}</Text>
           <Btn title="Anmelden" onPress={async () => {
             const { error } = await supabase!.auth.signInWithPassword({ email, password: pw });
-            if (error) notify('Fehler', error.message); else void pushProfile(profile);
+            if (error) notify('Fehler', friendlyAuthError(error.message, supabaseHost)); else void pushProfile(profile);
           }} />
           <Btn kind="ghost" title="Konto erstellen" onPress={async () => {
             const { data, error } = await supabase!.auth.signUp({ email, password: pw });
-            if (error) notify('Fehler', error.message);
+            if (error) notify('Fehler', friendlyAuthError(error.message, supabaseHost));
             else if (!data.session) notify('Fast geschafft', 'Bitte bestätige deine E-Mail-Adresse und melde dich dann an.');
             else void pushProfile(profile);
           }} />
@@ -75,7 +77,7 @@ export default function FriendsScreen({ navigation }: any) {
   };
   const request = async (id: string) => {
     const { error } = await supabase!.from('friendships').insert({ requester: me, addressee: id });
-    notify(error ? 'Fehler' : 'Anfrage gesendet', error?.message ?? '');
+    notify(error ? 'Fehler' : 'Anfrage gesendet', error ? friendlyAuthError(error.message, supabaseHost) : '');
     void load();
   };
   const other = (f: Fs) => people[f.requester === me ? f.addressee : f.requester];

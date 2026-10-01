@@ -23,3 +23,5 @@ if (config && 'url' in config) {
 export const supabase = client;
 /** Beschreibung, falls die Konfiguration vorhanden, aber fehlerhaft ist. */
 export const supabaseConfigError = error;
+/** Servername, den die App anspricht (zur Kontrolle gegen die Supabase-Adresse). */
+export const supabaseHost = config && 'url' in config ? new URL(config.url).host : null;
