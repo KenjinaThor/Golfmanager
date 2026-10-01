@@ -33,7 +33,7 @@ Ohne Supabase läuft alles lokal; der Tab «Freunde» zeigt dann nur einen Hinwe
 1. **Projekt anlegen**: auf supabase.com ein kostenloses Projekt erstellen (Region z. B. Frankfurt).
 2. **Datenbank einrichten**: SQL Editor → neue Abfrage → Inhalt von `backend/schema.sql` einfügen → Run. Das legt Tabellen und Zugriffsregeln (Row-Level-Security) an.
 3. **Anmeldung**: Authentication → Providers → Email aktiv (Standard). Authentication → URL Configuration → **Site URL** auf `https://kenjinathor.github.io/Golfmanager/` setzen (Link in der Bestätigungs-Mail).
-4. **Zugangsdaten holen**: Project Settings → API → *Project URL* und *anon public key* (der anon key ist öffentlich vorgesehen; geschützt sind die Daten durch die Zugriffsregeln, **nie** den `service_role`-Key verwenden).
+4. **Zugangsdaten holen**: Project Settings → API Keys → *Publishable key* (`sb_publishable_…`; in älteren Projekten *anon public key*, Reiter «Legacy») und die *Project URL* (auch im grünen «Connect»-Knopf). Der Key ist öffentlich vorgesehen; geschützt sind die Daten durch die Zugriffsregeln. **Nie** den *Secret key* oder `service_role`-Key verwenden.
 5. **Web-App**: GitHub → Settings → Secrets and variables → Actions → Secrets `EXPO_PUBLIC_SUPABASE_URL` und `EXPO_PUBLIC_SUPABASE_ANON_KEY` anlegen, dann Actions → «Web-App veröffentlichen» → Run workflow.
    **Handy-App/Expo Go**: dieselben zwei Werte in `.env` eintragen (siehe `.env.example`).
 6. In der App: Profil → Benutzername setzen (a–z, 0–9, _; min. 3 Zeichen) → Tab «Freunde» → Konto erstellen, E-Mail bestätigen, anmelden.
